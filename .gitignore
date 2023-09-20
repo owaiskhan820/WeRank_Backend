@@ -1,0 +1,4 @@
+# write files which you dont want to be on git
+# like never push .env to the git ever.
+# I am pushing so that you can run it
+node_modules

@@ -1,0 +1,1240 @@
+2023-09-15T20:04:20.656Z [info] : 🚀 ~ file: connection.js:6 ~ DBConnect ~ mongoUrl: {
+  "0": "m",
+  "1": "o",
+  "2": "n",
+  "3": "g",
+  "4": "o",
+  "5": "d",
+  "6": "b",
+  "7": ":",
+  "8": "/",
+  "9": "/",
+  "10": "1",
+  "11": "2",
+  "12": "7",
+  "13": ".",
+  "14": "0",
+  "15": ".",
+  "16": "0",
+  "17": ".",
+  "18": "1",
+  "19": ":",
+  "20": "4",
+  "21": "0",
+  "22": "0",
+  "23": "4",
+  "24": "/",
+  "25": "t",
+  "26": "e",
+  "27": "s",
+  "28": "t",
+  "29": "-",
+  "30": "b",
+  "31": "o",
+  "32": "i",
+  "33": "l",
+  "34": "e",
+  "35": "r",
+  "36": "p",
+  "37": "l",
+  "38": "a",
+  "39": "t",
+  "40": "e"
+}
+2023-09-15T20:04:20.689Z [info] : Mongo connected!!! 
+2023-09-15T20:04:20.690Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:04:21.104Z [info] : 🚀 ~ file: connection.js:6 ~ DBConnect ~ mongoUrl: {
+  "0": "m",
+  "1": "o",
+  "2": "n",
+  "3": "g",
+  "4": "o",
+  "5": "d",
+  "6": "b",
+  "7": ":",
+  "8": "/",
+  "9": "/",
+  "10": "1",
+  "11": "2",
+  "12": "7",
+  "13": ".",
+  "14": "0",
+  "15": ".",
+  "16": "0",
+  "17": ".",
+  "18": "1",
+  "19": ":",
+  "20": "4",
+  "21": "0",
+  "22": "0",
+  "23": "4",
+  "24": "/",
+  "25": "t",
+  "26": "e",
+  "27": "s",
+  "28": "t",
+  "29": "-",
+  "30": "b",
+  "31": "o",
+  "32": "i",
+  "33": "l",
+  "34": "e",
+  "35": "r",
+  "36": "p",
+  "37": "l",
+  "38": "a",
+  "39": "t",
+  "40": "e"
+}
+2023-09-15T20:04:21.136Z [info] : Mongo connected!!! 
+2023-09-15T20:04:21.137Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:04:28.516Z [info] : Mongo connected!!! 
+2023-09-15T20:04:28.517Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:04:34.909Z [info] : Mongo connected!!! 
+2023-09-15T20:04:34.910Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:04:48.622Z [info] : Mongo connected!!! 
+2023-09-15T20:04:48.623Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:04:52.041Z [info] : Mongo connected!!! 
+2023-09-15T20:04:52.042Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:08.986Z [info] : Mongo connected!!! 
+2023-09-15T20:05:08.987Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:11.239Z [info] : Mongo connected!!! 
+2023-09-15T20:05:11.240Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:18.307Z [info] : Mongo connected!!! 
+2023-09-15T20:05:18.308Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:28.087Z [info] : Mongo connected!!! 
+2023-09-15T20:05:28.088Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:28.817Z [info] : Mongo connected!!! 
+2023-09-15T20:05:28.817Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:32.273Z [info] : Mongo connected!!! 
+2023-09-15T20:05:32.274Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:49.123Z [info] : Mongo connected!!! 
+2023-09-15T20:05:49.123Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:50.704Z [info] : Mongo connected!!! 
+2023-09-15T20:05:50.705Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:56.656Z [info] : Mongo connected!!! 
+2023-09-15T20:05:56.658Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:05:59.226Z [info] : Mongo connected!!! 
+2023-09-15T20:05:59.227Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:06:42.363Z [info] : Mongo connected!!! 
+2023-09-15T20:06:42.365Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:25:26.430Z [info] : Mongo connected!!! 
+2023-09-15T20:25:26.431Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:25:32.152Z [info] : Mongo connected!!! 
+2023-09-15T20:25:32.153Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:25:36.874Z [info] : Mongo connected!!! 
+2023-09-15T20:25:36.876Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:26:10.332Z [info] : Mongo connected!!! 
+2023-09-15T20:26:10.333Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:26:42.002Z [info] : Mongo connected!!! 
+2023-09-15T20:26:42.003Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:26:51.431Z [info] : Mongo connected!!! 
+2023-09-15T20:26:51.433Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:27:19.190Z [info] : Mongo connected!!! 
+2023-09-15T20:27:19.191Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:28:00.460Z [info] : Mongo connected!!! 
+2023-09-15T20:28:00.461Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:28:06.150Z [info] : Mongo connected!!! 
+2023-09-15T20:28:06.151Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:28:14.721Z [info] : Mongo connected!!! 
+2023-09-15T20:28:14.722Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:28:25.118Z [info] : Mongo connected!!! 
+2023-09-15T20:28:25.122Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:28:29.514Z [info] : Mongo connected!!! 
+2023-09-15T20:28:29.516Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:29:20.602Z [info] : Mongo connected!!! 
+2023-09-15T20:29:20.603Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:29:27.278Z [info] : Mongo connected!!! 
+2023-09-15T20:29:27.279Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:29:38.174Z [info] : Mongo connected!!! 
+2023-09-15T20:29:38.176Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:29:46.883Z [info] : Mongo connected!!! 
+2023-09-15T20:29:46.884Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:29:51.681Z [info] : Mongo connected!!! 
+2023-09-15T20:29:51.682Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:29:54.598Z [info] : Mongo connected!!! 
+2023-09-15T20:29:54.599Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:29:57.217Z [info] : Mongo connected!!! 
+2023-09-15T20:29:57.218Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:29:58.081Z [info] : Mongo connected!!! 
+2023-09-15T20:29:58.082Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:30:51.727Z [info] : Mongo connected!!! 
+2023-09-15T20:30:51.728Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:32:59.719Z [info] : Mongo connected!!! 
+2023-09-15T20:32:59.720Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:33:25.601Z [info] : Mongo connected!!! 
+2023-09-15T20:33:25.602Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:33:40.089Z [info] : Mongo connected!!! 
+2023-09-15T20:33:40.090Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:33:45.589Z [info] : Mongo connected!!! 
+2023-09-15T20:33:45.590Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:33:48.242Z [info] : Mongo connected!!! 
+2023-09-15T20:33:48.243Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:33:59.808Z [info] : Mongo connected!!! 
+2023-09-15T20:33:59.809Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:34:20.617Z [info] : Mongo connected!!! 
+2023-09-15T20:34:20.618Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:34:23.283Z [info] : Mongo connected!!! 
+2023-09-15T20:34:23.285Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:35:18.480Z [info] : Mongo connected!!! 
+2023-09-15T20:35:18.481Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:35:24.149Z [info] : Mongo connected!!! 
+2023-09-15T20:35:24.150Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:35:28.269Z [info] : Mongo connected!!! 
+2023-09-15T20:35:28.270Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:35:35.542Z [info] : Mongo connected!!! 
+2023-09-15T20:35:35.543Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:35:40.420Z [info] : Mongo connected!!! 
+2023-09-15T20:35:40.421Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:35:51.253Z [info] : Mongo connected!!! 
+2023-09-15T20:35:51.254Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:35:53.621Z [info] : Mongo connected!!! 
+2023-09-15T20:35:53.622Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:35:59.849Z [info] : Mongo connected!!! 
+2023-09-15T20:35:59.851Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:36:01.850Z [info] : Mongo connected!!! 
+2023-09-15T20:36:01.851Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:36:33.288Z [info] : Mongo connected!!! 
+2023-09-15T20:36:33.290Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:37:08.965Z [info] : Mongo connected!!! 
+2023-09-15T20:37:08.966Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:37:21.696Z [info] : Mongo connected!!! 
+2023-09-15T20:37:21.697Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:37:36.942Z [info] : Mongo connected!!! 
+2023-09-15T20:37:36.943Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:37:44.555Z [info] : Mongo connected!!! 
+2023-09-15T20:37:44.557Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:37:55.371Z [info] : Mongo connected!!! 
+2023-09-15T20:37:55.372Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:38:04.189Z [info] : Mongo connected!!! 
+2023-09-15T20:38:04.191Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:38:21.150Z [info] : Mongo connected!!! 
+2023-09-15T20:38:21.151Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:38:35.196Z [info] : Mongo connected!!! 
+2023-09-15T20:38:35.197Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:39:33.253Z [info] : Mongo connected!!! 
+2023-09-15T20:39:33.254Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:40:29.799Z [info] : Mongo connected!!! 
+2023-09-15T20:40:29.800Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:40:38.344Z [info] : Mongo connected!!! 
+2023-09-15T20:40:38.345Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:40:40.460Z [info] : Mongo connected!!! 
+2023-09-15T20:40:40.463Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:40:42.712Z [info] : Mongo connected!!! 
+2023-09-15T20:40:42.713Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:40:54.616Z [info] : Mongo connected!!! 
+2023-09-15T20:40:54.617Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:40:58.669Z [info] : Mongo connected!!! 
+2023-09-15T20:40:58.670Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:43:34.334Z [info] : Mongo connected!!! 
+2023-09-15T20:43:34.335Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:43:57.709Z [info] : Mongo connected!!! 
+2023-09-15T20:43:57.711Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:44:21.755Z [info] : Mongo connected!!! 
+2023-09-15T20:44:21.756Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:44:24.338Z [info] : Mongo connected!!! 
+2023-09-15T20:44:24.339Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:44:25.446Z [info] : Mongo connected!!! 
+2023-09-15T20:44:25.447Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:44:30.153Z [info] : Mongo connected!!! 
+2023-09-15T20:44:30.154Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:45:18.488Z [info] : Mongo connected!!! 
+2023-09-15T20:45:18.489Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:45:38.790Z [info] : Mongo connected!!! 
+2023-09-15T20:45:38.791Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:45:43.105Z [info] : Mongo connected!!! 
+2023-09-15T20:45:43.106Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:46:55.120Z [info] : Mongo connected!!! 
+2023-09-15T20:46:55.121Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:47:13.540Z [info] : Mongo connected!!! 
+2023-09-15T20:47:13.541Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:47:27.193Z [info] : Mongo connected!!! 
+2023-09-15T20:47:27.194Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:47:39.872Z [info] : Mongo connected!!! 
+2023-09-15T20:47:39.872Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:47:46.730Z [info] : Mongo connected!!! 
+2023-09-15T20:47:46.731Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:47:55.773Z [info] : Mongo connected!!! 
+2023-09-15T20:47:55.774Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:48:21.419Z [info] : Mongo connected!!! 
+2023-09-15T20:48:21.419Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:51:31.822Z [info] : Mongo connected!!! 
+2023-09-15T20:51:31.823Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:52:05.397Z [info] : Mongo connected!!! 
+2023-09-15T20:52:05.398Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:56:54.798Z [info] : Mongo connected!!! 
+2023-09-15T20:56:54.799Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:57:16.567Z [info] : Mongo connected!!! 
+2023-09-15T20:57:16.568Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:58:33.188Z [info] : Mongo connected!!! 
+2023-09-15T20:58:33.189Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:58:37.643Z [info] : Mongo connected!!! 
+2023-09-15T20:58:37.644Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:59:00.421Z [info] : Mongo connected!!! 
+2023-09-15T20:59:00.422Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:59:06.387Z [info] : Mongo connected!!! 
+2023-09-15T20:59:06.388Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T20:59:59.900Z [info] : Mongo connected!!! 
+2023-09-15T20:59:59.901Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:01:13.641Z [info] : Mongo connected!!! 
+2023-09-15T21:01:13.642Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:01:21.251Z [info] : Mongo connected!!! 
+2023-09-15T21:01:21.252Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:01:47.483Z [info] : Mongo connected!!! 
+2023-09-15T21:01:47.484Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:03:51.760Z [info] : Mongo connected!!! 
+2023-09-15T21:03:51.761Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:05:18.190Z [info] : Mongo connected!!! 
+2023-09-15T21:05:18.191Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:05:20.834Z [info] : Mongo connected!!! 
+2023-09-15T21:05:20.836Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:05:29.519Z [info] : Mongo connected!!! 
+2023-09-15T21:05:29.520Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:05:30.796Z [info] : Mongo connected!!! 
+2023-09-15T21:05:30.797Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:05:33.219Z [info] : Mongo connected!!! 
+2023-09-15T21:05:33.221Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:05:57.902Z [info] : Mongo connected!!! 
+2023-09-15T21:05:57.903Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:06:00.504Z [info] : Mongo connected!!! 
+2023-09-15T21:06:00.506Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:06:43.549Z [info] : Mongo connected!!! 
+2023-09-15T21:06:43.551Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:06:46.523Z [info] : Mongo connected!!! 
+2023-09-15T21:06:46.524Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:06:50.054Z [info] : Mongo connected!!! 
+2023-09-15T21:06:50.055Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:06:58.204Z [info] : Mongo connected!!! 
+2023-09-15T21:06:58.206Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:10:47.807Z [info] : Mongo connected!!! 
+2023-09-15T21:10:47.808Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:10:51.448Z [info] : Mongo connected!!! 
+2023-09-15T21:10:51.449Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:11:37.051Z [info] : Mongo connected!!! 
+2023-09-15T21:11:37.053Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:11:41.714Z [info] : Mongo connected!!! 
+2023-09-15T21:11:41.716Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:11:43.492Z [info] : Mongo connected!!! 
+2023-09-15T21:11:43.493Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:11:48.588Z [info] : Mongo connected!!! 
+2023-09-15T21:11:48.589Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:11:51.545Z [info] : Mongo connected!!! 
+2023-09-15T21:11:51.546Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:12:13.758Z [info] : Mongo connected!!! 
+2023-09-15T21:12:13.759Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:12:30.333Z [info] : Mongo connected!!! 
+2023-09-15T21:12:30.334Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:12:33.159Z [info] : Mongo connected!!! 
+2023-09-15T21:12:33.160Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:12:57.127Z [info] : Mongo connected!!! 
+2023-09-15T21:12:57.128Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:14:54.981Z [info] : Mongo connected!!! 
+2023-09-15T21:14:54.982Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:15:42.345Z [info] : Mongo connected!!! 
+2023-09-15T21:15:42.346Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:17:17.393Z [info] : Mongo connected!!! 
+2023-09-15T21:17:17.395Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:17:22.549Z [info] : Mongo connected!!! 
+2023-09-15T21:17:22.550Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:17:43.056Z [info] : Mongo connected!!! 
+2023-09-15T21:17:43.058Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:17:54.912Z [info] : Mongo connected!!! 
+2023-09-15T21:17:54.913Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:18:15.601Z [info] : Mongo connected!!! 
+2023-09-15T21:18:15.602Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:18:24.519Z [info] : Mongo connected!!! 
+2023-09-15T21:18:24.520Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:18:26.563Z [info] : Mongo connected!!! 
+2023-09-15T21:18:26.564Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:18:52.767Z [info] : Mongo connected!!! 
+2023-09-15T21:18:52.768Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:18:56.618Z [info] : Mongo connected!!! 
+2023-09-15T21:18:56.619Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:19:02.049Z [info] : Mongo connected!!! 
+2023-09-15T21:19:02.050Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:19:13.414Z [info] : Mongo connected!!! 
+2023-09-15T21:19:13.415Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:19:17.926Z [info] : Mongo connected!!! 
+2023-09-15T21:19:17.927Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:19:49.444Z [info] : Mongo connected!!! 
+2023-09-15T21:19:49.445Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:19:51.219Z [info] : Mongo connected!!! 
+2023-09-15T21:19:51.220Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:20:18.881Z [info] : Mongo connected!!! 
+2023-09-15T21:20:18.882Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:20:19.808Z [info] : Mongo connected!!! 
+2023-09-15T21:20:19.809Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:20:25.019Z [info] : Mongo connected!!! 
+2023-09-15T21:20:25.020Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:20:54.394Z [info] : Mongo connected!!! 
+2023-09-15T21:20:54.396Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:03.181Z [info] : Mongo connected!!! 
+2023-09-15T21:21:03.182Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:13.475Z [info] : Mongo connected!!! 
+2023-09-15T21:21:13.476Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:17.193Z [info] : Mongo connected!!! 
+2023-09-15T21:21:17.194Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:20.035Z [info] : Mongo connected!!! 
+2023-09-15T21:21:20.036Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:21.669Z [info] : Mongo connected!!! 
+2023-09-15T21:21:21.670Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:26.898Z [info] : Mongo connected!!! 
+2023-09-15T21:21:26.899Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:34.247Z [info] : Mongo connected!!! 
+2023-09-15T21:21:34.247Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:41.815Z [info] : Mongo connected!!! 
+2023-09-15T21:21:41.816Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:21:59.825Z [info] : Mongo connected!!! 
+2023-09-15T21:21:59.826Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:23:22.546Z [info] : Mongo connected!!! 
+2023-09-15T21:23:22.548Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:23:26.167Z [info] : Mongo connected!!! 
+2023-09-15T21:23:26.168Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:23:56.613Z [info] : Mongo connected!!! 
+2023-09-15T21:23:56.614Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:24:16.718Z [info] : Mongo connected!!! 
+2023-09-15T21:24:16.720Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:24:19.168Z [info] : Mongo connected!!! 
+2023-09-15T21:24:19.169Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:24:21.655Z [info] : Mongo connected!!! 
+2023-09-15T21:24:21.656Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:25:29.423Z [info] : Mongo connected!!! 
+2023-09-15T21:25:29.424Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:25:38.656Z [info] : Mongo connected!!! 
+2023-09-15T21:25:38.657Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:25:48.940Z [info] : Mongo connected!!! 
+2023-09-15T21:25:48.941Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:25:56.856Z [info] : Mongo connected!!! 
+2023-09-15T21:25:56.857Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:26:12.351Z [info] : Mongo connected!!! 
+2023-09-15T21:26:12.352Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:26:35.517Z [info] : Mongo connected!!! 
+2023-09-15T21:26:35.518Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:26:40.832Z [info] : Mongo connected!!! 
+2023-09-15T21:26:40.833Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:26:53.855Z [info] : Mongo connected!!! 
+2023-09-15T21:26:53.856Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:27:04.581Z [info] : Mongo connected!!! 
+2023-09-15T21:27:04.582Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:27:08.933Z [info] : Mongo connected!!! 
+2023-09-15T21:27:08.934Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:27:09.916Z [info] : Mongo connected!!! 
+2023-09-15T21:27:09.917Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:27:21.527Z [info] : Mongo connected!!! 
+2023-09-15T21:27:21.528Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:27:54.895Z [info] : Mongo connected!!! 
+2023-09-15T21:27:54.896Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:28:18.530Z [info] : Mongo connected!!! 
+2023-09-15T21:28:18.531Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:28:40.169Z [info] : Mongo connected!!! 
+2023-09-15T21:28:40.170Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:28:52.690Z [info] : Mongo connected!!! 
+2023-09-15T21:28:52.691Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:28:55.427Z [info] : Mongo connected!!! 
+2023-09-15T21:28:55.428Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:28:59.072Z [info] : Mongo connected!!! 
+2023-09-15T21:28:59.073Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:29:10.710Z [info] : Mongo connected!!! 
+2023-09-15T21:29:10.711Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:29:13.206Z [info] : Mongo connected!!! 
+2023-09-15T21:29:13.207Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:30:19.996Z [info] : Mongo connected!!! 
+2023-09-15T21:30:19.997Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:30:56.967Z [info] : Mongo connected!!! 
+2023-09-15T21:30:56.968Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:31:39.246Z [info] : Mongo connected!!! 
+2023-09-15T21:31:39.248Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:31:47.616Z [info] : Mongo connected!!! 
+2023-09-15T21:31:47.617Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:31:55.870Z [info] : Mongo connected!!! 
+2023-09-15T21:31:55.872Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:32:06.269Z [info] : Mongo connected!!! 
+2023-09-15T21:32:06.270Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:32:13.214Z [info] : Mongo connected!!! 
+2023-09-15T21:32:13.215Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:32:55.713Z [info] : Mongo connected!!! 
+2023-09-15T21:32:55.714Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:32:56.652Z [info] : Mongo connected!!! 
+2023-09-15T21:32:56.654Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:25.828Z [info] : Mongo connected!!! 
+2023-09-15T21:33:25.829Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:28.456Z [info] : Mongo connected!!! 
+2023-09-15T21:33:28.457Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:32.733Z [info] : Mongo connected!!! 
+2023-09-15T21:33:32.734Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:35.928Z [info] : Mongo connected!!! 
+2023-09-15T21:33:35.929Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:45.444Z [info] : Mongo connected!!! 
+2023-09-15T21:33:45.445Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:47.201Z [info] : Mongo connected!!! 
+2023-09-15T21:33:47.202Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:50.249Z [info] : Mongo connected!!! 
+2023-09-15T21:33:50.250Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:53.553Z [info] : Mongo connected!!! 
+2023-09-15T21:33:53.554Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:33:56.901Z [info] : Mongo connected!!! 
+2023-09-15T21:33:56.902Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:34:00.575Z [info] : Mongo connected!!! 
+2023-09-15T21:34:00.576Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:34:07.572Z [info] : Mongo connected!!! 
+2023-09-15T21:34:07.573Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:34:27.193Z [info] : Mongo connected!!! 
+2023-09-15T21:34:27.195Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:35:07.020Z [info] : Mongo connected!!! 
+2023-09-15T21:35:07.021Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:35:07.858Z [info] : Mongo connected!!! 
+2023-09-15T21:35:07.859Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:35:18.855Z [info] : Mongo connected!!! 
+2023-09-15T21:35:18.856Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:35:26.706Z [info] : Mongo connected!!! 
+2023-09-15T21:35:26.707Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:35:29.765Z [info] : Mongo connected!!! 
+2023-09-15T21:35:29.766Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:35:30.947Z [info] : Mongo connected!!! 
+2023-09-15T21:35:30.948Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:35:34.144Z [info] : Mongo connected!!! 
+2023-09-15T21:35:34.145Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:41:32.331Z [info] : Mongo connected!!! 
+2023-09-15T21:41:32.332Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:42:01.869Z [info] : Mongo connected!!! 
+2023-09-15T21:42:01.870Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:42:25.075Z [info] : Mongo connected!!! 
+2023-09-15T21:42:25.076Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:43:45.106Z [info] : Mongo connected!!! 
+2023-09-15T21:43:45.107Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:43:58.398Z [info] : Mongo connected!!! 
+2023-09-15T21:43:58.399Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:44:01.875Z [info] : Mongo connected!!! 
+2023-09-15T21:44:01.876Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:44:06.482Z [info] : Mongo connected!!! 
+2023-09-15T21:44:06.483Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:44:30.025Z [info] : Mongo connected!!! 
+2023-09-15T21:44:30.026Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:44:31.765Z [info] : Mongo connected!!! 
+2023-09-15T21:44:31.766Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:44:45.990Z [info] : Mongo connected!!! 
+2023-09-15T21:44:45.991Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:44:51.087Z [info] : Mongo connected!!! 
+2023-09-15T21:44:51.088Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:45:00.131Z [info] : Mongo connected!!! 
+2023-09-15T21:45:00.132Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:45:34.700Z [info] : Mongo connected!!! 
+2023-09-15T21:45:34.702Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:46:41.162Z [info] : Mongo connected!!! 
+2023-09-15T21:46:41.163Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:47:58.384Z [info] : Mongo connected!!! 
+2023-09-15T21:47:58.385Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:48:39.596Z [info] : Mongo connected!!! 
+2023-09-15T21:48:39.597Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:49:25.654Z [info] : Mongo connected!!! 
+2023-09-15T21:49:25.655Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:49:37.386Z [info] : Mongo connected!!! 
+2023-09-15T21:49:37.387Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:50:18.310Z [info] : Mongo connected!!! 
+2023-09-15T21:50:18.311Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:54:33.953Z [info] : Mongo connected!!! 
+2023-09-15T21:54:33.955Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:54:35.503Z [info] : Mongo connected!!! 
+2023-09-15T21:54:35.504Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:55:26.310Z [info] : Mongo connected!!! 
+2023-09-15T21:55:26.311Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:55:32.258Z [info] : Mongo connected!!! 
+2023-09-15T21:55:32.259Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:55:34.882Z [info] : Mongo connected!!! 
+2023-09-15T21:55:34.883Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:55:36.755Z [info] : Mongo connected!!! 
+2023-09-15T21:55:36.756Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:55:45.449Z [info] : Mongo connected!!! 
+2023-09-15T21:55:45.450Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:56:20.171Z [info] : Mongo connected!!! 
+2023-09-15T21:56:20.172Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:56:31.528Z [info] : Mongo connected!!! 
+2023-09-15T21:56:31.530Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:56:50.177Z [info] : Mongo connected!!! 
+2023-09-15T21:56:50.177Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:56:53.297Z [info] : Mongo connected!!! 
+2023-09-15T21:56:53.298Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:57:02.043Z [info] : Mongo connected!!! 
+2023-09-15T21:57:02.045Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:57:16.333Z [info] : Mongo connected!!! 
+2023-09-15T21:57:16.334Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:57:19.054Z [info] : Mongo connected!!! 
+2023-09-15T21:57:19.055Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:57:30.564Z [info] : Mongo connected!!! 
+2023-09-15T21:57:30.565Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:57:38.669Z [info] : Mongo connected!!! 
+2023-09-15T21:57:38.670Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:57:49.742Z [info] : Mongo connected!!! 
+2023-09-15T21:57:49.743Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:57:54.099Z [info] : Mongo connected!!! 
+2023-09-15T21:57:54.100Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T21:59:36.048Z [info] : Mongo connected!!! 
+2023-09-15T21:59:36.050Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:00:59.913Z [info] : Mongo connected!!! 
+2023-09-15T22:00:59.914Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:01:18.418Z [info] : Mongo connected!!! 
+2023-09-15T22:01:18.419Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:01:19.587Z [info] : Mongo connected!!! 
+2023-09-15T22:01:19.588Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:01:59.175Z [info] : Mongo connected!!! 
+2023-09-15T22:01:59.176Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:03:22.674Z [info] : Mongo connected!!! 
+2023-09-15T22:03:22.675Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:03:23.718Z [info] : Mongo connected!!! 
+2023-09-15T22:03:23.719Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:03:40.973Z [info] : Mongo connected!!! 
+2023-09-15T22:03:40.974Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:03:48.359Z [info] : Mongo connected!!! 
+2023-09-15T22:03:48.361Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:03:55.672Z [info] : Mongo connected!!! 
+2023-09-15T22:03:55.674Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:03:58.952Z [info] : Mongo connected!!! 
+2023-09-15T22:03:58.953Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:04:01.684Z [info] : Mongo connected!!! 
+2023-09-15T22:04:01.685Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:04:11.426Z [info] : Mongo connected!!! 
+2023-09-15T22:04:11.427Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:07:32.904Z [info] : Mongo connected!!! 
+2023-09-15T22:07:32.905Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:07:33.546Z [info] : Mongo connected!!! 
+2023-09-15T22:07:33.547Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:07:44.054Z [info] : Mongo connected!!! 
+2023-09-15T22:07:44.055Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:07:46.439Z [info] : Mongo connected!!! 
+2023-09-15T22:07:46.441Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:07:47.710Z [info] : Mongo connected!!! 
+2023-09-15T22:07:47.711Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:07:48.777Z [info] : Mongo connected!!! 
+2023-09-15T22:07:48.778Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:07:51.771Z [info] : Mongo connected!!! 
+2023-09-15T22:07:51.772Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:08:01.992Z [info] : Mongo connected!!! 
+2023-09-15T22:08:01.993Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:08:05.099Z [info] : Mongo connected!!! 
+2023-09-15T22:08:05.100Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:09:36.952Z [info] : Mongo connected!!! 
+2023-09-15T22:09:36.954Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:10:27.331Z [info] : Mongo connected!!! 
+2023-09-15T22:10:27.332Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:10:28.897Z [info] : Mongo connected!!! 
+2023-09-15T22:10:28.898Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:10:33.337Z [info] : Mongo connected!!! 
+2023-09-15T22:10:33.338Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:10:46.515Z [info] : Mongo connected!!! 
+2023-09-15T22:10:46.516Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:11:17.490Z [info] : Mongo connected!!! 
+2023-09-15T22:11:17.491Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:11:18.749Z [info] : Mongo connected!!! 
+2023-09-15T22:11:18.751Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:11:22.347Z [info] : Mongo connected!!! 
+2023-09-15T22:11:22.348Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:11:25.845Z [info] : Mongo connected!!! 
+2023-09-15T22:11:25.846Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:11:31.109Z [info] : Mongo connected!!! 
+2023-09-15T22:11:31.110Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:11:43.157Z [info] : Mongo connected!!! 
+2023-09-15T22:11:43.158Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:11:45.454Z [info] : Mongo connected!!! 
+2023-09-15T22:11:45.455Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:11:46.801Z [info] : Mongo connected!!! 
+2023-09-15T22:11:46.802Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:12:50.626Z [info] : Mongo connected!!! 
+2023-09-15T22:12:50.627Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:13:28.812Z [info] : Mongo connected!!! 
+2023-09-15T22:13:28.814Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:13:44.532Z [info] : Mongo connected!!! 
+2023-09-15T22:13:44.533Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:14:36.819Z [info] : Mongo connected!!! 
+2023-09-15T22:14:36.820Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:14:42.092Z [info] : Mongo connected!!! 
+2023-09-15T22:14:42.093Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:15:49.785Z [info] : Mongo connected!!! 
+2023-09-15T22:15:49.786Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:16:00.439Z [info] : Mongo connected!!! 
+2023-09-15T22:16:00.441Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:16:03.811Z [info] : Mongo connected!!! 
+2023-09-15T22:16:03.812Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:16:14.272Z [info] : Mongo connected!!! 
+2023-09-15T22:16:14.273Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:16:40.881Z [info] : Mongo connected!!! 
+2023-09-15T22:16:40.882Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:16:52.168Z [info] : Mongo connected!!! 
+2023-09-15T22:16:52.169Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:16:59.757Z [info] : Mongo connected!!! 
+2023-09-15T22:16:59.758Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:17:15.996Z [info] : Mongo connected!!! 
+2023-09-15T22:17:15.997Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:18:36.705Z [info] : Mongo connected!!! 
+2023-09-15T22:18:36.706Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:18:46.973Z [info] : Mongo connected!!! 
+2023-09-15T22:18:46.974Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:19:06.083Z [info] : Mongo connected!!! 
+2023-09-15T22:19:06.084Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:20:38.338Z [info] : Mongo connected!!! 
+2023-09-15T22:20:38.339Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:20:40.573Z [info] : Mongo connected!!! 
+2023-09-15T22:20:40.574Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:20:46.268Z [info] : Mongo connected!!! 
+2023-09-15T22:20:46.269Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:20:47.960Z [info] : Mongo connected!!! 
+2023-09-15T22:20:47.961Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:20:51.647Z [info] : Mongo connected!!! 
+2023-09-15T22:20:51.648Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:22:08.629Z [info] : Mongo connected!!! 
+2023-09-15T22:22:08.631Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:22:10.168Z [info] : Mongo connected!!! 
+2023-09-15T22:22:10.169Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:29:11.170Z [info] : Mongo connected!!! 
+2023-09-15T22:29:11.171Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:29:22.658Z [info] : Mongo connected!!! 
+2023-09-15T22:29:22.659Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:29:32.301Z [info] : Mongo connected!!! 
+2023-09-15T22:29:32.302Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:29:43.609Z [info] : Mongo connected!!! 
+2023-09-15T22:29:43.610Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:30:01.708Z [info] : Mongo connected!!! 
+2023-09-15T22:30:01.709Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:30:07.172Z [info] : Mongo connected!!! 
+2023-09-15T22:30:07.173Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:30:09.748Z [info] : Mongo connected!!! 
+2023-09-15T22:30:09.750Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:30:20.382Z [info] : Mongo connected!!! 
+2023-09-15T22:30:20.383Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:31:38.884Z [info] : Mongo connected!!! 
+2023-09-15T22:31:38.885Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:31:57.651Z [info] : Mongo connected!!! 
+2023-09-15T22:31:57.652Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:32:02.429Z [info] : Mongo connected!!! 
+2023-09-15T22:32:02.431Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:32:04.945Z [info] : Mongo connected!!! 
+2023-09-15T22:32:04.946Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:32:11.553Z [info] : Mongo connected!!! 
+2023-09-15T22:32:11.554Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:32:36.514Z [info] : Mongo connected!!! 
+2023-09-15T22:32:36.515Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:32:38.036Z [info] : Mongo connected!!! 
+2023-09-15T22:32:38.037Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:32:41.138Z [info] : Mongo connected!!! 
+2023-09-15T22:32:41.139Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:32:52.360Z [info] : Mongo connected!!! 
+2023-09-15T22:32:52.361Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:32:59.647Z [info] : Mongo connected!!! 
+2023-09-15T22:32:59.648Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:33:08.012Z [info] : Mongo connected!!! 
+2023-09-15T22:33:08.013Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:33:09.241Z [info] : Mongo connected!!! 
+2023-09-15T22:33:09.242Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:33:10.431Z [info] : Mongo connected!!! 
+2023-09-15T22:33:10.432Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:33:13.221Z [info] : Mongo connected!!! 
+2023-09-15T22:33:13.222Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:33:39.248Z [info] : Mongo connected!!! 
+2023-09-15T22:33:39.249Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:34:11.114Z [info] : Mongo connected!!! 
+2023-09-15T22:34:11.114Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:34:19.248Z [info] : Mongo connected!!! 
+2023-09-15T22:34:19.250Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:34:26.191Z [info] : Mongo connected!!! 
+2023-09-15T22:34:26.192Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:34:30.013Z [info] : Mongo connected!!! 
+2023-09-15T22:34:30.014Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:34:32.740Z [info] : Mongo connected!!! 
+2023-09-15T22:34:32.741Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:34:37.082Z [info] : Mongo connected!!! 
+2023-09-15T22:34:37.083Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:34:51.263Z [info] : Mongo connected!!! 
+2023-09-15T22:34:51.264Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:02.077Z [info] : Mongo connected!!! 
+2023-09-15T22:35:02.078Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:06.384Z [info] : Mongo connected!!! 
+2023-09-15T22:35:06.386Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:07.929Z [info] : Mongo connected!!! 
+2023-09-15T22:35:07.930Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:09.394Z [info] : Mongo connected!!! 
+2023-09-15T22:35:09.396Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:13.776Z [info] : Mongo connected!!! 
+2023-09-15T22:35:13.777Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:16.101Z [info] : Mongo connected!!! 
+2023-09-15T22:35:16.102Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:17.589Z [info] : Mongo connected!!! 
+2023-09-15T22:35:17.590Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:27.533Z [info] : Mongo connected!!! 
+2023-09-15T22:35:27.534Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:43.137Z [info] : Mongo connected!!! 
+2023-09-15T22:35:43.138Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:48.829Z [info] : Mongo connected!!! 
+2023-09-15T22:35:48.830Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:50.552Z [info] : Mongo connected!!! 
+2023-09-15T22:35:50.554Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:57.960Z [info] : Mongo connected!!! 
+2023-09-15T22:35:57.961Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:35:59.538Z [info] : Mongo connected!!! 
+2023-09-15T22:35:59.539Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:36:16.341Z [info] : Mongo connected!!! 
+2023-09-15T22:36:16.342Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:36:17.937Z [info] : Mongo connected!!! 
+2023-09-15T22:36:17.938Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:36:19.760Z [info] : Mongo connected!!! 
+2023-09-15T22:36:19.761Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:37:50.527Z [info] : Mongo connected!!! 
+2023-09-15T22:37:50.529Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:38:01.629Z [info] : Mongo connected!!! 
+2023-09-15T22:38:01.631Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:38:24.059Z [info] : Mongo connected!!! 
+2023-09-15T22:38:24.060Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:38:57.423Z [info] : Mongo connected!!! 
+2023-09-15T22:38:57.424Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:39:00.762Z [info] : Mongo connected!!! 
+2023-09-15T22:39:00.763Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:39:07.436Z [info] : Mongo connected!!! 
+2023-09-15T22:39:07.437Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:41:04.401Z [info] : Mongo connected!!! 
+2023-09-15T22:41:04.402Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:41:28.214Z [info] : Mongo connected!!! 
+2023-09-15T22:41:28.215Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:41:31.311Z [info] : Mongo connected!!! 
+2023-09-15T22:41:31.312Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:41:38.643Z [info] : Mongo connected!!! 
+2023-09-15T22:41:38.644Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:41:45.606Z [info] : Mongo connected!!! 
+2023-09-15T22:41:45.608Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:41:53.452Z [info] : Mongo connected!!! 
+2023-09-15T22:41:53.453Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:42:02.311Z [info] : Mongo connected!!! 
+2023-09-15T22:42:02.312Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:42:07.779Z [info] : Mongo connected!!! 
+2023-09-15T22:42:07.780Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:42:18.201Z [info] : Mongo connected!!! 
+2023-09-15T22:42:18.203Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:42:20.321Z [info] : Mongo connected!!! 
+2023-09-15T22:42:20.322Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:42:21.888Z [info] : Mongo connected!!! 
+2023-09-15T22:42:21.889Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:42:24.644Z [info] : Mongo connected!!! 
+2023-09-15T22:42:24.645Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:42:27.029Z [info] : Mongo connected!!! 
+2023-09-15T22:42:27.030Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:42:54.108Z [info] : Mongo connected!!! 
+2023-09-15T22:42:54.109Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:43:44.310Z [info] : Mongo connected!!! 
+2023-09-15T22:43:44.311Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:44:26.967Z [info] : Mongo connected!!! 
+2023-09-15T22:44:26.968Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:44:51.217Z [info] : Mongo connected!!! 
+2023-09-15T22:44:51.218Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:45:16.271Z [info] : Mongo connected!!! 
+2023-09-15T22:45:16.272Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:45:21.279Z [info] : Mongo connected!!! 
+2023-09-15T22:45:21.280Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:45:38.876Z [info] : Mongo connected!!! 
+2023-09-15T22:45:38.877Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:45:42.614Z [info] : Mongo connected!!! 
+2023-09-15T22:45:42.616Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:47:04.999Z [info] : Mongo connected!!! 
+2023-09-15T22:47:05.000Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:47:33.212Z [info] : Mongo connected!!! 
+2023-09-15T22:47:33.213Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:49:48.394Z [info] : Mongo connected!!! 
+2023-09-15T22:49:48.395Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:49:52.689Z [info] : Mongo connected!!! 
+2023-09-15T22:49:52.690Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:51:26.058Z [info] : Mongo connected!!! 
+2023-09-15T22:51:26.059Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:51:54.032Z [info] : Mongo connected!!! 
+2023-09-15T22:51:54.033Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:52:01.978Z [info] : Mongo connected!!! 
+2023-09-15T22:52:01.979Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:52:06.063Z [info] : Mongo connected!!! 
+2023-09-15T22:52:06.063Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:52:08.447Z [info] : Mongo connected!!! 
+2023-09-15T22:52:08.448Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:52:09.953Z [info] : Mongo connected!!! 
+2023-09-15T22:52:09.954Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:52:45.362Z [info] : Mongo connected!!! 
+2023-09-15T22:52:45.363Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:53:16.806Z [info] : Mongo connected!!! 
+2023-09-15T22:53:16.807Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:53:25.631Z [info] : Mongo connected!!! 
+2023-09-15T22:53:25.633Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:53:28.225Z [info] : Mongo connected!!! 
+2023-09-15T22:53:28.227Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:53:28.805Z [info] : Mongo connected!!! 
+2023-09-15T22:53:28.806Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:53:47.656Z [info] : Mongo connected!!! 
+2023-09-15T22:53:47.657Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:53:56.310Z [info] : Mongo connected!!! 
+2023-09-15T22:53:56.311Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:54:20.361Z [info] : Mongo connected!!! 
+2023-09-15T22:54:20.362Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:54:33.432Z [info] : Mongo connected!!! 
+2023-09-15T22:54:33.433Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:54:34.850Z [info] : Mongo connected!!! 
+2023-09-15T22:54:34.851Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:54:36.677Z [info] : Mongo connected!!! 
+2023-09-15T22:54:36.678Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:54:38.710Z [info] : Mongo connected!!! 
+2023-09-15T22:54:38.711Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:54:40.092Z [info] : Mongo connected!!! 
+2023-09-15T22:54:40.093Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:54:43.467Z [info] : Mongo connected!!! 
+2023-09-15T22:54:43.469Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:55:14.383Z [info] : Mongo connected!!! 
+2023-09-15T22:55:14.384Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:55:18.863Z [info] : Mongo connected!!! 
+2023-09-15T22:55:18.864Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:55:19.753Z [info] : Mongo connected!!! 
+2023-09-15T22:55:19.754Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:55:23.469Z [info] : Mongo connected!!! 
+2023-09-15T22:55:23.471Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:55:24.298Z [info] : Mongo connected!!! 
+2023-09-15T22:55:24.299Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:55:59.322Z [info] : Mongo connected!!! 
+2023-09-15T22:55:59.323Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:56:12.410Z [info] : Mongo connected!!! 
+2023-09-15T22:56:12.411Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:56:15.978Z [info] : Mongo connected!!! 
+2023-09-15T22:56:15.979Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:56:22.995Z [info] : Mongo connected!!! 
+2023-09-15T22:56:22.996Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:56:26.601Z [info] : Mongo connected!!! 
+2023-09-15T22:56:26.602Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:56:31.486Z [info] : Mongo connected!!! 
+2023-09-15T22:56:31.487Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:57:00.752Z [info] : Mongo connected!!! 
+2023-09-15T22:57:00.753Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:58:07.437Z [info] : Mongo connected!!! 
+2023-09-15T22:58:07.439Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:58:08.799Z [info] : Mongo connected!!! 
+2023-09-15T22:58:08.800Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T22:59:14.894Z [info] : Mongo connected!!! 
+2023-09-15T22:59:14.896Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:00:26.391Z [info] : Mongo connected!!! 
+2023-09-15T23:00:26.392Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:01:51.283Z [info] : Mongo connected!!! 
+2023-09-15T23:01:51.284Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:01:52.071Z [info] : Mongo connected!!! 
+2023-09-15T23:01:52.072Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:01:54.116Z [info] : Mongo connected!!! 
+2023-09-15T23:01:54.117Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:02:05.285Z [info] : Mongo connected!!! 
+2023-09-15T23:02:05.286Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:02:33.328Z [info] : Mongo connected!!! 
+2023-09-15T23:02:33.330Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:03:05.568Z [info] : Mongo connected!!! 
+2023-09-15T23:03:05.568Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:03:25.231Z [info] : Mongo connected!!! 
+2023-09-15T23:03:25.233Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:03:31.906Z [info] : Mongo connected!!! 
+2023-09-15T23:03:31.907Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:03:54.360Z [info] : Mongo connected!!! 
+2023-09-15T23:03:54.362Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:00.236Z [info] : Mongo connected!!! 
+2023-09-15T23:04:00.237Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:04.424Z [info] : Mongo connected!!! 
+2023-09-15T23:04:04.425Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:09.598Z [info] : Mongo connected!!! 
+2023-09-15T23:04:09.599Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:19.730Z [info] : Mongo connected!!! 
+2023-09-15T23:04:19.733Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:21.197Z [info] : Mongo connected!!! 
+2023-09-15T23:04:21.198Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:22.755Z [info] : Mongo connected!!! 
+2023-09-15T23:04:22.756Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:25.929Z [info] : Mongo connected!!! 
+2023-09-15T23:04:25.930Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:28.295Z [info] : Mongo connected!!! 
+2023-09-15T23:04:28.296Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:48.236Z [info] : Mongo connected!!! 
+2023-09-15T23:04:48.237Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:53.815Z [info] : Mongo connected!!! 
+2023-09-15T23:04:53.816Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:04:56.437Z [info] : Mongo connected!!! 
+2023-09-15T23:04:56.438Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:05:29.997Z [info] : Mongo connected!!! 
+2023-09-15T23:05:29.999Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:05:35.881Z [info] : Mongo connected!!! 
+2023-09-15T23:05:35.882Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:05:38.654Z [info] : Mongo connected!!! 
+2023-09-15T23:05:38.656Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:06:00.734Z [info] : Mongo connected!!! 
+2023-09-15T23:06:00.735Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:06:04.245Z [info] : Mongo connected!!! 
+2023-09-15T23:06:04.246Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:06:06.239Z [info] : Mongo connected!!! 
+2023-09-15T23:06:06.240Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:06:08.579Z [info] : Mongo connected!!! 
+2023-09-15T23:06:08.580Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:06:22.634Z [info] : Mongo connected!!! 
+2023-09-15T23:06:22.635Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:07:42.820Z [info] : Mongo connected!!! 
+2023-09-15T23:07:42.821Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:07:57.854Z [info] : Mongo connected!!! 
+2023-09-15T23:07:57.855Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:08:03.076Z [info] : Mongo connected!!! 
+2023-09-15T23:08:03.077Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:08:04.141Z [info] : Mongo connected!!! 
+2023-09-15T23:08:04.142Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:08:25.707Z [info] : Mongo connected!!! 
+2023-09-15T23:08:25.709Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:08:26.729Z [info] : Mongo connected!!! 
+2023-09-15T23:08:26.730Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:08:31.305Z [info] : Mongo connected!!! 
+2023-09-15T23:08:31.306Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:08:58.352Z [info] : Mongo connected!!! 
+2023-09-15T23:08:58.353Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:09:33.901Z [info] : Mongo connected!!! 
+2023-09-15T23:09:33.902Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:10:03.660Z [info] : Mongo connected!!! 
+2023-09-15T23:10:03.661Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:10:28.765Z [info] : Mongo connected!!! 
+2023-09-15T23:10:28.766Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:10:30.454Z [info] : Mongo connected!!! 
+2023-09-15T23:10:30.455Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:10:39.979Z [info] : Mongo connected!!! 
+2023-09-15T23:10:39.981Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:10:53.586Z [info] : Mongo connected!!! 
+2023-09-15T23:10:53.587Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:11:04.247Z [info] : Mongo connected!!! 
+2023-09-15T23:11:04.248Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:11:17.755Z [info] : Mongo connected!!! 
+2023-09-15T23:11:17.756Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:11:20.288Z [info] : Mongo connected!!! 
+2023-09-15T23:11:20.289Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:11:28.442Z [info] : Mongo connected!!! 
+2023-09-15T23:11:28.443Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:11:30.729Z [info] : Mongo connected!!! 
+2023-09-15T23:11:30.730Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:11:44.079Z [info] : Mongo connected!!! 
+2023-09-15T23:11:44.080Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:11:45.438Z [info] : Mongo connected!!! 
+2023-09-15T23:11:45.439Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:12:11.801Z [info] : Mongo connected!!! 
+2023-09-15T23:12:11.802Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:12:38.808Z [info] : Mongo connected!!! 
+2023-09-15T23:12:38.809Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:12:40.522Z [info] : Mongo connected!!! 
+2023-09-15T23:12:40.523Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:12:43.130Z [info] : Mongo connected!!! 
+2023-09-15T23:12:43.131Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:12:54.979Z [info] : Mongo connected!!! 
+2023-09-15T23:12:54.980Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-15T23:12:57.030Z [info] : Mongo connected!!! 
+2023-09-15T23:12:57.031Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:02:38.488Z [info] : Mongo connected!!! 
+2023-09-16T20:02:38.490Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:02:52.146Z [info] : Mongo connected!!! 
+2023-09-16T20:02:52.147Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:00.139Z [info] : Mongo connected!!! 
+2023-09-16T20:03:00.141Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:07.831Z [info] : Mongo connected!!! 
+2023-09-16T20:03:07.832Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:09.261Z [info] : Mongo connected!!! 
+2023-09-16T20:03:09.262Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:19.369Z [info] : Mongo connected!!! 
+2023-09-16T20:03:19.370Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:20.786Z [info] : Mongo connected!!! 
+2023-09-16T20:03:20.786Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:26.301Z [info] : Mongo connected!!! 
+2023-09-16T20:03:26.302Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:29.037Z [info] : Mongo connected!!! 
+2023-09-16T20:03:29.038Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:32.433Z [info] : Mongo connected!!! 
+2023-09-16T20:03:32.434Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:36.078Z [info] : Mongo connected!!! 
+2023-09-16T20:03:36.079Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:38.563Z [info] : Mongo connected!!! 
+2023-09-16T20:03:38.564Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:40.665Z [info] : Mongo connected!!! 
+2023-09-16T20:03:40.667Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:43.173Z [info] : Mongo connected!!! 
+2023-09-16T20:03:43.175Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:03:56.311Z [info] : Mongo connected!!! 
+2023-09-16T20:03:56.312Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:04:03.462Z [info] : Mongo connected!!! 
+2023-09-16T20:04:03.462Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:04:04.099Z [info] : Mongo connected!!! 
+2023-09-16T20:04:04.100Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:04:11.139Z [info] : Mongo connected!!! 
+2023-09-16T20:04:11.140Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:09:54.975Z [info] : Mongo connected!!! 
+2023-09-16T20:09:54.976Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:09:56.191Z [info] : Mongo connected!!! 
+2023-09-16T20:09:56.191Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T20:10:16.103Z [info] : Mongo connected!!! 
+2023-09-16T20:10:16.104Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:44:54.478Z [info] : Mongo connected!!! 
+2023-09-16T21:44:54.479Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:44:55.642Z [info] : Mongo connected!!! 
+2023-09-16T21:44:55.643Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:44:59.224Z [info] : Mongo connected!!! 
+2023-09-16T21:44:59.225Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:44:59.961Z [info] : Mongo connected!!! 
+2023-09-16T21:44:59.962Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:45:22.603Z [info] : Mongo connected!!! 
+2023-09-16T21:45:22.604Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:45:34.658Z [info] : Mongo connected!!! 
+2023-09-16T21:45:34.659Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:45:52.982Z [info] : Mongo connected!!! 
+2023-09-16T21:45:52.983Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:46:19.969Z [info] : Mongo connected!!! 
+2023-09-16T21:46:19.970Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:46:25.143Z [info] : Mongo connected!!! 
+2023-09-16T21:46:25.145Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:46:27.889Z [info] : Mongo connected!!! 
+2023-09-16T21:46:27.890Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:46:40.877Z [info] : Mongo connected!!! 
+2023-09-16T21:46:40.878Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:46:43.752Z [info] : Mongo connected!!! 
+2023-09-16T21:46:43.753Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:47:22.107Z [info] : Mongo connected!!! 
+2023-09-16T21:47:22.108Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:48:03.736Z [info] : Mongo connected!!! 
+2023-09-16T21:48:03.737Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:52:21.926Z [info] : Mongo connected!!! 
+2023-09-16T21:52:21.927Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:52:30.594Z [info] : Mongo connected!!! 
+2023-09-16T21:52:30.595Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:53:10.876Z [info] : Mongo connected!!! 
+2023-09-16T21:53:10.877Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:53:16.116Z [info] : Mongo connected!!! 
+2023-09-16T21:53:16.117Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:53:18.256Z [info] : Mongo connected!!! 
+2023-09-16T21:53:18.257Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:53:20.278Z [info] : Mongo connected!!! 
+2023-09-16T21:53:20.279Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:53:40.921Z [info] : Mongo connected!!! 
+2023-09-16T21:53:40.923Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:53:48.459Z [info] : Mongo connected!!! 
+2023-09-16T21:53:48.459Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:53:51.701Z [info] : Mongo connected!!! 
+2023-09-16T21:53:51.702Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:00.787Z [info] : Mongo connected!!! 
+2023-09-16T21:54:00.788Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:04.917Z [info] : Mongo connected!!! 
+2023-09-16T21:54:04.918Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:05.718Z [info] : Mongo connected!!! 
+2023-09-16T21:54:05.719Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:10.543Z [info] : Mongo connected!!! 
+2023-09-16T21:54:10.545Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:15.059Z [info] : Mongo connected!!! 
+2023-09-16T21:54:15.060Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:42.221Z [info] : Mongo connected!!! 
+2023-09-16T21:54:42.222Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:43.096Z [info] : Mongo connected!!! 
+2023-09-16T21:54:43.097Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:47.434Z [info] : Mongo connected!!! 
+2023-09-16T21:54:47.435Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:48.013Z [info] : Mongo connected!!! 
+2023-09-16T21:54:48.014Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:54:59.726Z [info] : Mongo connected!!! 
+2023-09-16T21:54:59.727Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:55:10.325Z [info] : Mongo connected!!! 
+2023-09-16T21:55:10.326Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:55:12.043Z [info] : Mongo connected!!! 
+2023-09-16T21:55:12.044Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:55:15.656Z [info] : Mongo connected!!! 
+2023-09-16T21:55:15.657Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:56:14.015Z [info] : Mongo connected!!! 
+2023-09-16T21:56:14.016Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:56:36.799Z [info] : Mongo connected!!! 
+2023-09-16T21:56:36.800Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:56:39.576Z [info] : Mongo connected!!! 
+2023-09-16T21:56:39.577Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:56:42.275Z [info] : Mongo connected!!! 
+2023-09-16T21:56:42.276Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:56:44.483Z [info] : Mongo connected!!! 
+2023-09-16T21:56:44.484Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:56:45.903Z [info] : Mongo connected!!! 
+2023-09-16T21:56:45.904Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:56:47.881Z [info] : Mongo connected!!! 
+2023-09-16T21:56:47.882Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:56:57.861Z [info] : Mongo connected!!! 
+2023-09-16T21:56:57.862Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:57:06.066Z [info] : Mongo connected!!! 
+2023-09-16T21:57:06.067Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:57:09.355Z [info] : Mongo connected!!! 
+2023-09-16T21:57:09.356Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:57:16.939Z [info] : Mongo connected!!! 
+2023-09-16T21:57:16.940Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:58:35.220Z [info] : Mongo connected!!! 
+2023-09-16T21:58:35.221Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:58:42.954Z [info] : Mongo connected!!! 
+2023-09-16T21:58:42.955Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:58:44.318Z [info] : Mongo connected!!! 
+2023-09-16T21:58:44.319Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:59:07.259Z [info] : Mongo connected!!! 
+2023-09-16T21:59:07.260Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:59:14.149Z [info] : Mongo connected!!! 
+2023-09-16T21:59:14.151Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T21:59:52.522Z [info] : Mongo connected!!! 
+2023-09-16T21:59:52.523Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:00:12.335Z [info] : Mongo connected!!! 
+2023-09-16T22:00:12.336Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:00:44.386Z [info] : Mongo connected!!! 
+2023-09-16T22:00:44.387Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:00:55.610Z [info] : Mongo connected!!! 
+2023-09-16T22:00:55.611Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:00:57.857Z [info] : Mongo connected!!! 
+2023-09-16T22:00:57.858Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:03.178Z [info] : Mongo connected!!! 
+2023-09-16T22:01:03.179Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:11.225Z [info] : Mongo connected!!! 
+2023-09-16T22:01:11.225Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:17.720Z [info] : Mongo connected!!! 
+2023-09-16T22:01:17.720Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:23.244Z [info] : Mongo connected!!! 
+2023-09-16T22:01:23.245Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:31.199Z [info] : Mongo connected!!! 
+2023-09-16T22:01:31.200Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:32.638Z [info] : Mongo connected!!! 
+2023-09-16T22:01:32.639Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:34.350Z [info] : Mongo connected!!! 
+2023-09-16T22:01:34.351Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:49.274Z [info] : Mongo connected!!! 
+2023-09-16T22:01:49.275Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:01:54.987Z [info] : Mongo connected!!! 
+2023-09-16T22:01:54.988Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:02:08.326Z [info] : Mongo connected!!! 
+2023-09-16T22:02:08.327Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:02:34.441Z [info] : Mongo connected!!! 
+2023-09-16T22:02:34.442Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:02:38.961Z [info] : Mongo connected!!! 
+2023-09-16T22:02:38.962Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:02:55.413Z [info] : Mongo connected!!! 
+2023-09-16T22:02:55.414Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:02:58.350Z [info] : Mongo connected!!! 
+2023-09-16T22:02:58.351Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:03:04.952Z [info] : Mongo connected!!! 
+2023-09-16T22:03:04.953Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:03:08.849Z [info] : Mongo connected!!! 
+2023-09-16T22:03:08.850Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:03:15.371Z [info] : Mongo connected!!! 
+2023-09-16T22:03:15.371Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:03:24.449Z [info] : Mongo connected!!! 
+2023-09-16T22:03:24.450Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:03:45.269Z [info] : Mongo connected!!! 
+2023-09-16T22:03:45.270Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:03:46.999Z [info] : Mongo connected!!! 
+2023-09-16T22:03:47.000Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:03:47.800Z [info] : Mongo connected!!! 
+2023-09-16T22:03:47.801Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:03:55.375Z [info] : Mongo connected!!! 
+2023-09-16T22:03:55.376Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:04:04.781Z [info] : Mongo connected!!! 
+2023-09-16T22:04:04.782Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:04:40.511Z [info] : Mongo connected!!! 
+2023-09-16T22:04:40.512Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:04:41.066Z [info] : Mongo connected!!! 
+2023-09-16T22:04:41.066Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:04:51.394Z [info] : Mongo connected!!! 
+2023-09-16T22:04:51.395Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:05:27.982Z [info] : Mongo connected!!! 
+2023-09-16T22:05:27.983Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:05:41.403Z [info] : Mongo connected!!! 
+2023-09-16T22:05:41.404Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-16T22:06:13.355Z [info] : Mongo connected!!! 
+2023-09-16T22:06:13.356Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-17T18:18:25.920Z [info] : Mongo connected!!! 
+2023-09-17T18:18:25.921Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-17T18:30:25.038Z [info] : Mongo connected!!! 
+2023-09-17T18:30:25.040Z [info] : Using mongo host '127.0.0.1' and port '4004' 
