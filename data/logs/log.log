@@ -1238,3 +1238,5 @@
 2023-09-17T18:18:25.921Z [info] : Using mongo host '127.0.0.1' and port '4004' 
 2023-09-17T18:30:25.038Z [info] : Mongo connected!!! 
 2023-09-17T18:30:25.040Z [info] : Using mongo host '127.0.0.1' and port '4004' 
+2023-09-21T14:26:38.612Z [info] : Mongo connected!!! 
+2023-09-21T14:26:38.615Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 

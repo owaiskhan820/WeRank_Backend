@@ -3,11 +3,11 @@ import { MONGODB_URI, PORT } from './utils/secrets.js'; // Make sure to provide 
 import  DBConnect  from './config/database/connection.js';
 import cors from "cors";
 import userRouter from './apicontrollers/user/user.js'
-import pkg from 'body-parser';
+import pkg from 'body-parser'; //middleware used for parsing POST requests
 const { json } = pkg;
 
 
-const app = express();
+const app = express();  
 const mongoUrl = MONGODB_URI;
 DBConnect(mongoUrl);
 

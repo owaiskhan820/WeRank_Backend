@@ -6,7 +6,7 @@ class UserDAO {
    async findAllUsers(page = 1, perPage = 10) {
     const users = await applyPagination(UserModel.find(), page, perPage);
     return users;
-  }
+  } 
 }
 
 const instanceOfUserDAO = new UserDAO();

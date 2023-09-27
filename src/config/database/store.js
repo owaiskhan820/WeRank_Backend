@@ -1,5 +1,5 @@
 const mongo = require("connect-mongo");
-const { logger } = require("../../util/logger");
+const { logger } = require("../../utils/logger");
 
 let mongoStore = null;
 
