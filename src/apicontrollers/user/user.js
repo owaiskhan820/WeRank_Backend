@@ -5,6 +5,8 @@ import apiHelpers from '../../utils/assets/apiHelpers.js';
 import userValidationSchema from '../requestValidaton/user.js';
 import validatePagination from '../../utils/assets/paginateValidation.js'; // Import the custom pagination validation middleware
 import userService from '../../services/user/user.js';
+import * as userService from '../../services/userService';
+
 
 const userRouter = express.Router();
 const { validateErrors, apikok } = apiHelpers;
@@ -28,15 +30,34 @@ userRouter.get('/', validatePagination, userValidationSchema, validateErrors, as
   res.json(response);
 });
 
-// Route for getting a user by their ID
 userRouter.get('/:userId', async (req, res) => {
-  // logic for getting user by id
+  try {
+    const userId = req.params.userId;
+    const user = await userService.getUserById(userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(apikok(user));
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
-// Route for updating a user by their ID
-userRouter.put('/:userId', userValidationSchema, validateErrors, async (req, res) => {
-  // logic for updating user by id
 
+userRouter.put('/:userId', userValidationSchema, validateErrors, async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const updatedData = req.body;
+    const updatedUser = await userService.updateUser(userId, updatedData);
+    if (!updatedUser) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json(apikok(updatedUser));
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 // Route for deleting a user by their ID
