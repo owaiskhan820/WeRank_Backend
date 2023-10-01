@@ -16,14 +16,14 @@ export const validateErrors = (req, res, next) => {
 }
 
 // This function wraps the result in a response object.
-export const apikok = (result) => {
+export const apiOk = (result) => {
     return  {"response": result };
 }
 
 // Exporting the functions as an object for use in other files.
 const apiHelpers = {
     validateErrors,
-    apikok
+    apiOk
 };
 
 export default apiHelpers;

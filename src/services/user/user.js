@@ -1,10 +1,13 @@
 // Assuming you have a UserModel and any necessary dependencies imported
 import instanceOfUserDAO from "../../daos/user/user.js";
 import UserModel from "../../models/user.js"
+import { hashPassword } from "../../authentication/authentication.js"; 
 
 class UserService {
   async createUser(userData) {
     try {
+      const hashedPassword = await hashPassword(userData.password);
+      userData.password = hashedPassword;
       return await instanceOfUserDAO.createUser(userData);
     } catch (error) {
       console.error(error);

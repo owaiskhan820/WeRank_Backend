@@ -5,17 +5,15 @@ import apiHelpers from '../../utils/assets/apiHelpers.js';
 import userValidationSchema from '../requestValidaton/user.js';
 import validatePagination from '../../utils/assets/paginateValidation.js'; // Import the custom pagination validation middleware
 import userService from '../../services/user/user.js';
-import * as userService from '../../services/userService';
-
 
 const authRouter = express.Router();
-const { validateErrors, apikok } = apiHelpers;
+const { validateErrors, apiOk } = apiHelpers;
 
 // Route for registering a new user
 authRouter.post('/register', userValidationSchema, validateErrors, async (req, res) => {
   const body = req.body;
   const result = await userService.createUser(body);
-  const response = apikok(result);
+  const response = apiOk(result);
   res.json(response);
 });
 
@@ -26,44 +24,52 @@ authRouter.get('/', validatePagination, userValidationSchema, validateErrors, as
   page = page || 1;
   perPage = perPage || 10;
   const result = await userService.getAllUsers(page, perPage);
-  const response = apikok(result);
+  const response = apiOk(result);
   res.json(response);
 });
 
-authRouter.get('/:userId', async (req, res) => {
+// 3. Forgot Password:
+authRouter.post('/forgot-password', async (req, res) => {
   try {
-    const userId = req.params.userId;
-    const user = await userService.getUserById(userId);
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-    res.json(apikok(user));
+    // Validate request body
+    // Generate password reset token and save it
+    // Send password reset email
+    res.json({ message: 'Password reset email sent' });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: error.message });
   }
 });
+// 4. Reset Password:
 
-
-authRouter.put('/:userId', userValidationSchema, validateErrors, async (req, res) => {
+authRouter.post('/reset-password', async (req, res) => {
   try {
-    const userId = req.params.userId;
-    const updatedData = req.body;
-    const updatedUser = await userService.updateUser(userId, updatedData);
-    if (!updatedUser) {
-      return res.status(404).json({ error: 'User not found' });
-    }
-    res.json(apikok(updatedUser));
+    // Validate request body and token
+    // Reset user's password
+    res.json({ message: 'Password reset successfully' });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    res.status(500).json({ error: error.message });
   }
 });
-
-// Route for deleting a user by their ID
-authRouter.delete('/:userId', async (req, res) => {
-  // logic for deleting user by id
-  
+// 5. Email Confirmation:
+ 
+authRouter.post('/verify-email', async (req, res) => {
+  try {
+    // Validate request body and token
+    // Mark user's email as verified
+    res.json({ message: 'Email verified successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+// 6. Logout:
+ 
+authRouter.post('/logout', async (req, res) => {
+  try {
+    // Invalidate user's session or token
+    res.json({ message: 'Logged out successfully' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 export default authRouter;

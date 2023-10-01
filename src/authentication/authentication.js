@@ -1,8 +1,8 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import UserModel from '../models/user'; // Adjust the path as necessary
+import UserModel from '../models/user.js';
 
-const SECRET_KEY = process.env.JWT_SECRET || 'your-secret-key'; // It's crucial to keep your secret key safe
+const SECRET_KEY = process.env.JWT_SECRET  
 
 export const generateToken = (user) => {
   const payload = {
