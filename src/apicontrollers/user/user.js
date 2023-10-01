@@ -8,11 +8,11 @@ import userService from '../../services/user/user.js';
 import * as userService from '../../services/userService';
 
 
-const userRouter = express.Router();
+const authRouter = express.Router();
 const { validateErrors, apikok } = apiHelpers;
 
 // Route for registering a new user
-userRouter.post('/register', userValidationSchema, validateErrors, async (req, res) => {
+authRouter.post('/register', userValidationSchema, validateErrors, async (req, res) => {
   const body = req.body;
   const result = await userService.createUser(body);
   const response = apikok(result);
@@ -20,7 +20,7 @@ userRouter.post('/register', userValidationSchema, validateErrors, async (req, r
 });
 
 // Route for getting a list of users with pagination support
-userRouter.get('/', validatePagination, userValidationSchema, validateErrors, async (req, res) => {
+authRouter.get('/', validatePagination, userValidationSchema, validateErrors, async (req, res) => {
   let { page, perPage } = req.query;
   // Set default values if page and/or perPage are not provided
   page = page || 1;
@@ -30,7 +30,7 @@ userRouter.get('/', validatePagination, userValidationSchema, validateErrors, as
   res.json(response);
 });
 
-userRouter.get('/:userId', async (req, res) => {
+authRouter.get('/:userId', async (req, res) => {
   try {
     const userId = req.params.userId;
     const user = await userService.getUserById(userId);
@@ -45,7 +45,7 @@ userRouter.get('/:userId', async (req, res) => {
 });
 
 
-userRouter.put('/:userId', userValidationSchema, validateErrors, async (req, res) => {
+authRouter.put('/:userId', userValidationSchema, validateErrors, async (req, res) => {
   try {
     const userId = req.params.userId;
     const updatedData = req.body;
@@ -61,9 +61,9 @@ userRouter.put('/:userId', userValidationSchema, validateErrors, async (req, res
 });
 
 // Route for deleting a user by their ID
-userRouter.delete('/:userId', async (req, res) => {
+authRouter.delete('/:userId', async (req, res) => {
   // logic for deleting user by id
   
 });
 
-export default userRouter;
+export default authRouter;

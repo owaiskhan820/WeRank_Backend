@@ -2,7 +2,7 @@ import express from 'express';
 import { MONGODB_URI, PORT } from './utils/secrets.js'; // Make sure to provide the correct path
 import  DBConnect  from './config/database/connection.js';
 import cors from "cors";
-import userRouter from './apicontrollers/user/user.js'
+import authRouter from './apicontrollers/user/user.js'
 import pkg from 'body-parser'; //middleware used for parsing POST requests
 const { json } = pkg;
 
@@ -18,4 +18,4 @@ app.listen(app.get("port"), () => {console.log(`Server is listening on port ${ap
 
 
 // register all new routers here ( for ex listRouter, commentRouter, replyRouter)
-app.use('/api/v1/user', userRouter);
+app.use('/api/v1/user', authRouter);
