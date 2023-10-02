@@ -5,6 +5,7 @@ import apiHelpers from '../../utils/assets/apiHelpers.js';
 import userValidationSchema from '../requestValidaton/user.js';
 import validatePagination from '../../utils/assets/paginateValidation.js'; // Import the custom pagination validation middleware
 import userService from '../../services/user/user.js';
+import { verifyEmail } from '../../authentication/emailVarification.js';
 
 const authRouter = express.Router();
 const { validateErrors, apiOk } = apiHelpers;
@@ -16,6 +17,13 @@ authRouter.post('/register', userValidationSchema, validateErrors, async (req, r
   const response = apiOk(result);
   res.json(response);
 });
+
+
+authRouter.get('/verify-email', async (req, res) => {
+  const token = req.query.token;
+  verifyEmail(token, res)
+});
+
 
 // Route for getting a list of users with pagination support
 authRouter.get('/', validatePagination, userValidationSchema, validateErrors, async (req, res) => {
@@ -50,17 +58,8 @@ authRouter.post('/reset-password', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-// 5. Email Confirmation:
  
-authRouter.post('/verify-email', async (req, res) => {
-  try {
-    // Validate request body and token
-    // Mark user's email as verified
-    res.json({ message: 'Email verified successfully' });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
+
 // 6. Logout:
  
 authRouter.post('/logout', async (req, res) => {

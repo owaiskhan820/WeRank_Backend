@@ -1,43 +1,48 @@
 import mongoose from 'mongoose';
-import validator from 'validator';
 
 const userSchema = new mongoose.Schema({
   
-  firstName: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-  },
-   
-  lasttName: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-  },
-
-  userName: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-  },
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: true, // Ensure email is unique
     trim: true,
     lowercase: true,
-    validate: [validator.isEmail, 'Please provide a valid email address']
+    match: [/.+\@.+\..+/, 'Please enter a valid email address']
   },
   password: {
     type: String,
     required: true,
+    minlength: 8
+  },
+  firstName: {
+    type: String,
+    required: true,
     trim: true
+  },
+  lastName: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true, // Ensure username is unique
+    trim: true,
+    minlength: 3,
+    match: [/^\w+$/, 'Username can only contain letters, numbers, and underscores']
+  },
+  isVerified: {
+    type: Boolean,
+    default: false // New field to track if the email is verified
+  },
+  emailVerificationToken: {
+    type: String, // New field to store the email verification token
+    select: false // This option ensures the token is not sent in every user-related request
+  },
+  emailVerificationExpires: {
+    type: Date // New field to store the token's expiration date
   }
 });
 

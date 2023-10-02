@@ -6,10 +6,9 @@ const SECRET_KEY = process.env.JWT_SECRET
 
 export const generateToken = (user) => {
   const payload = {
-    id: user._id,
     email: user.email,
   };
-  return jwt.sign(payload, SECRET_KEY, { expiresIn: '1h' }); // Token expiration is optional
+  return jwt.sign(payload, SECRET_KEY); 
 };
 
 export const verifyToken = (token) => {

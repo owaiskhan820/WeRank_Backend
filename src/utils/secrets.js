@@ -4,7 +4,11 @@ import dotenv from 'dotenv';
 if (fs.existsSync('.env')) dotenv.config({ path: '.env' });
 else dotenv.config({ path: '.env.example' });
 
-export const MONGODB_URI = process.env.MONGODB_URI;
-export const PORT = process.env.PORT;
-export const ALT_PORT = process.env.ALT_PORT;
+const { MONGODB_URI, PORT, ALT_PORT, SENDGRID_API_KEY } = process.env;
 
+if (!MONGODB_URI) throw new Error('Missing MONGODB_URI');
+if (!PORT) throw new Error('Missing PORT');
+if (!ALT_PORT) throw new Error('Missing ALT_PORT');
+if (!SENDGRID_API_KEY) throw new Error('Missing SENDGRID_API_KEY');
+
+export  { MONGODB_URI, PORT, ALT_PORT, SENDGRID_API_KEY };

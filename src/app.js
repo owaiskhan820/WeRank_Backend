@@ -1,5 +1,5 @@
 import express from 'express';
-import { MONGODB_URI, PORT } from './utils/secrets.js'; // Make sure to provide the correct path
+import { MONGODB_URI, PORT, SENDGRID_API_KEY } from './utils/secrets.js'; // Make sure to provide the correct path
 import  DBConnect  from './config/database/connection.js';
 import cors from "cors";
 import authRouter from './apicontrollers/user/user.js'
