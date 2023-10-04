@@ -19,6 +19,17 @@ class UserDAO {
     }
   }
 
+  async getUserByEmail(email){
+    const user = await UserModel.findOne({ email: email });
+    if (!user) throw new Error('User not found');
+    return user;
+  }
+
+  async userExists(email){ 
+    const user = await UserModel.findOne({ email: email });
+    return user;
+  }
+
   async getUserById(userId) {
     try {
       const user = await UserModel.findById(userId);

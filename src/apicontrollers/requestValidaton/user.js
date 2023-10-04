@@ -1,7 +1,7 @@
 import { body } from 'express-validator';
 import UserModel from '../../models/user.js';
-
-const userValidationSchema = [
+import instanceOfUserDAO from '../../daos/user/user.js';
+export const userValidationSchema = [
 
 
   body('firstName')
@@ -50,7 +50,30 @@ const userValidationSchema = [
     .isLength({ min: 8 }).withMessage('Password must be at least 8 characters long'),
   
 ];
+//Validation schema for login
+export const loginValidationSchema = [
 
-export default userValidationSchema;
+  body('email')
+    .exists().withMessage('Email is required')
+    .isEmail().withMessage('Email must be a valid email address')
+    .custom(async (value) => {
+      // Check if email already exists in the database
+      const user = instanceOfUserDAO.userExists(value)
+      if (!user) {
+        // If email already exists, throw an error
+        throw new Error('Invalid Email');
+      }
+      // If email does not exist, validation passes
+      return true;
+    }),
+    
+  body('password')
+    .exists().withMessage('Password is required')
+    .isLength({ min: 8 }).withMessage('Password must be at least 8 characters long'),
+  
+];
+
+
+
 
 
