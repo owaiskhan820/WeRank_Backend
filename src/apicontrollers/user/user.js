@@ -7,6 +7,7 @@ import userService from '../../services/user/user.js';
 import { verifyEmail, sendEmail } from '../../authentication/emailVarification.js';
 import instanceOfUserDAO from '../../daos/user/user.js';
 import { generateToken } from '../../authentication/authentication.js';
+import { hashPassword } from '../../authentication/authentication.js';
 
 const authRouter = express.Router();
 const { validateErrors, apiOk } = apiHelpers;
@@ -55,35 +56,31 @@ authRouter.post('/forgot-password', async (req, res) => {
 // 4. Reset Password:
 
 authRouter.post('/reset-password', async (req, res) => {
-  const { token, newPassword } = req.body;
-
-  if (!token || !newPassword) {
-    return res.status(400).json({ error: 'Token and new password are required' });
-  }
-
   try {
-    // Find the user with the reset token
-    const user = await UserModel.findOne({ passwordResetToken: token });
+    const token = req.query.token;
+    const { email, newPassword } = req.body;
 
-    if (!user) {
-      return res.status(400).json({ error: 'Invalid or expired token' });
+    // Find user by email
+    const user = await instanceOfUserDAO.getUserByEmail(email);
+
+    // Check if user exists and token matches
+    if (!user || user.passwordResetToken !== token) {
+      return res.status(400).json({ msg: 'Invalid token or user does not exist' });
     }
 
-    // Hash the new password
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-
-    // Update the user's password and clear the reset token
+    // Hash the new password and update user document
+    const hashedPassword = await hashPassword(newPassword);
     user.password = hashedPassword;
-    user.passwordResetToken = undefined;
+    user.passwordResetToken = undefined; // You might want to clear the reset token
     await user.save();
 
-    res.json({ message: 'Password successfully reset' });
+    res.status(200).json({ msg: 'Password changed successfully' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Internal server error' });
+    res.status(500).json({ msg: 'Internal Server Error' });
   }
 });
- 
+
 
 // 6. Logout:
  
