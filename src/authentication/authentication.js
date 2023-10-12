@@ -20,39 +20,6 @@ export const verifyToken = (token) => {
   }
 };
 
-
-export const authenticateUserMiddleware = async (req, res, next) => {
-    try {
-      const { email, password } = req.body;
-      const user = await UserModel.findOne({ email });
-      if (!user) return res.status(401).json({ error: 'Invalid credentials' });
-  
-      const isPasswordValid = await comparePassword(password, user.password);
-      if (!isPasswordValid) return res.status(401).json({ error: 'Invalid credentials' });
-  
-      req.user = user; // add user to request object
-      next();
-    } catch (error) {
-      res.status(500).json({ error: 'Authentication failed' });
-    }
-  };
-  
-  export const verifyTokenMiddleware = (req, res, next) => {
-    try {
-      const token = req.headers.authorization;
-      if (!token) return res.status(401).json({ error: 'No token provided' });
-  
-      const user = verifyToken(token);
-      if (!user) return res.status(401).json({ error: 'Invalid token' });
-  
-      req.user = user; // add user to request object
-      next();
-    } catch (error) {
-      res.status(500).json({ error: 'Token verification failed' });
-    }
-  };
-  
-
 export const hashPassword = async (password) => {
   return await bcrypt.hash(password, 10); // 10 is the saltRounds, adjust as necessary
 };
@@ -69,4 +36,12 @@ export const authenticateUser = async (email, password) => {
   if (!isPasswordValid) return null;
 
   return generateToken(user);
+};
+
+export const authMiddleware = (req, res, next) => {
+  const token = req.header.token
+  if (!token) return res.status(401).send('Access Denied: No Token Provided');
+    const user = verifyToken(token)
+    req.user = user
+    next();
 };

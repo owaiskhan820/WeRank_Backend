@@ -8,6 +8,20 @@ class UserDAO {
     return users;
   }
 
+  async getUserById(userId) {
+    try {
+      const user = await applyPagination(UserModel.findById(userId));
+      return user;
+    } catch (error) {
+      console.error(error);
+      throw new Error('Error retrieving user from database');
+    }
+  }
+
+  async saveUser(user){
+    await user.save()
+  }
+
   async createUser(userData) {
     try {
       const newUser = new UserModel(userData);
@@ -23,21 +37,6 @@ class UserDAO {
     const user = await UserModel.findOne({ email: email });
     if (!user) throw new Error('User not found');
     return user;
-  }
-
-  async userExists(email){ 
-    const user = await UserModel.findOne({ email: email });
-    return user;
-  }
-
-  async getUserById(userId) {
-    try {
-      const user = await UserModel.findById(userId);
-      return user;
-    } catch (error) {
-      console.error(error);
-      throw new Error('Error retrieving user from database');
-    }
   }
 
   async updateUser(userId, updatedData) {

@@ -3,6 +3,7 @@ import { MONGODB_URI, PORT, SENDGRID_API_KEY } from './utils/secrets.js'; // Mak
 import  DBConnect  from './config/database/connection.js';
 import cors from "cors";
 import authRouter from './apicontrollers/user/user.js'
+import categoryRouter from './apicontrollers/category/category.js'
 import pkg from 'body-parser'; //middleware used for parsing POST requests
 const { json } = pkg;
 
@@ -19,3 +20,4 @@ app.listen(app.get("port"), () => {console.log(`Server is listening on port ${ap
 
 // register all new routers here ( for ex listRouter, commentRouter, replyRouter)
 app.use('/api/v1/user', authRouter);
+app.use('/api/v2/category', categoryRouter);

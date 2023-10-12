@@ -45,7 +45,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 'N/A',
     required: false
-  }
+  },
+  interests: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Category', // Reference to the Interest model
+    }
+],
+  
 });
 
 export default userSchema;
