@@ -4,6 +4,7 @@ import { verifyToken } from './authentication.js';
 sgMail.setApiKey(SENDGRID_API_KEY);
 import instanceOfUserDAO from '../daos/user/user.js';
 
+
   export async function sendEmail(user, emailType) {
     let subject, text;
   

@@ -39,8 +39,8 @@ const userSchema = new mongoose.Schema({
   },
   emailVerificationToken: {
     type: String, // New field to store the email verification token
-    select: false // This option ensures the token is not sent in every user-related request
-  },
+    default: 'N/A'
+   },
   passwordResetToken: {
     type: String,
     default: 'N/A',

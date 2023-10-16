@@ -9,20 +9,42 @@ class CategoryDAO{
     }
 
     async deleteCategory(id) {
-        return await CategoryModel.findByIdAndDelete(id);
+        try {
+            return await CategoryModel.findByIdAndDelete(id);
+        } catch (error) {
+            console.error("Error deleting category:", error);
+            return { error: 'Error deleting category' };
+        }
     }
-
+    
     async getCategoryById(id) {
-        return await CategoryModel.findById(id);
+        try {
+            return await CategoryModel.findById(id);
+        } catch (error) {
+            console.error("Error retrieving category by ID:", error);
+            return { error: 'Error retrieving category by ID' };
+        }
     }
-
+    
     async getAllCategories() {
-        return await CategoryModel.find();
+        try {
+            return await CategoryModel.find();
+        } catch (error) {
+            console.error("Error retrieving all categories:", error);
+            return { error: 'Error retrieving all categories' };
+        }
     }
-
+    
     async updateCategory(id, updatedCategory) {
-        return await CategoryModel.findByIdAndUpdate(id, { categoryName: updatedCategory }, { new: true });
+        try {
+            return await CategoryModel.findByIdAndUpdate(id, { categoryName: updatedCategory }, { new: true });
+        } catch (error) {
+            console.error("Error updating category:", error);
+            return { error: 'Error updating category' };
+        }
     }
+    
+    
 }
 
 const instanceOfCategoryDAO = new CategoryDAO()

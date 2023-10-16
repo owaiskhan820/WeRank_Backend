@@ -6,6 +6,8 @@ import userService  from '../../services/user/user.js';
 import { verifyEmail, sendEmail } from '../../authentication/emailVarification.js';
 import { authMiddleware, generateToken } from '../../authentication/authentication.js';
 import { hashPassword } from '../../authentication/authentication.js';
+import { authenticateUser } from '../../authentication/authentication.js';
+import categoryService from '../../services/category/category.js'
 
 const authRouter = express.Router();
 const { validateErrors, apiOk } = apiHelpers;
@@ -13,9 +15,35 @@ const { validateErrors, apiOk } = apiHelpers;
 // Route for registering a new user
 authRouter.post('/register', userValidationSchema, validateErrors, async (req, res) => {
   const body = req.body;
-  const result = await userService.createUser(body);
-  const response = apiOk(result);
+  const user = await userService.createUser(body);
+  const response = apiOk(user);
+  await sendEmail(user, 'verification')
   res.json(response);
+});
+
+authRouter.get('/getAll', async (req, res) => {
+  const users = await userService.getAllUsers();
+  console.log(users)
+  res.status(200).json({ message: users });
+
+});
+
+authRouter.get('/getUser/:id', async (req, res) => {
+  try {
+    const userId = req.params.id;  // Get the ID from the route parameters
+    const user = await userService.getUserById(userId);  // Fetch the user by ID
+
+    if (!user) {  // Check if user exists
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.status(200).json(user);  // Return the fetched user
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+
 });
 
 //varify email
@@ -24,11 +52,29 @@ authRouter.get('/verify-email', async (req, res) => {
   verifyEmail(token, res)
 });
 
-//login
-authRouter.post('/login', loginValidationSchema, async (req, res) => {
-  const body = req.body;
-  userService.validateUser(body, res)
+
+authRouter.delete('/delete-user/:userId', async (req, res) => {
+  try {
+    // Get user ID from the URL
+    const userId = req.params.userId;
+
+    // Delete user
+    await userService.deleteUserById(userId);
+
+    res.status(200).json({ message: 'User successfully deleted' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
+
+
+//login
+  authRouter.post('/login', loginValidationSchema, async (req, res) => {
+    const body = req.body;
+    authenticateUser(body.email, body.password, res)
+  });
+
 
 //forgot password
 authRouter.post('/forgot-password', async (req, res) => {
@@ -45,7 +91,7 @@ authRouter.post('/forgot-password', async (req, res) => {
   }
   const token = generateToken(user)
   user.passwordResetToken = token;
-  await user.save();  
+  await userService.saveUser(user);
 
   await sendEmail(user, 'passwordReset')
   res.status(200).send('Password reset email sent');
@@ -63,8 +109,8 @@ authRouter.post('/reset-password', async (req, res) => {
     const user = await userService.getUserByEmail(email);
 
     // Check if user exists and token matches
-    if (!user || user.passwordResetToken !== token) {
-      return res.status(400).json({ msg: 'Invalid token or user does not exist' });
+      if ( user.passwordResetToken !== token) {
+      return res.status(400).json({ msg: 'Invalid token ' });
     }
 
     // Hash the new password and update user document
@@ -80,26 +126,34 @@ authRouter.post('/reset-password', async (req, res) => {
   }
 });
 
-authRouter.post('/update-interest', authMiddleware, async (req, res) => {
 
+  authRouter.post('/add-interest', authMiddleware, async (req, res) => {
+  
     // Get user from the request (populated by the authMiddleware)
-    const user = await userService.getUserById(req.user._id);
-
-    // Get the interest from the request body
+    const user = await userService.getUserById(req.user.id);
+    // Get the interest name from the request body
     const { interestId } = req.body;
-
-    // Check if the user already has this interest
-    if (user.interests.includes(interestId)) {
-      return res.status(400).json({ error: 'Interest already added' });
+    
+    // Fetch the category by its name
+    const category = await categoryService.getCategoryById(interestId);
+    
+    // Check if the category exists
+    if (category.error) {
+      return res.status(404).json({ error: 'Interest does not exist' });
     }
 
+
+    if (user.interests.some(interest => interest.toString() === category._id.toString())) {
+      return res.status(400).json({ error: 'Interest already exists' });
+   }
+  
     // Add new interest and save the user
-    user.interests.push(interestId);
+    user.interests.push(category._id);
     await userService.saveUser(user);
-
+    
     res.status(200).json({ message: 'Interest successfully updated', user });
-
-});
+  });
+  
 
 
 authRouter.post('/delete-interest', authMiddleware, async (req, res) => {

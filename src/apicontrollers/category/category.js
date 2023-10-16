@@ -33,7 +33,7 @@ categoryRouter.delete('/delete-category/:id', async (req, res) => {
 });
 
 
-categoryRouter.get('/all-categories', async (req, res, next) => {
+categoryRouter.get('/getAll', async (req, res, next) => {
     try {
         const categories = await categoryService.getAllCategories();
         res.status(200).json(apiOk({ categories }));
@@ -42,7 +42,7 @@ categoryRouter.get('/all-categories', async (req, res, next) => {
     }
 });
 
-categoryRouter.get('/getOneCategory/:id', async (req, res, next) => {
+categoryRouter.get('/getCategory/:id', async (req, res, next) => {
     try {
         const category = await categoryService.getCategoryById(req.params.id);
 
