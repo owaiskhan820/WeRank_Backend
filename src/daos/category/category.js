@@ -1,5 +1,5 @@
 
-import CategoryModel from "../../models/category.js";
+import CategoryModel from "../../models/category/category.js";
 
 class CategoryDAO{
     async saveCategory(category){

@@ -1859,3 +1859,269 @@
 2023-10-16T19:10:25.888Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
 2023-10-16T19:15:59.125Z [info] : Mongo connected!!! 
 2023-10-16T19:15:59.132Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:26:22.612Z [info] : Mongo connected!!! 
+2023-10-16T19:26:22.616Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:28:38.677Z [info] : Mongo connected!!! 
+2023-10-16T19:28:38.681Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:29:32.445Z [info] : Mongo connected!!! 
+2023-10-16T19:29:32.449Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:30:13.618Z [info] : Mongo connected!!! 
+2023-10-16T19:30:13.624Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:31:24.373Z [info] : Mongo connected!!! 
+2023-10-16T19:31:24.378Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:32:09.733Z [info] : Mongo connected!!! 
+2023-10-16T19:32:09.737Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:33:01.684Z [info] : Mongo connected!!! 
+2023-10-16T19:33:01.689Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:37:38.679Z [info] : Mongo connected!!! 
+2023-10-16T19:37:38.685Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:38:11.448Z [info] : Mongo connected!!! 
+2023-10-16T19:38:11.455Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T19:38:51.532Z [info] : Mongo connected!!! 
+2023-10-16T19:38:51.534Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:03:58.048Z [info] : Mongo connected!!! 
+2023-10-16T20:03:58.054Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:07:37.641Z [info] : Mongo connected!!! 
+2023-10-16T20:07:37.643Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:09:02.439Z [info] : Mongo connected!!! 
+2023-10-16T20:09:02.446Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:15:54.403Z [info] : Mongo connected!!! 
+2023-10-16T20:15:54.406Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:16:14.617Z [info] : Mongo connected!!! 
+2023-10-16T20:16:14.624Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:18:46.166Z [info] : Mongo connected!!! 
+2023-10-16T20:18:46.171Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:19:53.253Z [info] : Mongo connected!!! 
+2023-10-16T20:19:53.258Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:22:09.949Z [info] : Mongo connected!!! 
+2023-10-16T20:22:09.953Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:24:27.421Z [info] : Mongo connected!!! 
+2023-10-16T20:24:27.427Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:24:56.019Z [info] : Mongo connected!!! 
+2023-10-16T20:24:56.023Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:25:51.095Z [info] : Mongo connected!!! 
+2023-10-16T20:25:51.097Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:32:16.055Z [info] : Mongo connected!!! 
+2023-10-16T20:32:16.058Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:35:23.101Z [info] : Mongo connected!!! 
+2023-10-16T20:35:23.102Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:39:27.372Z [info] : Mongo connected!!! 
+2023-10-16T20:39:27.378Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:39:53.583Z [info] : Mongo connected!!! 
+2023-10-16T20:39:53.588Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:41:13.435Z [info] : Mongo connected!!! 
+2023-10-16T20:41:13.437Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:42:30.435Z [info] : Mongo connected!!! 
+2023-10-16T20:42:30.438Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:42:38.457Z [info] : Mongo connected!!! 
+2023-10-16T20:42:38.462Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:43:03.029Z [info] : Mongo connected!!! 
+2023-10-16T20:43:03.031Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:43:30.272Z [info] : Mongo connected!!! 
+2023-10-16T20:43:30.273Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:44:02.303Z [info] : Mongo connected!!! 
+2023-10-16T20:44:02.309Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:45:18.204Z [info] : Mongo connected!!! 
+2023-10-16T20:45:18.213Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:45:38.682Z [info] : Mongo connected!!! 
+2023-10-16T20:45:38.685Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:54:36.155Z [info] : Mongo connected!!! 
+2023-10-16T20:54:36.159Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:56:44.150Z [info] : Mongo connected!!! 
+2023-10-16T20:56:44.155Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:57:03.161Z [info] : Mongo connected!!! 
+2023-10-16T20:57:03.162Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:58:15.494Z [info] : Mongo connected!!! 
+2023-10-16T20:58:15.496Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:58:33.902Z [info] : Mongo connected!!! 
+2023-10-16T20:58:33.905Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:58:40.664Z [info] : Mongo connected!!! 
+2023-10-16T20:58:40.670Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T20:58:54.183Z [info] : Mongo connected!!! 
+2023-10-16T20:58:54.187Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:03:09.553Z [info] : Mongo connected!!! 
+2023-10-16T21:03:09.561Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:10:28.623Z [info] : Mongo connected!!! 
+2023-10-16T21:10:28.625Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:10:33.645Z [info] : Mongo connected!!! 
+2023-10-16T21:10:33.649Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:11:43.093Z [info] : Mongo connected!!! 
+2023-10-16T21:11:43.096Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:13:20.158Z [info] : Mongo connected!!! 
+2023-10-16T21:13:20.164Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:15:28.454Z [info] : Mongo connected!!! 
+2023-10-16T21:15:28.459Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:17:01.890Z [info] : Mongo connected!!! 
+2023-10-16T21:17:01.905Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:24:24.314Z [info] : Mongo connected!!! 
+2023-10-16T21:24:24.320Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:25:10.932Z [info] : Mongo connected!!! 
+2023-10-16T21:25:10.942Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:25:33.342Z [info] : Mongo connected!!! 
+2023-10-16T21:25:33.349Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:26:25.876Z [info] : Mongo connected!!! 
+2023-10-16T21:26:25.889Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:29:46.894Z [info] : Mongo connected!!! 
+2023-10-16T21:29:46.900Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:31:17.593Z [info] : Mongo connected!!! 
+2023-10-16T21:31:17.598Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:31:24.977Z [info] : Mongo connected!!! 
+2023-10-16T21:31:24.981Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:33:30.192Z [info] : Mongo connected!!! 
+2023-10-16T21:33:30.195Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:36:22.793Z [info] : Mongo connected!!! 
+2023-10-16T21:36:22.797Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:38:03.720Z [info] : Mongo connected!!! 
+2023-10-16T21:38:03.723Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:39:17.881Z [info] : Mongo connected!!! 
+2023-10-16T21:39:17.887Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:39:27.991Z [info] : Mongo connected!!! 
+2023-10-16T21:39:28.000Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:40:09.458Z [info] : Mongo connected!!! 
+2023-10-16T21:40:09.472Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:40:57.589Z [info] : Mongo connected!!! 
+2023-10-16T21:40:57.590Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:41:25.331Z [info] : Mongo connected!!! 
+2023-10-16T21:41:25.338Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:42:12.648Z [info] : Mongo connected!!! 
+2023-10-16T21:42:12.656Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-16T21:42:46.012Z [info] : Mongo connected!!! 
+2023-10-16T21:42:46.014Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T19:56:31.286Z [info] : Mongo connected!!! 
+2023-10-17T19:56:31.289Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T19:59:15.229Z [info] : Mongo connected!!! 
+2023-10-17T19:59:15.233Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T19:59:27.025Z [info] : Mongo connected!!! 
+2023-10-17T19:59:27.027Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T19:59:55.569Z [info] : Mongo connected!!! 
+2023-10-17T19:59:55.572Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:00:07.757Z [info] : Mongo connected!!! 
+2023-10-17T20:00:07.759Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:05:03.193Z [info] : Mongo connected!!! 
+2023-10-17T20:05:03.195Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:05:23.152Z [info] : Mongo connected!!! 
+2023-10-17T20:05:23.163Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:05:58.844Z [info] : Mongo connected!!! 
+2023-10-17T20:05:58.846Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:06:14.060Z [info] : Mongo connected!!! 
+2023-10-17T20:06:14.062Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:14:04.950Z [info] : Mongo connected!!! 
+2023-10-17T20:14:04.952Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:15:32.121Z [info] : Mongo connected!!! 
+2023-10-17T20:15:32.124Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:30:50.405Z [info] : Mongo connected!!! 
+2023-10-17T20:30:50.409Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:31:29.195Z [info] : Mongo connected!!! 
+2023-10-17T20:31:29.207Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:31:48.548Z [info] : Mongo connected!!! 
+2023-10-17T20:31:48.557Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:33:16.473Z [info] : Mongo connected!!! 
+2023-10-17T20:33:16.484Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-17T20:33:52.451Z [info] : Mongo connected!!! 
+2023-10-17T20:33:52.456Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T10:59:57.999Z [info] : Mongo connected!!! 
+2023-10-22T10:59:58.002Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:03:06.095Z [info] : Mongo connected!!! 
+2023-10-22T11:03:06.098Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:05:05.014Z [info] : Mongo connected!!! 
+2023-10-22T11:05:05.020Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:05:27.525Z [info] : Mongo connected!!! 
+2023-10-22T11:05:27.528Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:19:42.882Z [info] : Mongo connected!!! 
+2023-10-22T11:19:42.884Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:19:46.668Z [info] : Mongo connected!!! 
+2023-10-22T11:19:46.670Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:22:04.306Z [info] : Mongo connected!!! 
+2023-10-22T11:22:04.309Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:24:51.220Z [info] : Mongo connected!!! 
+2023-10-22T11:24:51.224Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:47:04.807Z [info] : Mongo connected!!! 
+2023-10-22T11:47:04.809Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:47:54.042Z [info] : Mongo connected!!! 
+2023-10-22T11:47:54.048Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:58:41.868Z [info] : Mongo connected!!! 
+2023-10-22T11:58:41.872Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T11:59:46.718Z [info] : Mongo connected!!! 
+2023-10-22T11:59:46.720Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:07:06.781Z [info] : Mongo connected!!! 
+2023-10-22T12:07:06.786Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:08:50.264Z [info] : Mongo connected!!! 
+2023-10-22T12:08:50.271Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:10:45.207Z [info] : Mongo connected!!! 
+2023-10-22T12:10:45.209Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:10:53.011Z [info] : Mongo connected!!! 
+2023-10-22T12:10:53.013Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:12:07.018Z [info] : Mongo connected!!! 
+2023-10-22T12:12:07.020Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:25:31.661Z [info] : Mongo connected!!! 
+2023-10-22T12:25:31.665Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:25:36.402Z [info] : Mongo connected!!! 
+2023-10-22T12:25:36.404Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:25:47.764Z [info] : Mongo connected!!! 
+2023-10-22T12:25:47.766Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:26:37.419Z [info] : Mongo connected!!! 
+2023-10-22T12:26:37.421Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:43:42.492Z [info] : Mongo connected!!! 
+2023-10-22T12:43:42.499Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:45:02.164Z [info] : Mongo connected!!! 
+2023-10-22T12:45:02.166Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T12:45:26.035Z [info] : Mongo connected!!! 
+2023-10-22T12:45:26.036Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:00:36.281Z [info] : Mongo connected!!! 
+2023-10-22T13:00:36.284Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:00:59.630Z [info] : Mongo connected!!! 
+2023-10-22T13:00:59.632Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:01:09.377Z [info] : Mongo connected!!! 
+2023-10-22T13:01:09.384Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:02:38.445Z [info] : Mongo connected!!! 
+2023-10-22T13:02:38.450Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:03:26.366Z [info] : Mongo connected!!! 
+2023-10-22T13:03:26.368Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:03:49.511Z [info] : Mongo connected!!! 
+2023-10-22T13:03:49.514Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:05:52.537Z [info] : Mongo connected!!! 
+2023-10-22T13:05:52.539Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:10:27.844Z [info] : Mongo connected!!! 
+2023-10-22T13:10:27.846Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:12:06.373Z [info] : Mongo connected!!! 
+2023-10-22T13:12:06.377Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:12:51.141Z [info] : Mongo connected!!! 
+2023-10-22T13:12:51.144Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:13:49.183Z [info] : Mongo connected!!! 
+2023-10-22T13:13:49.186Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:20:54.386Z [info] : Mongo connected!!! 
+2023-10-22T13:20:54.393Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:21:45.991Z [info] : Mongo connected!!! 
+2023-10-22T13:21:45.993Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:23:01.728Z [info] : Mongo connected!!! 
+2023-10-22T13:23:01.731Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:23:11.841Z [info] : Mongo connected!!! 
+2023-10-22T13:23:11.843Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:24:29.122Z [info] : Mongo connected!!! 
+2023-10-22T13:24:29.124Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:24:35.436Z [info] : Mongo connected!!! 
+2023-10-22T13:24:35.440Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:24:53.581Z [info] : Mongo connected!!! 
+2023-10-22T13:24:53.582Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:30:35.363Z [info] : Mongo connected!!! 
+2023-10-22T13:30:35.367Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:33:52.683Z [info] : Mongo connected!!! 
+2023-10-22T13:33:52.685Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:34:13.280Z [info] : Mongo connected!!! 
+2023-10-22T13:34:13.282Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:35:04.702Z [info] : Mongo connected!!! 
+2023-10-22T13:35:04.705Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:36:58.708Z [info] : Mongo connected!!! 
+2023-10-22T13:36:58.709Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T13:38:02.885Z [info] : Mongo connected!!! 
+2023-10-22T13:38:02.888Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T20:54:04.249Z [info] : Mongo connected!!! 
+2023-10-22T20:54:04.252Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T20:56:45.158Z [info] : Mongo connected!!! 
+2023-10-22T20:56:45.165Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T21:04:36.386Z [info] : Mongo connected!!! 
+2023-10-22T21:04:36.389Z [info] : Using mongo host 'ac-qbi10eq-shard-00-01.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T21:09:00.215Z [info] : Mongo connected!!! 
+2023-10-22T21:09:00.225Z [info] : Using mongo host 'ac-qbi10eq-shard-00-02.lu0f8x0.mongodb.net' and port '27017' 
+2023-10-22T21:09:10.371Z [info] : Mongo connected!!! 
+2023-10-22T21:09:10.375Z [info] : Using mongo host 'ac-qbi10eq-shard-00-00.lu0f8x0.mongodb.net' and port '27017' 

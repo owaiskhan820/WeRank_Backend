@@ -131,9 +131,9 @@ authRouter.post('/reset-password', async (req, res) => {
   
     // Get user from the request (populated by the authMiddleware)
     const user = await userService.getUserById(req.user.id);
+
     // Get the interest name from the request body
-    const { interestId } = req.body;
-    
+    const  interestId  = req.body.interestId;
     // Fetch the category by its name
     const category = await categoryService.getCategoryById(interestId);
     
@@ -142,10 +142,19 @@ authRouter.post('/reset-password', async (req, res) => {
       return res.status(404).json({ error: 'Interest does not exist' });
     }
 
+    let count = 0;
 
-    if (user.interests.some(interest => interest.toString() === category._id.toString())) {
+    const exists = user.interests.some(interest => {
+      count++;
+      return interest._id.toString() === interestId.toString();
+    });
+    
+    console.log(count);
+
+    if (exists) {
       return res.status(400).json({ error: 'Interest already exists' });
-   }
+    }
+    
   
     // Add new interest and save the user
     user.interests.push(category._id);
@@ -157,33 +166,50 @@ authRouter.post('/reset-password', async (req, res) => {
 
 
 authRouter.post('/delete-interest', authMiddleware, async (req, res) => {
-  try {
+    try {
     // Get user from the request (populated by the authMiddleware)
     
-    const user = await userService.getUserById(req.user._id);
+    const user = await userService.getUserById(req.user.id);
 
     // Get the interest from the request body
-    const { interestId } = req.body;
+    const interestId  = req.body.interestId;
 
     // Remove the interest from the user's interests
-    user.interests = user.interests.filter(id => id.toString() !== interestId);
-
+    const filteredInterests = user.interests.filter(category => {
+      const categoryIdAsString = category._id.toString();
+      console.log('Comparing:', categoryIdAsString, 'with:', interestId);
+      return categoryIdAsString !== interestId;
+  });
+  
+   
+    user.interests = filteredInterests;
     // Save the updated user
-    await userService.saveUser(user);
+    const newUser = await userService.saveUser(user);
 
-    res.status(200).json({ message: 'Interest successfully removed', user });
+    res.status(200).json({ msg: "Interest deleted successfully", user: newUser });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-authRouter.get("/get-interests", authMiddleware, async (req, res) =>{
-  const userId = req.query.id
-  const user = userService.getUserById(userId)
-  const userInterests = user.interests;
-  res.status(200).json({"interests": userInterests})
-});
+  authRouter.post("/get-interests", authMiddleware, async (req, res) => {
+    try {
+        const userId = req.body.userId;
+        const user = await userService.getUserById(userId);
+        
+        if (!user) {
+            return res.status(404).json({ error: "User not found" });
+        }
+        
+        const userInterests = user.interests;
+        res.status(200).json({"interests": userInterests});
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+
 
 // 6. Logout:
  

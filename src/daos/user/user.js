@@ -1,5 +1,5 @@
 // Data Access Object (DAO) for handling user-related database operations.
-import UserModel from '../../models/user.js';
+import UserModel from '../../models/user/user.js';
 import applyPagination from '../../utils/assets/pagination.js';
 
 class UserDAO {

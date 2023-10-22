@@ -1,6 +1,8 @@
 import { body } from 'express-validator';
-import UserModel from '../../models/user.js';
+import UserModel from '../../models/user/user.js';
+
 import instanceOfUserDAO from '../../daos/user/user.js';
+
 export const userValidationSchema = [
 
 

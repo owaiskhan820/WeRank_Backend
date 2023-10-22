@@ -1,5 +1,5 @@
 import { body } from 'express-validator';
-import CategoryModel from '../../models/category.js';
+import CategoryModel from '../../models/category/category.js';
 
 export const categoryValidationSchema = [
 
