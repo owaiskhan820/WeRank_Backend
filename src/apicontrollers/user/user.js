@@ -3,6 +3,7 @@ import express from 'express';
 import apiHelpers from '../../utils/assets/apiHelpers.js';
 import {userValidationSchema, loginValidationSchema} from '../requestValidaton/user.js';
 import userService  from '../../services/user/user.js';
+import contributorService from '../../services/contributor/contributor.js'
 import { verifyEmail, sendEmail } from '../../authentication/emailVarification.js';
 import { authMiddleware, generateToken } from '../../authentication/authentication.js';
 import { hashPassword } from '../../authentication/authentication.js';
@@ -209,6 +210,25 @@ authRouter.post('/delete-interest', authMiddleware, async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
   });
+
+  authRouter.get("/user-contributions/:userId", async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        
+        // Get contributions made by the user from the service
+        const result = await contributorService.getUserContributions(userId);
+        
+        res.status(200).json({
+            success: true,
+            data: result
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+});
 
 
 // 6. Logout:

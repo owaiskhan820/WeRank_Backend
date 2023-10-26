@@ -29,16 +29,17 @@ class VoteDAO {
     }
 
     async switchVote(listId, userId, voteType) {
+
         // Validate the vote type
         if (voteType !== 'upvote' && voteType !== 'downvote') {
             throw new Error('Invalid vote type');
         }
     
         // 1. Update the vote in VoteModel collection
-        const newVoteType = (voteType === 'upvote') ? 'downvote' : 'upvote';
+
         await VoteModel.findOneAndUpdate(
             { userId: userId, listId: listId }, 
-            { voteType: newVoteType, updatedAt: Date.now() }
+            { voteType: voteType, updatedAt: Date.now() }
         );
     
         

@@ -3,6 +3,8 @@ import { authMiddleware, generateToken } from '../../authentication/authenticati
 import categoryService from '../../services/category/category.js';
 import listService from '../../services/list/list.js';
 import voteService from '../../services/vote/vote.js';
+import contributorService from '../../services/contributor/contributor.js';
+import commentService from '../../services/comment/comment.js';
 import express from 'express';
 
 
@@ -28,13 +30,14 @@ listRouter.post('/createList', validateList, authMiddleware, async (req, res) =>
             ...req.body,
             userId: userId,
         };
-
+        
+        newListData.listItems = await listService.calculateScores(newListData.listItems);
+    
         // 4. Save the new list
         const savedList = await listService.saveList(newListData);
-
+    
         // 5. Return the created list
         res.status(201).json(savedList);
-
   
 });
 
@@ -98,11 +101,11 @@ listRouter.delete('/deleteList/:Id', async (req, res) => {
 });
 
 // Upvote a List
-listRouter.post('/vote/:listId/', async (req, res) => {
+listRouter.post('/vote/:listId/', authMiddleware, async (req, res) => {
 
 
     const { listId } = req.params;
-    const userId  = req.query.userId;  
+    const userId  = req.user.id;  
     const voteType = req.body.voteType;  
 
     
@@ -114,59 +117,84 @@ listRouter.post('/vote/:listId/', async (req, res) => {
             if (existingVote.voteType === voteType) {
                 return res.status(400).json({ message: "Already voted this way." });
             } else {
-                // Switch vote (e.g., from upvote to downvote or vice versa)
-                await voteService.switchVote(listId, voteType.toString());
+                await voteService.switchVote(listId, userId, voteType);
             }
         } else {
             // Add new vote
             await voteService.addVote(userId, listId, voteType);
+            // res.json({msg: "Vote added successfully"})
+            console.log("Vote added successfully")
         }
 
-    //     // Fetch the updated list to return, or just return a success message
-    //     const updatedList = await listService.getListByListId(listId);
-    //     res.json(updatedList);
+        // Fetch the updated list to return, or just return a success message
+        const updatedList = await listService.getListByListId(listId);
+        res.json(updatedList);
 
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
 
-// Downvote a List
-listRouter.post('/lists/:listId/downvote', async (req, res) => {
+
+listRouter.put('/rearrangeList/:listId', authMiddleware, async (req, res) => {
     try {
-        const list = await List.findById(req.params.listId);
-        if (!list) return res.status(404).json({ message: 'List not found' });
+        const userId = req.user.id
+        const listId = req.params.listId;
+        const rearrangedItems = req.body.rearrangedListItems;
+
+        const verificationMessage = await contributorService.verifyContributor(listId, userId);
         
-        // Add user's ID to downvotes array and remove from upvotes array if present
-        list.downvotes.push(req.user.id);
-        const index = list.upvotes.indexOf(req.user.id);
-        if (index > -1) {
-            list.upvotes.splice(index, 1);
+        if (verificationMessage) {
+            return res.status(400).json({ message: verificationMessage });
         }
 
-        await list.save();
-        res.status(200).json(list);
+        const updatedList = await listService.updateScore(listId, rearrangedItems);
+        const contributor = await contributorService.addContributor(listId, userId)
+        res.status(200).json({updatedList, contributor});
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(500).json({ message: "Error rearranging list", error: error.message });
     }
 });
 
-// Rearrange List Items
-listRouter.put('/lists/:listId/rearrange', async (req, res) => {
+
+listRouter.post('/comment/:listId', authMiddleware, async (req, res) => {
     try {
-        const list = await List.findById(req.params.listId);
-        if (!list) return res.status(404).json({ message: 'List not found' });
-        
-        // The rearranged items would likely come from the request body
-        // You would perform your rearrangement logic here and then save.
-        // For simplicity, I'm just directly setting the listItems.
-        list.listItems = req.body.listItems;
-        
-        await list.save();
-        res.status(200).json(list);
+        const { listId } = req.params;
+        const userId = req.user.id
+        const { text } = req.body; // Assuming the comment's text is sent in the request body
+
+        const comment = await commentService.addcomment(listId, userId, text);
+        res.status(201).json(comment);
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        res.status(400).json({ error: error.message });
     }
+});
+
+
+listRouter.get("/getContributors/:listId", async (req, res) => {
+    try {
+        const listId = req.params.listId;
+        const contributors = await contributorService.getContributorsForList(listId);
+
+        if (!contributors || contributors.length === 0) {
+            return res.status(404).json({ message: "No contributors found for this list." });
+        }
+
+        res.status(200).json(contributors);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Internal server error" });
+    }
+
+
+});
+
+
+
+listRouter.delete("/deleteVote/:listId", async (req, res) => {
+
+
+
 });
 
 export default listRouter;

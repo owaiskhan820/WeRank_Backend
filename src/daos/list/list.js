@@ -2,12 +2,14 @@
 import ListModel from '../../models/list/list.js';
 import applyPagination from '../../utils/assets/pagination.js';
 import VoteModel from '../../models/list/vote.js';
+import ContributorModel from '../../models/list/contributor.js';
 
 class ListDAO {
 
 
     async createList(listData) {
         try {
+          console.log(listData);
           const newList = new ListModel(listData);
           return await newList.save();
     
@@ -113,15 +115,52 @@ class ListDAO {
 
 
     async incrementVoteCount(listId, voteType){
+  
+      let voteChanges = {};
+
       if (voteType === 'upvote') {
-        // If switching from upvote to downvote
-        return await ListModel.findByIdAndUpdate(listId, { $inc: { downvotes: 1, upvotes: -1 } });
-    } else {
-        // If switching from downvote to upvote
-        return await ListModel.findByIdAndUpdate(listId, { $inc: { upvotes: 1, downvotes: -1 } });
+          voteChanges = { upVotes: 1 };
+      } else if (voteType === 'downvote') {
+          voteChanges = { downVotes: 1 };
+      } else {
+          throw new Error('Invalid vote type');
+      }
+  
+      return await ListModel.findByIdAndUpdate(listId, { $inc: voteChanges }, { new: true });
     }
+
+    async switchVoteCount(listId, voteType){
+  
+      let voteChanges = {}; 
+      console.log(voteType)
+
+      if (voteType === 'upvote') {
+          voteChanges = { downVotes: -1, upVotes: 1 };
+      } else if (voteType === 'downvote') {
+          voteChanges = { upVotes: -1, downVotes: 1 };
+      } else {
+          throw new Error('Invalid vote type');
+      }
+      console.log(voteChanges)
+      return await ListModel.findByIdAndUpdate(listId, { $inc: voteChanges }, { new: true });
+  }
+
+
+  async updateScores(listId, scoreUpdates) {
+    const list = await ListModel.findById(listId);
+
+    // For each item in the list, update its score
+    for (const item of list.listItems) {
+      const update = scoreUpdates.find(s => s.itemId === item._id.toString());
+      if (update) {
+            item.score += update.scoreIncrement;
+        }
     }
+    list.listItems.sort((a, b) => b.score - a.score);
+    return await list.save();
+   
 }
+  }    
 
 const instanceOfListDAO = new ListDAO();
 

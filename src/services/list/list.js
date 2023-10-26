@@ -49,6 +49,26 @@ async getListByCategoryId(Id) {
 
   }
 
+  async calculateScores(listItems){
+    const maxScore = listItems.length;
+    return listItems.map((item, index) => ({
+        ...item,
+        score: maxScore - index
+    }));
+  }
+
+  async updateScore(listId, rearrangedItems) {
+    const maxScore = rearrangedItems.length;
+    console.log(maxScore)
+    // Create a score update map based on new positions
+    const scoreUpdates = rearrangedItems.map((item, index) => ({
+        itemId: item._id,
+        scoreIncrement: maxScore - index
+    }));
+
+    return await instanceOfListDAO.updateScores(listId, scoreUpdates);
+}
+
 }
 
 const listService = new ListService();
