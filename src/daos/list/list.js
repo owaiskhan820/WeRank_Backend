@@ -160,6 +160,17 @@ class ListDAO {
     return await list.save();
    
 }
+
+
+async fetchListCountByUserId(userId){
+  try {
+      const count = await ListModel.countDocuments({ userId: userId });
+      return count;
+  } catch (error) {
+      throw error;
+  }
+};
+
   }    
 
 const instanceOfListDAO = new ListDAO();

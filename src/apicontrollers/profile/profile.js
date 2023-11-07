@@ -1,54 +1,64 @@
 import express from 'express'
+import { authMiddleware } from '../../authentication/authentication.js';
+import profileService from '../../services/profile/profile.js';
+
+
+
 const profileRouter = express.Router();
 
-// Middleware and utility functions here...
 
-// **Profile Picture**
-// Endpoint to upload or change the profile picture
-profileRouter.post('/profile/picture', (req, res, next) => {
-    // ... code to handle profile picture upload
+
+
+profileRouter.post('/update-user-info', authMiddleware, async (req, res, next) => {
+    try {
+        const userId = req.user.id;
+        let profileData = { ...req.body };
+        profileData.userId = userId;
+
+        
+        const user = await profileService.getProfileByUserId(userId)
+        if(!user){
+            const newProfile = await profileService.createUserProfile(profileData)
+            return res.status(200).send({ message: 'Profile created successfully!', Profile:  newProfile});
+        }
+        const updatedProfile = await profileService.updateUserProfile(userId, profileData);
+  
+
+        return res.status(200).send({ message: 'Profile updated successfully!', Profile:  updatedProfile});
+    } catch (error) {
+        next(error);
+    }
 });
 
-// Endpoint to delete the profile picture
-profileRouter.delete('/profile/picture', (req, res, next) => {
-    // ... code to delete profile picture
+
+
+profileRouter.get('/get-by-userId', async (req, res, next) => {
+    try {
+        const userId = req.query.userId;
+        console.log(req.query.userId)
+        const profile = await profileService.getProfileByUserId(userId);
+        if (!profile) {
+            return res.status(404).json({ message: 'Profile not found.' });
+        }
+        res.json(profile);
+    } catch (error) {
+        next(error);
+    }
 });
 
-// **Bio/About**
-// Endpoint to update bio/about
-profileRouter.put('/profile/bio', (req, res, next) => {
-    // ... code to update bio/about
+
+profileRouter.get('/getAll', async (req, res, next) => {
+    try {
+        const result = await profileService.getAllProfiles();
+        if (!result) {
+            return res.status(404).json({ message: 'No Profiles found.' });
+        }
+        res.json(result);
+    } catch (error) {
+        next(error);
+    }
 });
 
-// **Location**
-// Endpoint to update location
-profileRouter.put('/profile/location', (req, res, next) => {
-    // ... code to update user location
-});
-
-// **Email**
-// Endpoint to update email
-profileRouter.put('/profile/email', (req, res, next) => {
-    // ... code to update email
-});
-
-// **Phone**
-// Endpoint to update phone number
-profileRouter.put('/profile/phone', (req, res, next) => {
-    // ... code to update phone number
-});
-
-// **Social Links**
-// Endpoint to add/update social links
-profileRouter.put('/profile/social-links', (req, res, next) => {
-    // ... code to handle social links
-});
-
-// **Post Count** (mostly retrieved, not updated via endpoint)
-// Endpoint to retrieve post count
-profileRouter.get('/profile/post-count', (req, res, next) => {
-    // ... code to retrieve post count
-});
 
 // **Activity**
 // Endpoint to retrieve user activity
@@ -62,32 +72,4 @@ profileRouter.put('/profile/settings', (req, res, next) => {
     // ... code to handle user settings
 });
 
-// **Interests**
-// Endpoint to update interests
-profileRouter.put('/profile/interests', (req, res, next) => {
-    // ... code to handle user interests
-});
-
-// **Actions** (e.g., editing the profile)
-// Endpoint to edit profile
-profileRouter.put('/profile/edit', (req, res, next) => {
-    // ... code to handle profile edits
-});
-
-// **Watchlist**
-// Endpoint to add items to watchlist
-profileRouter.post('/profile/watchlist', (req, res, next) => {
-    // ... code to add items to watchlist
-});
-
-// Endpoint to retrieve items from watchlist
-profileRouter.get('/profile/watchlist', (req, res, next) => {
-    // ... code to retrieve items from watchlist
-});
-
-// Endpoint to remove items from watchlist
-profileRouter.delete('/profile/watchlist/:itemId', (req, res, next) => {
-    // ... code to remove items from watchlist based on itemId
-});
-
-module.exports = router;
+export default profileRouter;

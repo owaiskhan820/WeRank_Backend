@@ -5,8 +5,13 @@ import cors from "cors";
 import authRouter from './apicontrollers/user/user.js'
 import categoryRouter from './apicontrollers/category/category.js'
 import listRouter from './apicontrollers/list/list.js'
-
+import profileRouter from './apicontrollers/profile/profile.js'
+import watchlistRouter from './apicontrollers/watchlist/watchlist.js';
 import pkg from 'body-parser'; //middleware used for parsing POST requests
+import followRouter from './apicontrollers/follow/follow.js';
+
+
+
 const { json } = pkg;
 
 
@@ -22,5 +27,8 @@ app.listen(app.get("port"), () => {console.log(`Server is listening on port ${ap
 
 // register all new routers here ( for ex listRouter, commentRouter, replyRouter)
 app.use('/api/v1/user', authRouter);
-app.use('/api/v2/category', categoryRouter);
-app.use('/api/v3/list', listRouter)
+app.use('/api/v1/category', categoryRouter);
+app.use('/api/v1/list', listRouter)
+app.use('/api/v1/profile', profileRouter);
+app.use('/api/v1/follow', followRouter)
+app.use('/api/v1/watchlist', watchlistRouter)

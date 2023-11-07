@@ -69,6 +69,18 @@ async getListByCategoryId(Id) {
     return await instanceOfListDAO.updateScores(listId, scoreUpdates);
 }
 
+
+  async getListCountByUserId(userId){
+    try{
+      return await instanceOfListDAO.fetchListCountByUserId(userId);
+
+    } catch(error){
+      throw error
+    }
+  
+  };
+
+
 }
 
 const listService = new ListService();

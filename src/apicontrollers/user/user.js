@@ -178,7 +178,6 @@ authRouter.post('/delete-interest', authMiddleware, async (req, res) => {
     // Remove the interest from the user's interests
     const filteredInterests = user.interests.filter(category => {
       const categoryIdAsString = category._id.toString();
-      console.log('Comparing:', categoryIdAsString, 'with:', interestId);
       return categoryIdAsString !== interestId;
   });
   

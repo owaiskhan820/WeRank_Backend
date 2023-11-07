@@ -191,6 +191,24 @@ listRouter.get("/getContributors/:listId", async (req, res) => {
 
 
 
+listRouter.get('/list-count-by-userId/:userId', async (req, res) => {
+
+       try{
+        const userId = req.params.userId; // or from req.query or req.body, depending on how you send it.
+        const count = await listService.getListCountByUserId(userId);
+        res.status(200).json({ count });
+
+       } catch(error){
+        throw error
+       }
+
+
+
+
+});
+
+
+
 listRouter.delete("/deleteVote/:listId", async (req, res) => {
 
 

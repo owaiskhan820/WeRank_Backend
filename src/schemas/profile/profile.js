@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
-const { Schema } = mongoose;
 
-const ProfileSchema = new Schema({
+const ProfileSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -31,33 +30,11 @@ const ProfileSchema = new Schema({
         instagram: String,
         // Add more if needed.
     },
-    postCount: {
-        type: Number,
-        default: 0
-    },
-    activity: [{
-        type: String,
-        enum: ['liked', 'commented', 'posted', 'shared'], // Add more activities as required.
-        listId: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'List',
-        },
-        timestamp: {
-            type: Date,
-            default: Date.now
-        }
-    }],
     interests: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category' // Reference to the Category or Interest model.
     }],
-    actions: [{
-        // Define user actions here, such as saved posts, liked comments, etc.
-    }],
-    watchlist: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Watchlist'
-    }]
+ 
 });
 
 export default ProfileSchema;

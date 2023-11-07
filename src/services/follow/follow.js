@@ -1,4 +1,4 @@
-import instanceOfFollowDAO from "../../daos/follow/follow";
+import instanceOfFollowDAO from "../../daos/follow/follow.js";
 class FollowService{
     async followUser(followerId, followingId){
         if (followerId === followingId) {
@@ -11,14 +11,29 @@ class FollowService{
         return await instanceOfFollowDAO.deleteFollow(followerId, followingId);
     }
     
-    async getFollowersOfUser(userId){
-        return await instanceOfFollowDAO.listFollowersOfUser(userId);
+    async getFollowersByUserId(userId){
+            if (!userId) {
+                throw new Error('User ID is required');
+            }
+            return instanceOfFollowDAO.getFollowersByUserId(userId);
+        
     }
     
-    async getUsersFollowedBy(userId){
-        return await instanceOfFollowDAO.listUsersFollowedBy(userId);
+    async getFollowingByUserId(userId) {
+        if (!userId) {
+            throw new Error('User ID is required');
+        }
+        return instanceOfFollowDAO.getFollowingByUserId(userId);
     }
-    
+
+    async countFollowers(userId) {
+        return instanceOfFollowDAO.countFollowersDAO(userId);
+      }
+      
+
+    async countFollowing(userId) {
+        return instanceOfFollowDAO.countFollowing(userId);
+      }
 }
 
 const followService = new FollowService();
