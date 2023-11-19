@@ -1,12 +1,15 @@
 // Data Access Object (DAO) for handling user-related database operations.
 import UserModel from '../../models/user/user.js';
-import applyPagination from '../../utils/assets/pagination.js';
-
+import ProfileModel from '../../models/profile/profie.js';
+import ListModel from '../../models/list/list.js';
+import WatchlistModel from '../../models/watchlist/watchlist.js';
+import FollowModel from '../../models/follow/follow.js';
+import mongoose from 'mongoose'
 class UserDAO {
 
   async findAllUsers() {
     try {
-      const users = await UserModel.find().populate('interests');
+      const users = await UserModel.find();
       return users;
     } catch (error) {
       console.error(error);
@@ -16,7 +19,7 @@ class UserDAO {
 
   async getUserById(userId) {
     try {
-      const user = await UserModel.findById(userId).populate('interests');
+      const user = await UserModel.findById(userId);
       return user;
     } catch (error) {
       console.error(error);
@@ -24,42 +27,91 @@ class UserDAO {
     }
   }
 
-  async deleteUserById(userId) {
-    // Assuming you're using Mongoose (as it appears so in your other methods)
-    return await UserModel.findByIdAndDelete(userId).populate('interests');
-}
+  async deleteUser(userId) {
+    const session = await mongoose.startSession();
+    session.startTransaction();
+    try {
+      // Delete the user's profile
+      await ProfileModel.findOneAndDelete({ userId: userId }, { session });
+      // Delete the user's lists
+      await ListModel.deleteMany({ createdBy: userId }, { session });
+      // Delete the user's watchlist entries
+      await WatchlistModel.deleteMany({ userId: userId }, { session });
+      // ... Add other delete operations for related collections
+      await FollowModel.deleteMany({ userId: userId }, { session });
+
+
+      // Delete the user
+      await UserModel.findByIdAndDelete(userId, { session });
+
+      // Commit the transaction
+      await session.commitTransaction();
+    } catch (error) {
+      // If anything fails, abort the transaction
+      await session.abortTransaction();
+      throw error; // Rethrow the error so it can be handled by the caller
+    } finally {
+      // End the session
+      session.endSession();
+    }
+  }
+
 
   async createUser(userData) {
+    const session = await mongoose.startSession();
+    session.startTransaction();
+    
     try {
       const newUser = new UserModel(userData);
-      await newUser.save();
+      const savedUser = await newUser.save({ session });
+      
+      // Create an empty profile for the new user with only the userId field populated
+      const newProfile = new ProfileModel({ userId: savedUser._id });
+      await newProfile.save({ session });
 
-      // If you want the populated interests to be returned:
-      const populatedUser = await UserModel.findById(newUser._id).populate('interests');
-      return populatedUser;
-
-   } catch (error) {
+      await session.commitTransaction();
+      
+      return savedUser;
+    } catch (error) {
+      await session.abortTransaction();
       console.error(error);
-      throw new Error('Error creating user');
-   }
+      throw new Error('Error creating user and profile');
+    } finally {
+      session.endSession();
+    }
   }
 
   async getUserByEmail(email){
-    const user = await UserModel.findOne({ email: email }).populate('interests');
-    if (!user) throw new Error('User not found');
-    return user;
-  }
+    return await UserModel.findOne({ email: email });
+}
+
+  async getUserByResetToken(resetToken) {
+    try {
+      const user = await UserModel.findOne({ passwordResetToken: resetToken });
+      return user;
+    } catch (error) {
+      throw new Error('Error accessing the database');
+    }}
+
+    async getUsernameById(userId) {
+      // Assuming mongoose and a UserModel is already defined
+      const user = await UserModel.findById(userId, 'username');
+      return user ? user.username : null;
+    }
 
 
   async updateUser(userId, updatedData) {
     try {
-      const updatedUser = await UserModel.findByIdAndUpdate(userId, updatedData, { new: true }).populate('interests');
+      const updatedUser = await UserModel.findByIdAndUpdate(userId, updatedData, { new: true });
       return updatedUser;
     } catch (error) {
       console.error(error);
       throw new Error('Error updating user in database');
     }
   }
+
+
+  
 }
 
 const instanceOfUserDAO = new UserDAO();

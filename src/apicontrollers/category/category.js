@@ -1,6 +1,6 @@
 import express  from "express";
 import categoryService from "../../services/category/category.js";
-import { categoryValidationSchema } from "../requestValidaton/category.js";
+import { categoryValidationSchema } from "../../utils/requestValidaton/category.js";
 import apiHelpers from '../../utils/assets/apiHelpers.js';
 
 

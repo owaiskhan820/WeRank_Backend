@@ -7,6 +7,7 @@ import categoryRouter from './apicontrollers/category/category.js'
 import listRouter from './apicontrollers/list/list.js'
 import profileRouter from './apicontrollers/profile/profile.js'
 import watchlistRouter from './apicontrollers/watchlist/watchlist.js';
+import feedRouter from './apicontrollers/userFeed/userFeed.js';
 import pkg from 'body-parser'; //middleware used for parsing POST requests
 import followRouter from './apicontrollers/follow/follow.js';
 
@@ -32,3 +33,4 @@ app.use('/api/v1/list', listRouter)
 app.use('/api/v1/profile', profileRouter);
 app.use('/api/v1/follow', followRouter)
 app.use('/api/v1/watchlist', watchlistRouter)
+app.use('/api/v1/userFeed', feedRouter)

@@ -27,7 +27,7 @@ class FollowService{
     }
 
     async countFollowers(userId) {
-        return instanceOfFollowDAO.countFollowersDAO(userId);
+        return instanceOfFollowDAO.countFollowers(userId);
       }
       
 

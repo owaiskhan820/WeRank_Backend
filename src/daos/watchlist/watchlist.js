@@ -7,7 +7,7 @@ async getWatchlistByUserId(userId) {
         return await WatchlistModel.find({ userId: userId })
           .populate({
             path: 'listId',
-            populate: { path: 'items' }
+            populate: { path: 'listItems' }
           })
           .exec();
       } catch (error) {
@@ -50,6 +50,19 @@ async itemExists(userId, listId) {
       return result;
     } catch (error) {
       // If there's an error, throw it to be handled by the calling function
+      throw error;
+    }
+  }
+
+  async getWatchlistedListsByUserIds(userIds) {
+    try {
+      return await WatchlistModel.find({ userId: { $in: userIds } })
+        .populate({
+          path: 'listId',
+          populate: { path: 'listItems' }
+        })
+        .exec();
+    } catch (error) {
       throw error;
     }
   }

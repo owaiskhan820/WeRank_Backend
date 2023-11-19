@@ -1,5 +1,5 @@
-import { listValidationSchema, validateList } from '../requestValidaton/list.js';
-import { authMiddleware, generateToken } from '../../authentication/authentication.js';
+import { listValidationSchema, validateList } from '../../utils/requestValidaton/list.js'
+import { authMiddleware } from '../../utils/authentication/authentication.js'
 import categoryService from '../../services/category/category.js';
 import listService from '../../services/list/list.js';
 import voteService from '../../services/vote/vote.js';
@@ -99,6 +99,19 @@ listRouter.delete('/deleteList/:Id', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+
+
+listRouter.get('/suggestedLists/:userId', async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const suggestedLists = await listService.getSuggestedLists(userId);
+      res.status(200).json(suggestedLists);
+    } catch (error) {
+      console.error('Error fetching suggested lists:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
 
 // Upvote a List
 listRouter.post('/vote/:listId/', authMiddleware, async (req, res) => {

@@ -1,28 +1,31 @@
 import express  from "express";
 import apiHelpers from '../../utils/assets/apiHelpers.js';
 import followService from "../../services/follow/follow.js";
-import { authMiddleware } from '../../authentication/authentication.js';
+import { authMiddleware } from '../../utils/authentication/authentication.js'
 
 const followRouter = express.Router();
 const { validateErrors, apiOk } = apiHelpers;
 
 
-followRouter.post('/follow/:userId', authMiddleware, validateErrors, async (req, res, next) => {
-
+followRouter.get('/followUser/:userId', authMiddleware, validateErrors, async (req, res, next) => {
     try {
         const userIdToFollow = req.params.userId;
         const followerId = req.user.id; // Assuming 'req.user' is populated from some authentication middleware
-        
+
+        // Check if the user is trying to follow themselves
+        if (userIdToFollow === followerId) {
+            return res.status(400).json({ message: "You cannot follow yourself." });
+        }
+
         const followStatus = await followService.followUser(followerId, userIdToFollow);
-        
+
         res.status(200).json({ message: "Successfully followed the user", followStatus });
     } catch (error) {
         next(error);
     }
 });
 
-
-followRouter.post('/unfollow/:userId', authMiddleware, validateErrors, async (req, res, next) => {
+followRouter.get('/unfollow/:userId', authMiddleware, validateErrors, async (req, res, next) => {
 
     try {
         const followerId = req.user.id; 

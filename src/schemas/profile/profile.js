@@ -34,6 +34,7 @@ const ProfileSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category' // Reference to the Category or Interest model.
     }],
+    
  
 });
 

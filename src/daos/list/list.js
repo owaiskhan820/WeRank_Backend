@@ -3,6 +3,8 @@ import ListModel from '../../models/list/list.js';
 import applyPagination from '../../utils/assets/pagination.js';
 import VoteModel from '../../models/list/vote.js';
 import ContributorModel from '../../models/list/contributor.js';
+import WatchlistModel from '../../models/watchlist/watchlist.js';
+import CommentModel from '../../models/list/comment.js';
 
 class ListDAO {
 
@@ -59,15 +61,33 @@ class ListDAO {
 
     // In your ListDAO class or object
     async deleteListById(listId) {
+      const session = await mongoose.startSession();
+      session.startTransaction();
       try {
-          const result = await ListModel.findByIdAndDelete(listId);
-          if (!result) {
-              throw new Error(`List with ID ${listId} not found`);
-          }
-          return result;
+        // Delete the list
+        const list = await ListModel.findByIdAndDelete(listId, { session });
+        if (!list) {
+          await session.abortTransaction();
+          session.endSession();
+          throw new Error(`List with ID ${listId} not found`);
+        }
+  
+        // Delete related documents in other collections
+        await CommentModel.deleteMany({ listId: listId }, { session });
+        await VoteModel.deleteMany({ listId: listId }, { session });
+        await WatchlistModel.deleteMany({ listId: listId }, { session });
+        await ContributorModel.deleteMany({ listId: listId }, { session });
+
+        // Commit the transaction
+        await session.commitTransaction();
+        return list;
       } catch (error) {
-          console.error(error);
-          throw new Error('Error deleting list from database');
+        // If anything fails, abort the transaction
+        await session.abortTransaction();
+        throw error; // Rethrow the error to be handled by the caller
+      } finally {
+        // End the session
+        session.endSession();
       }
     }
 
@@ -170,6 +190,41 @@ async fetchListCountByUserId(userId){
       throw error;
   }
 };
+
+
+async findListsCreatedByUsers(userIds) {
+  return ListModel.find({ userId: { $in: userIds } }).sort({ createdDate: -1 });
+}
+
+
+async findListsByInterests(interests) {
+  try {
+    // Assuming 'interests' is an array of interest IDs
+    // and 'ListModel' is your Mongoose model for lists
+    return await ListModel.find({ 
+      'categoryId': { $in: interests },
+      'visibility': 'public'  // Assuming you only want public lists
+    })
+    .populate('listItems')  // Populate list items if necessary
+    .exec();
+  } catch (error) {
+    throw error;
+  }
+}
+
+async findListsByCreators(creatorIds) {
+  try {
+      // Assuming 'userId' is the field in the ListModel that refers to the creator
+      const lists = await ListModel.find({
+          userId: { $in: creatorIds }
+      }).exec(); // Add any additional query parameters or options if needed
+
+      return lists; // Returns an array of list documents
+  } catch (error) {
+      console.error("Error in findListsByCreators: ", error);
+      throw error; // Re-throw the error for further handling
+  }
+}
 
   }    
 

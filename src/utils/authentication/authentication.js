@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
-import userService from '../services/user/user.js';
+import userService from '../../services/user/user.js';
 
 
 const SECRET_KEY = process.env.JWT_SECRET  
@@ -27,19 +27,21 @@ export const hashPassword = async (password) => {
 };
 
 
-export const authenticateUser = async (email, password, res) => {
+export const authenticateUser = async (email, password) => {
   const user = await userService.getUserByEmail(email);
-  if (!user) return "user not found";
+  if (!user) {
+    throw new Error('User not found');
+  }
 
   const isPasswordValid = await bcrypt.compare(password, user.password);
-  if (!isPasswordValid) return "Incorrect Password";
+  if (!isPasswordValid) {
+    throw new Error('Incorrect password');
+  }
 
-
-
-   const token = generateToken(user);
-   res.status(200).json({response: token})
-
+  const token = generateToken(user);
+  return { user, token };
 };
+
 
 export const authMiddleware = (req, res, next) => {
   const token = req.query.token

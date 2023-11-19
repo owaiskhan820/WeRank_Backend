@@ -1,5 +1,5 @@
 import express from 'express'
-import { authMiddleware } from '../../authentication/authentication.js';
+import { authMiddleware } from '../../utils/authentication/authentication.js'
 import watchlistService from '../../services/watchlist/watchlist.js';
 
 const watchlistRouter= express.Router();

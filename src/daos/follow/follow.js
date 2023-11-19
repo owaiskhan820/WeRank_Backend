@@ -2,13 +2,26 @@ import FollowModel from "../../models/follow/follow.js";
 
 class FollowDAO{
     async createFollow(followerId, followingId){
-        return await FollowModel.create({ 
+        const follow = await FollowModel.create({ 
             follower: followerId, 
-            following: followingId });
+            following: followingId
+        });
+    
+        // Increment follower count
+        await UserModel.findByIdAndUpdate(followingId, { $inc: { followerCount: 1 } });
+    
+        return follow;
     }
     
     async deleteFollow(followerId, followingId){
-        return await FollowModel.deleteOne({ follower: followerId, following: followingId });
+        const result = await FollowModel.deleteOne({ follower: followerId, following: followingId });
+    
+        // Decrement follower count if a document was deleted
+        if (result.deletedCount > 0) {
+            await UserModel.findByIdAndUpdate(followingId, { $inc: { followerCount: -1 } });
+        }
+    
+        return result;
     }
     
     async getFollowersByUserId(userId) {
@@ -18,16 +31,32 @@ class FollowDAO{
 
     
     async getFollowingByUserId(userId) {
-        const following = await FollowModel.find({ follower: userId }).populate('following', 'username');
-        return following;
-    }
+      try {
+          const following = await FollowModel
+            .find({ follower: userId })
+            .populate('following', 'username')
+            .exec();
+
+            console.log(following)
+  
+          return following.map(f => ({
+            userId: f.following._id, 
+            username: f.following.username
+          }));
+      } catch (error) {
+          console.error("Error in getFollowingByUserId: ", error);
+          throw error; // Re-throw the error for further handling
+      }
+  }
+  
+   
 
     async countFollowers(userId) {
-        return FollowModel.countDocuments({ followedId: userId });
+        return FollowModel.countDocuments({ following: userId });
       }
 
     async countFollowing(userId) {
-        return FollowModel.countDocuments({ followingId: userId });
+        return FollowModel.countDocuments({ follower: userId });
       }
 }
 
