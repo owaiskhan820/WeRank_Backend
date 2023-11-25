@@ -36,7 +36,8 @@ categoryRouter.delete('/delete-category/:id', async (req, res) => {
 categoryRouter.get('/getAll', async (req, res, next) => {
     try {
         const categories = await categoryService.getAllCategories();
-        res.status(200).json(apiOk({ categories }));
+        console.log(categories)
+        res.status(200).json({ categories });
     } catch (err) {
         next(err);   
     }

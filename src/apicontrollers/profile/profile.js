@@ -9,26 +9,22 @@ const profileRouter = express.Router();
 
 
 
-profileRouter.post('/update-user-info', authMiddleware, async (req, res, next) => {
+profileRouter.post('/update-profile', authMiddleware, async (req, res) => {
     try {
-        const userId = req.user.id;
-        let profileData = { ...req.body };
-        profileData.userId = userId;
-
-        
-        const user = await profileService.getProfileByUserId(userId)
-        if(!user){
-            const newProfile = await profileService.createUserProfile(profileData)
-            return res.status(200).send({ message: 'Profile created successfully!', Profile:  newProfile});
-        }
-        const updatedProfile = await profileService.updateUserProfile(userId, profileData);
+      const userId = req.user.id;
+      const profileData = { ...req.body, userId }; // Includes interests and other profile data
   
-
-        return res.status(200).send({ message: 'Profile updated successfully!', Profile:  updatedProfile});
+      const profile = await profileService.getProfileByUserId(userId);
+  
+      // Update the profile
+      const updatedProfile = await profileService.updateUserProfile(userId, profileData);
+      return res.status(200).json({ message: 'Profile updated successfully', profile: updatedProfile });
     } catch (error) {
-        next(error);
+      console.error(error);
+      res.status(500).json({ error: error.message });
     }
-});
+  });
+  
 
 
 

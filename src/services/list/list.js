@@ -62,14 +62,17 @@ async getListByCategoryId(Id) {
 
   async updateScore(listId, rearrangedItems) {
     const maxScore = rearrangedItems.length;
-    console.log(maxScore)
-    // Create a score update map based on new positions
     const scoreUpdates = rearrangedItems.map((item, index) => ({
         itemId: item._id,
         scoreIncrement: maxScore - index
     }));
 
-    return await instanceOfListDAO.updateScores(listId, scoreUpdates);
+    try{
+       return await instanceOfListDAO.updateScores(listId, scoreUpdates);
+    }
+    catch(error){
+      throw error
+    }
 }
 
 
@@ -150,6 +153,16 @@ async getListByCategoryId(Id) {
     return uniqueLists;
   }
 
+
+  async getListsByIds(listIds) {
+    try {
+      // Fetch lists that match the list of IDs
+      const lists = instanceOfListDAO.getListsByIds(listIds)
+      return lists;
+    } catch (error) {
+      throw new Error(`Service error: ${error.message}`);
+    }
+  }
 
 }
 

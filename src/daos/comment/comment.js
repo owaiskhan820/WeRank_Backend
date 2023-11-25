@@ -1,4 +1,3 @@
-// Data Access Object (DAO) for handling list-related database operations.
 import CommentModel from '../../models/list/comment.js';
 
 
@@ -10,13 +9,33 @@ class CommentDAO {
             userId: userId,
             text: text
         });
-
+    
         // Save the new comment document
         await newComment.save();
-
-        // Return the newly added comment
-        return newComment;
+    
+        // Populate the userId field with username before returning
+        const populatedComment = await CommentModel.findById(newComment._id).populate('userId', 'username');
+        return populatedComment;
     }
+
+
+    async getCommentsByListId(listId){
+        try {
+            const comments = await CommentModel.find({ listId }).populate('userId', 'username');
+            return comments;
+        } catch (error) {
+            throw new Error('Error fetching comments: ' + error.message);
+        }
+    }
+
+    async deleteComment(commentId) {
+        try {
+          const result = await CommentModel.findByIdAndDelete(commentId);
+          return result;
+        } catch (error) {
+          throw new Error('Error deleting comment');
+        }
+      }
 
   }    
 

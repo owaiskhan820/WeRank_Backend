@@ -3,13 +3,18 @@ import instanceOfContributorDAO from "../../daos/contributor/contributor.js";
 class ContributorService{
 
     async addContributor(listId, userId){
-        return await instanceOfContributorDAO.addContributor(listId, userId)
+        try {
+            return await instanceOfContributorDAO.addContributor(listId, userId)
+
+        } catch(error){
+            throw error
+        }
       } 
 
     async getUserContributions(userId){
         try {
-            const listTitles = await instanceOfContributorDAO.getContributionsByUserId(userId);
-            return listTitles;
+            const contributions = await instanceOfContributorDAO.getContributionsByUserId(userId);
+            return contributions;
         } catch (error) {
             throw new Error(`Service error: ${error.message}`);
         }
@@ -26,6 +31,10 @@ class ContributorService{
             throw error; // propagate the error to the calling function or controller
         }
     };
+
+
+
+    
 }
 
 const contributorService = new ContributorService();

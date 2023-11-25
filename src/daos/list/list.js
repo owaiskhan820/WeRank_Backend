@@ -52,7 +52,7 @@ class ListDAO {
                 throw new Error('Invalid query parameter');
             }
     
-            return await applyPagination(query, page, perPage);
+            return query
         } catch (error) {
             console.error(error);
             throw new Error('Error retrieving list from database');
@@ -139,9 +139,9 @@ class ListDAO {
       let voteChanges = {};
 
       if (voteType === 'upvote') {
-          voteChanges = { upVotes: 1 };
+        voteChanges = { upVotes: 1, downVotes: -1 };
       } else if (voteType === 'downvote') {
-          voteChanges = { downVotes: 1 };
+        voteChanges = { upVotes: -1, downVotes: 1 };
       } else {
           throw new Error('Invalid vote type');
       }
@@ -167,6 +167,7 @@ class ListDAO {
 
 
   async updateScores(listId, scoreUpdates) {
+    console.log(listId, scoreUpdates)
     const list = await ListModel.findById(listId);
 
     // For each item in the list, update its score
@@ -177,10 +178,16 @@ class ListDAO {
         }
     }
     list.listItems.sort((a, b) => b.score - a.score);
-    return await list.save();
+    const response =  await list.save();
+
+    if(!response){
+      throw new Error('Score could not be updated');
+
+    }
+    return {response, listId, scoreUpdates};
+
    
 }
-
 
 async fetchListCountByUserId(userId){
   try {
@@ -225,6 +232,18 @@ async findListsByCreators(creatorIds) {
       throw error; // Re-throw the error for further handling
   }
 }
+
+
+async getListsByIds(listIds) {
+  try {
+    // Fetch lists that match the list of IDs
+    const lists = await ListModel.find({ _id: { $in: listIds } }).exec();
+    return lists;
+  } catch (error) {
+    throw new Error(`Service error: ${error.message}`);
+  }
+}
+
 
   }    
 

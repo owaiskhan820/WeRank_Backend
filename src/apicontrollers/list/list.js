@@ -17,18 +17,20 @@ listRouter.post('/createList', validateList, authMiddleware, async (req, res) =>
   
         // 1. Extract userId from authenticated user
         const userId = req.user.id;
+        const { title, categoryId, listItems } = req.body; // Destructure the required fields from req.body
+
 
         // 2. Retrieve categoryId using the provided category name
-        const category = await categoryService.getCategoryById(req.body.categoryId)
-        if (!category) {
+        const categoryExists = await categoryService.getCategoryById(categoryId)
+        if (!categoryExists) {
             return res.status(404).json({ message: 'Category not found' });
         }
-        const categoryId = category._id;
-
         // 3. Preparing the new list data
         const newListData = {
-            ...req.body,
-            userId: userId,
+            title,
+            categoryId,
+            listItems, // Assuming listItems is an array of items
+            userId
         };
         
         newListData.listItems = await listService.calculateScores(newListData.listItems);
@@ -111,13 +113,29 @@ listRouter.get('/suggestedLists/:userId', async (req, res) => {
       res.status(500).send('Internal Server Error');
     }
   });
+
+
+  listRouter.post('/getUserVoteStatus/', authMiddleware, async (req, res) => {
+    const listId  = req.body.listId;
+    const userId = req.user.id;
+
+    try {
+        const vote = await voteService.findVoteByUserAndList(userId, listId);
+        const voteType = vote ? vote.voteType : null;
+        res.status(200).json({ voteType });
+    } catch (error) {
+        console.error('Error fetching user vote status:', error);
+        res.status(500).json({ message: 'Internal Server Error' });
+    }
+});
+
   
 
 // Upvote a List
-listRouter.post('/vote/:listId/', authMiddleware, async (req, res) => {
+listRouter.post('/vote/', authMiddleware, async (req, res) => {
 
 
-    const { listId } = req.params;
+    const listId  = req.body.listId;
     const userId  = req.user.id;  
     const voteType = req.body.voteType;  
 
@@ -153,28 +171,30 @@ listRouter.put('/rearrangeList/:listId', authMiddleware, async (req, res) => {
     try {
         const userId = req.user.id
         const listId = req.params.listId;
-        const rearrangedItems = req.body.rearrangedListItems;
+        const rearrangedItems = req.body.listItems;
+        console.log(userId, listId, rearrangedItems)
 
-        const verificationMessage = await contributorService.verifyContributor(listId, userId);
-        
-        if (verificationMessage) {
-            return res.status(400).json({ message: verificationMessage });
+        try{
+           const verifier = await contributorService.verifyContributor(listId, userId);
+            const updatedList = await listService.updateScore(listId, rearrangedItems);
+           const contributor = await contributorService.addContributor(listId, userId)
+            return res.status(200).json({updatedList, contributor });
+        }
+        catch(error){
+            return res.status(401).json({message: "something Went Wrong"})
         }
 
-        const updatedList = await listService.updateScore(listId, rearrangedItems);
-        const contributor = await contributorService.addContributor(listId, userId)
-        res.status(200).json({updatedList, contributor});
     } catch (error) {
-        res.status(500).json({ message: "Error rearranging list", error: error.message });
+        res.status(500).json({ message: "Error rearranging", error: error.message });
     }
 });
 
 
-listRouter.post('/comment/:listId', authMiddleware, async (req, res) => {
+listRouter.post('/addComment/', authMiddleware, async (req, res) => {
     try {
-        const { listId } = req.params;
+        const  listId  = req.body.listId;
         const userId = req.user.id
-        const { text } = req.body; // Assuming the comment's text is sent in the request body
+        const  text  = req.body.text; 
 
         const comment = await commentService.addcomment(listId, userId, text);
         res.status(201).json(comment);
@@ -183,6 +203,28 @@ listRouter.post('/comment/:listId', authMiddleware, async (req, res) => {
     }
 });
 
+listRouter.get('/comments/:listId', async (req, res) => {
+    try {
+        const listId = req.params.listId;
+        const comments = await commentService.getComments(listId);
+        res.json(comments);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+listRouter.delete('/deleteComment/', async (req, res) => {
+    
+      try {
+        const commentId = req.body.commentId;
+        // Optionally, you can add checks here to ensure that the user deleting the comment is the author of the comment
+        await commentService.deleteComment(commentId);
+        res.status(200).send({ message: 'Comment deleted successfully' });
+      } catch (error) {
+        res.status(500).send({ message: 'Error deleting comment' });
+      }
+
+    });
 
 listRouter.get("/getContributors/:listId", async (req, res) => {
     try {
@@ -203,7 +245,6 @@ listRouter.get("/getContributors/:listId", async (req, res) => {
 });
 
 
-
 listRouter.get('/list-count-by-userId/:userId', async (req, res) => {
 
        try{
@@ -214,11 +255,8 @@ listRouter.get('/list-count-by-userId/:userId', async (req, res) => {
        } catch(error){
         throw error
        }
-
-
-
-
 });
+
 
 
 

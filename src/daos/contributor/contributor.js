@@ -9,18 +9,18 @@ class ContributorDAO{
             listId: listId,
             userId: userId
         });
-        return await contributor.save();
+        const response = await contributor.save();
+        if(!response){
+            throw new Error("could not add contributor")
+        }
+        return response;
       }
     
     async getContributionsByUserId(userId) {
         try {
             const contributions = await ContributorModel.find({ userId: userId })
-                .populate('listId', 'title')
-                .exec();
-    
-            const titles = contributions.map(contribution => contribution.listId.title);
-    
-            return titles;
+                .exec();    
+            return contributions;
         } catch (error) {
             throw new Error(`Failed to fetch list titles for user ID: ${userId}. Error: ${error.message}`);
         }

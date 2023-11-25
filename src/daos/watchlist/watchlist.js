@@ -2,19 +2,14 @@ import WatchlistModel from "../../models/watchlist/watchlist.js";
 
 class WatchlistDAO{
 
-async getWatchlistByUserId(userId) {
+  async getWatchlistByUserId(userId) {
     try {
-        return await WatchlistModel.find({ userId: userId })
-          .populate({
-            path: 'listId',
-            populate: { path: 'listItems' }
-          })
-          .exec();
-      } catch (error) {
-        throw error;
-      }
+        const watchlistItems = await WatchlistModel.find({ userId: userId }).exec();
+        return watchlistItems; // This will return watchlist items with just listIds
+    } catch (error) {
+        throw new Error(`Failed to fetch watchlist for user ID: ${userId}. Error: ${error.message}`);
     }
-
+}
 async addWatchlistItem(userId, listId) {
     const newWatchlistItem = new WatchlistModel({
         userId,
@@ -40,18 +35,12 @@ async itemExists(userId, listId) {
   }
 
   async removeWatchlistItem(userId, listId) {
-    // Remove the item from the watchlist collection
-    try {
-      const result = await WatchlistModel.deleteOne({ userId, listId });
-      // The result will indicate if a document was found and deleted
-      if(result.deletedCount === 0){
-        throw new Error('No item found with the specified userId and listId.');
+      try {
+          const result = await WatchlistModel.findOneAndDelete({ userId, listId });
+          return result; 
+      } catch (error) {
+          throw error; 
       }
-      return result;
-    } catch (error) {
-      // If there's an error, throw it to be handled by the calling function
-      throw error;
-    }
   }
 
   async getWatchlistedListsByUserIds(userIds) {
@@ -67,6 +56,10 @@ async itemExists(userId, listId) {
     }
   }
   
+  async checkListInWatchlist(userId, listId) {
+    const item = await WatchlistModel.findOne({ userId, listId });
+    return item != null;
+}
 
 
 

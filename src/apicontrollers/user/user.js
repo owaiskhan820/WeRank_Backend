@@ -3,6 +3,7 @@ import express from 'express';
 import apiHelpers from '../../utils/assets/apiHelpers.js';
 import {userValidationSchema, loginValidationSchema} from '../../utils/requestValidaton/user.js'
 import userService  from '../../services/user/user.js';
+import listService from '../../services/list/list.js';
 import contributorService from '../../services/contributor/contributor.js'
 import { verifyEmail, sendEmail } from '../../utils/authentication/emailVarification.js'
 import { authenticateUser, authMiddleware, generateToken, hashPassword } from '../../utils/authentication/authentication.js'
@@ -159,24 +160,22 @@ authRouter.post('/reset-password', async (req, res) => {
 
 
   
-  authRouter.get("/user-contributions/:userId", async (req, res) => {
-    try {
-        const userId = req.params.userId;
-        
-        // Get contributions made by the user from the service
-        const result = await contributorService.getUserContributions(userId);
-        
-        res.status(200).json({
-            success: true,
-            data: result
-        });
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            message: error.message
-        });
-    }
+authRouter.get("/user-contributions/:userId", async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const contributions = await contributorService.getUserContributions(userId);
+    const listIds = contributions.map(contribution => contribution.listId);
+    const lists = await listService.getListsByIds(listIds);
+
+    res.status(200).json(lists);
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
 });
+
 
 authRouter.get('/userCredentials/:id', async (req, res) => {
   try {

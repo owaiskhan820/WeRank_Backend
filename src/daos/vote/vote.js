@@ -3,12 +3,10 @@ import VoteModel from '../../models/list/vote.js';
 
 class VoteDAO {
     async findVoteByUserAndList(userId, listId) {
-        // Use Mongoose or your DB driver to find the vote
-        return await VoteModel.findOne({ 
-            userId: userId,
-            listId: listId});
+        const vote = await VoteModel.findOne({ userId, listId });
+        return vote ? { exists: true, voteType: vote.voteType } : { exists: false };
     }
-
+    
     async updateVote(voteId, newVoteType) {
         // Update the vote type for the given voteId
         return await VoteModel.findByIdAndUpdate(voteId, { voteType: newVoteType });

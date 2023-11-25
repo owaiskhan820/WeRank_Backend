@@ -1,4 +1,6 @@
 import instanceOfFollowDAO from "../../daos/follow/follow.js";
+import instanceOfUserDAO from "../../daos/user/user.js";
+import userService from "../user/user.js";
 class FollowService{
     async followUser(followerId, followingId){
         if (followerId === followingId) {
@@ -23,8 +25,11 @@ class FollowService{
         if (!userId) {
             throw new Error('User ID is required');
         }
-        return instanceOfFollowDAO.getFollowingByUserId(userId);
+
+        const following = instanceOfFollowDAO.getFollowingByUserId(userId);
+        return following;
     }
+    
 
     async countFollowers(userId) {
         return instanceOfFollowDAO.countFollowers(userId);

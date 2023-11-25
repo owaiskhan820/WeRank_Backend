@@ -25,29 +25,41 @@ class FollowDAO{
     }
     
     async getFollowersByUserId(userId) {
-        const followers = await FollowModel.find({ following: userId }).populate('follower', 'username');
-        return followers;
-    }
-
-    
-    async getFollowingByUserId(userId) {
+      try {
+          const followers = await FollowModel
+              .find({ following: userId })
+              .populate('follower', 'username firstName lastName')
+              .exec();  
+          return followers.map(f => ({
+              userId: f.follower._id, 
+              username: f.follower.username,
+              firstName: f.follower.firstName,
+              lastName: f.follower.lastName
+          }));
+      } catch (error) {
+          console.error("Error in getFollowersByUserId: ", error);
+          throw error;
+      }
+  }
+  
+  async getFollowingByUserId(userId) {
       try {
           const following = await FollowModel
-            .find({ follower: userId })
-            .populate('following', 'username')
-            .exec();
-
-            console.log(following)
-  
+              .find({ follower: userId })
+              .populate('following', 'username firstName lastName')
+              .exec();  
           return following.map(f => ({
-            userId: f.following._id, 
-            username: f.following.username
+              userId: f.following._id, 
+              username: f.following.username,
+              firstName: f.following.firstName,
+              lastName: f.following.lastName
           }));
       } catch (error) {
           console.error("Error in getFollowingByUserId: ", error);
-          throw error; // Re-throw the error for further handling
+          throw error;
       }
   }
+  
   
    
 
