@@ -3,6 +3,13 @@ import instanceOfProfileDAO from "../../daos/profile/profile.js";
 import instanceOfFollowDAO from "../../daos/follow/follow.js";
 import instanceOfWatchlistDAO from "../../daos/watchlist/watchlist.js";
 import userService from "../user/user.js";
+import instanceOfVoteDAO from "../../daos/vote/vote.js";
+import instanceOfCommentDAO from "../../daos/comment/comment.js";
+import query from '../../huggingFace/sentimentAnalyzer.js';
+
+
+
+
 class ListService {
   async saveList(listBody) {
    return await instanceOfListDAO.createList(listBody)
@@ -163,6 +170,135 @@ async getListByCategoryId(Id) {
       throw new Error(`Service error: ${error.message}`);
     }
   }
+
+
+   calculateTimeDiffInDays(createdAt) {
+    const createdAtDate = new Date(createdAt);
+    const currentDate = new Date();
+    const diffInMilliseconds = currentDate - createdAtDate;
+    const diffInDays = diffInMilliseconds / (1000 * 60 * 60 * 24);
+    return diffInDays;
+}
+
+ normalizeScore(score, minPossibleScore, maxPossibleScore) {
+    // Ensure the score is within the bounds
+    if (score < minPossibleScore) score = minPossibleScore;
+    if (score > maxPossibleScore) score = maxPossibleScore;
+
+    // Normalize the score to a 5-point scale
+    const finalScore =  5 * (score - minPossibleScore) / (maxPossibleScore - minPossibleScore);
+    console.log(finalScore)
+    return(finalScore)
+}
+
+
+async getSentimentValue(commentText) {
+  const API_TOKEN = process.env.HUGGING_FACE_API_TOKEN; 
+
+  try {
+      const sentimentResults = await query({ "inputs": commentText }, API_TOKEN);
+      if (sentimentResults && sentimentResults.length > 0 && sentimentResults[0].length > 0) {
+          // Extract sentiment scores
+          const positiveSentiment = sentimentResults[0].find(sentiment => sentiment.label === 'POSITIVE');
+          const negativeSentiment = sentimentResults[0].find(sentiment => sentiment.label === 'NEGATIVE');
+
+          // Calculate and return the sentiment value
+          // Assuming you want to subtract the negative score from the positive score
+          const sentimentValue = (positiveSentiment ? positiveSentiment.score : 0) - (negativeSentiment ? negativeSentiment.score : 0);
+          return sentimentValue;
+      }
+      return 0; // Default sentiment value if no result is obtained
+  } catch (error) {
+      console.error('Error in sentiment analysis:', error);
+      return 0; // Return default value in case of error
+  }
+}
+
+
+calculateDecayFactor(createdAt, decayConstant) {
+
+    const timeNow = new Date();
+    const timeOfInteraction = new Date(createdAt);
+    const timeDiff = (timeNow - timeOfInteraction) / (1000 * 60 * 60 * 24); // Time difference in days
+    return Math.exp(-decayConstant * timeDiff);
+  }
+
+
+calculateVoteScore(votes, decayConstant) {
+  let voteScore = 0;
+  for (const vote of votes) {
+    const decayFactor = this.calculateDecayFactor(vote.createdAt, decayConstant);
+    const voteValue = (vote.voteType === 'upvote') ? 1 : -1;
+    voteScore += voteValue * decayFactor;
+}
+return voteScore;
+}
+
+
+
+async  calculateCommentScore(comments, decayConstant) {
+  let commentScore = 0;
+  const API_TOKEN = process.env.HUGGING_FACE_API_TOKEN; 
+  for (const comment of comments) {
+    const decayFactor = this.calculateDecayFactor(comment.createdAt, decayConstant);
+    const sentimentResult = await query({ "inputs": comment.text }, API_TOKEN);
+    const sentimentValue = this.interpretSentimentResult(sentimentResult); // Assuming this returns 1, -1, or 0
+    commentScore += sentimentValue * decayFactor;
+} 
+    return commentScore
+
+}
+
+
+
+combineAndScaleScores(voteScore, commentScore) {
+  const combinedScore = (voteScore + commentScore) / 2;
+  
+  // Scale from a -1 to 1 range to a 0 to 5 range
+  return (combinedScore + 1) * 2.5;
+}
+
+ interpretSentimentResult(result) {
+  if (result && result.length > 0) {
+      const sentiments = result[0];
+
+      // Assuming the response structure includes an array of sentiment objects with 'label' and 'score'
+      const primarySentiment = sentiments.sort((a, b) => b.score - a.score)[0]; // Sort by score and take the highest
+
+      if (primarySentiment.label === 'POSITIVE') {
+          return 1;
+      } else if (primarySentiment.label === 'NEGATIVE') {
+          return -1;
+      }
+  }
+}
+
+ scaleToFivePointRange(score) {
+  // Scale from -1 to 1 range to 0 to 5 range
+  return (score + 1) * 2.5;
+}
+
+ async calculateListScore(listId) {
+  const votesData = await instanceOfVoteDAO.FindVoteByListId(listId);
+  const commentsData = await instanceOfCommentDAO.FindCommentDetailsByListId(listId);
+
+  const votes = votesData.voteDetails
+  const comments = commentsData.commentDetails
+
+  const voteScore = this.calculateVoteScore(votes, 0.3);
+  const commentScore = await this.calculateCommentScore(comments, 0.3);
+  console.log(voteScore, commentScore)
+
+  const combinedScore = (voteScore + commentScore) / (votes.length + comments.length);
+  console.log(combinedScore)
+
+  const scaledScore = this.scaleToFivePointRange(combinedScore);
+
+  return scaledScore;
+
+}
+
+
 
 }
 

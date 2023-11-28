@@ -28,6 +28,18 @@ class CommentDAO {
         }
     }
 
+    async FindCommentDetailsByListId(listId) {
+        const comment = await CommentModel.find({ listId });
+        if (comment && comment.length > 0) {
+            const commentDetails = comment.map(comment => {
+                return { text: comment.text, createdAt: comment.date };
+            });
+            return { commentDetails: commentDetails };
+        } else {
+            return { exists: false };
+        }
+    }
+
     async deleteComment(commentId) {
         try {
           const result = await CommentModel.findByIdAndDelete(commentId);

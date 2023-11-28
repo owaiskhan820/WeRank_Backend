@@ -42,6 +42,19 @@ class VoteDAO {
     
         
     }
+
+    async FindVoteByListId(listId) {
+        const votes = await VoteModel.find({ listId });
+        if (votes && votes.length > 0) {
+            const voteDetails = votes.map(vote => {
+                return { voteType: vote.voteType, createdAt: vote.createdAt };
+            });
+            return { voteDetails: voteDetails };
+        } else {
+            return { exists: false };
+        }
+    }
+    
     
 
 }

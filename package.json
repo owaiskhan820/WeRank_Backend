@@ -28,6 +28,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.2",
     "nodemailer": "^6.9.6",
+    "python-shell": "^5.0.0",
+    "sentiment": "^5.0.2",
     "winston": "^3.10.0"
   },
   "devDependencies": {

@@ -6,6 +6,10 @@ import voteService from '../../services/vote/vote.js';
 import contributorService from '../../services/contributor/contributor.js';
 import commentService from '../../services/comment/comment.js';
 import express from 'express';
+import Sentiment from 'sentiment';
+import query from '../../huggingFace/sentimentAnalyzer.js';
+
+const sentiment = new Sentiment();
 
 
 const listRouter = express.Router();
@@ -244,6 +248,29 @@ listRouter.get("/getContributors/:listId", async (req, res) => {
 
 });
 
+listRouter.post('/analyze-sentiment', async (req, res) => {
+    try {
+        const { comment } = req.body;
+        const API_TOKEN = process.env.HUGGING_FACE_API_TOKEN; 
+
+        const response = await query({ "inputs": comment }, API_TOKEN);
+        res.json(response);
+    } catch (error) {
+        console.error('Error during sentiment analysis:', error);
+        res.status(500).send({ message: 'Error processing sentiment analysis' });
+    }
+});
+
+
+
+
+
+listRouter.get('/list-score/:listId', async (req, res) => {
+    const listId = req.params.listId
+    const response = await listService.calculateListScore(listId)
+    return res.status(200).json(response)
+  });
+
 
 listRouter.get('/list-count-by-userId/:userId', async (req, res) => {
 
@@ -260,10 +287,5 @@ listRouter.get('/list-count-by-userId/:userId', async (req, res) => {
 
 
 
-listRouter.delete("/deleteVote/:listId", async (req, res) => {
-
-
-
-});
 
 export default listRouter;

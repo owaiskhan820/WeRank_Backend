@@ -28,10 +28,9 @@ profileRouter.post('/update-profile', authMiddleware, async (req, res) => {
 
 
 
-profileRouter.get('/get-by-userId', async (req, res, next) => {
+profileRouter.get('/getProfilebyId/:userId', async (req, res, next) => {
     try {
-        const userId = req.query.userId;
-        console.log(req.query.userId)
+        const userId = req.params.userId;
         const profile = await profileService.getProfileByUserId(userId);
         if (!profile) {
             return res.status(404).json({ message: 'Profile not found.' });
