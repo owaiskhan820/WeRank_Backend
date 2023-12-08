@@ -185,7 +185,6 @@ authRouter.get('/userCredentials/:id', async (req, res) => {
     if (!userProfile.username) {
       return res.status(404).json({ message: 'User not found' });
     }
-
     res.status(200).json(userProfile);
 
   } catch (error) {

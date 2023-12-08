@@ -6,14 +6,31 @@ import userService from "../user/user.js";
 import instanceOfVoteDAO from "../../daos/vote/vote.js";
 import instanceOfCommentDAO from "../../daos/comment/comment.js";
 import query from '../../huggingFace/sentimentAnalyzer.js';
-
+import notificationService from '../../services/notifications/notifications.js'
 
 
 
 class ListService {
+
   async saveList(listBody) {
-   return await instanceOfListDAO.createList(listBody)
+    try {
+      const response = await instanceOfListDAO.createList(listBody);
+
+      const actionUser = response.userId;
+      const actionType = 'newPost';
+      const actionId = response._id; 
+
+     
+  
+      await notificationService.notify(actionUser, actionType, actionId);
+  
+      return response;
+    } catch (error) {
+      console.error('Error in saveList method:', error);
+      throw error; // Or handle it as per your application's error handling strategy
+    }
   }
+  
 
   // Retrieves all users with pagination support
   async getAllLists() {
@@ -27,28 +44,30 @@ class ListService {
   // Retrieves a user by their ID
   async getListByListId(Id) {
     try {
-        return await instanceOfListDAO.getListByListId(Id);
+      return await instanceOfListDAO.getListByQuery('id', Id);
     } catch (error) {
         throw error;
     }
 }
 
-async getListByUserId(Id) {
+
+async getListByUserId(userId) {
   try {
-    return await instanceOfListDAO.getListByQuery('userId', Id);
+    return await instanceOfListDAO.getListByQuery('userId', userId);
   } catch (error) {
       throw error;
   }
- 
 }
 
-async getListByCategoryId(Id) {
-  try {
-    return await instanceOfListDAO.getListByQuery('categoryId', Id);
-  } catch (error) {
-      throw error;
-  }
-}
+
+
+    async getListByCategoryId(Id) {
+      try {
+        return await instanceOfListDAO.getListByQuery('categoryId', Id);
+      } catch (error) {
+          throw error;
+      }
+    }
 
   async deleteListById(Id) {
     try{
@@ -119,9 +138,9 @@ async getListByCategoryId(Id) {
     const uniqueListsMap = new Map();
     combinedLists.forEach(list => {
         // Assuming each list has a unique identifier 'id'
-        if (!uniqueListsMap.has(list.id.toString())) {
-            uniqueListsMap.set(list.id.toString(), list);
-        }
+        if (!uniqueListsMap.has(list.id.toString()) && list.userId !== userId && !followingUserIds.includes(list.userId)) {
+          uniqueListsMap.set(list.id.toString(), list);
+      }
     });
 
     // Extracting the deduplicated lists
@@ -131,6 +150,7 @@ async getListByCategoryId(Id) {
     const listDetailsPromises = combinedLists.map(async list => {
       const userProfile = await instanceOfProfileDAO.getProfileByUserId(list.userId.toString());
       return {
+          userId: list.userId,
           listTitle: list.title,
           listId: list.id,
           username: userProfile.username,
@@ -187,35 +207,12 @@ async getListByCategoryId(Id) {
 
     // Normalize the score to a 5-point scale
     const finalScore =  5 * (score - minPossibleScore) / (maxPossibleScore - minPossibleScore);
-    console.log(finalScore)
     return(finalScore)
 }
 
 
-async getSentimentValue(commentText) {
-  const API_TOKEN = process.env.HUGGING_FACE_API_TOKEN; 
-
-  try {
-      const sentimentResults = await query({ "inputs": commentText }, API_TOKEN);
-      if (sentimentResults && sentimentResults.length > 0 && sentimentResults[0].length > 0) {
-          // Extract sentiment scores
-          const positiveSentiment = sentimentResults[0].find(sentiment => sentiment.label === 'POSITIVE');
-          const negativeSentiment = sentimentResults[0].find(sentiment => sentiment.label === 'NEGATIVE');
-
-          // Calculate and return the sentiment value
-          // Assuming you want to subtract the negative score from the positive score
-          const sentimentValue = (positiveSentiment ? positiveSentiment.score : 0) - (negativeSentiment ? negativeSentiment.score : 0);
-          return sentimentValue;
-      }
-      return 0; // Default sentiment value if no result is obtained
-  } catch (error) {
-      console.error('Error in sentiment analysis:', error);
-      return 0; // Return default value in case of error
-  }
-}
-
-
 calculateDecayFactor(createdAt, decayConstant) {
+  
 
     const timeNow = new Date();
     const timeOfInteraction = new Date(createdAt);
@@ -224,30 +221,47 @@ calculateDecayFactor(createdAt, decayConstant) {
   }
 
 
-calculateVoteScore(votes, decayConstant) {
-  let voteScore = 0;
-  for (const vote of votes) {
-    const decayFactor = this.calculateDecayFactor(vote.createdAt, decayConstant);
-    const voteValue = (vote.voteType === 'upvote') ? 1 : -1;
-    voteScore += voteValue * decayFactor;
-}
-return voteScore;
-}
+  calculateVoteScore(votes, decayConstant) {
+    // Check if votes is not an array
+    if (votes.length === 0) {
+
+
+      return 0; // or 'N/A', or any default value you choose
+    }
+  
+   else{ let voteScore = 0;
+    for (const vote of votes) {
+      const decayFactor = this.calculateDecayFactor(vote.createdAt, decayConstant);
+      const voteValue = (vote.voteType === 'upvote') ? 1 : -1;
+      voteScore += voteValue * decayFactor;
+    }
+  
+    return voteScore;}
+  }
+  
 
 
 
-async  calculateCommentScore(comments, decayConstant) {
-  let commentScore = 0;
-  const API_TOKEN = process.env.HUGGING_FACE_API_TOKEN; 
-  for (const comment of comments) {
-    const decayFactor = this.calculateDecayFactor(comment.createdAt, decayConstant);
-    const sentimentResult = await query({ "inputs": comment.text }, API_TOKEN);
-    const sentimentValue = this.interpretSentimentResult(sentimentResult); // Assuming this returns 1, -1, or 0
-    commentScore += sentimentValue * decayFactor;
-} 
-    return commentScore
+  async calculateCommentScore(comments, decayConstant) {
+    // Check if comments is not an array
+    if (comments.length === 0) {
 
-}
+
+      return 0; // or 'N/A', or any default value you choose
+    }
+
+    let commentScore = 0;
+    const API_TOKEN = process.env.HUGGING_FACE_API_TOKEN; 
+    for (const comment of comments) {
+      const decayFactor = this.calculateDecayFactor(comment.createdAt, decayConstant);
+      const sentimentResult = await query({ "inputs": comment.text }, API_TOKEN);
+      const sentimentValue = this.interpretSentimentResult(sentimentResult); // Assuming this returns 1, -1, or 0
+      commentScore += sentimentValue * decayFactor;
+    } 
+
+    return commentScore;
+  }
+
 
 
 
@@ -282,24 +296,19 @@ combineAndScaleScores(voteScore, commentScore) {
   const votesData = await instanceOfVoteDAO.FindVoteByListId(listId);
   const commentsData = await instanceOfCommentDAO.FindCommentDetailsByListId(listId);
 
-  const votes = votesData.voteDetails
-  const comments = commentsData.commentDetails
+  const votes = Array.isArray(votesData.voteDetails) ? votesData.voteDetails : [];
+  const comments = Array.isArray(commentsData.commentDetails) ? commentsData.commentDetails : [];
 
   const voteScore = this.calculateVoteScore(votes, 0.3);
   const commentScore = await this.calculateCommentScore(comments, 0.3);
-  console.log(voteScore, commentScore)
 
   const combinedScore = (voteScore + commentScore) / (votes.length + comments.length);
-  console.log(combinedScore)
 
   const scaledScore = this.scaleToFivePointRange(combinedScore);
 
   return scaledScore;
 
 }
-
-
-
 }
 
 const listService = new ListService();

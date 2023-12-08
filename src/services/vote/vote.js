@@ -1,6 +1,6 @@
 import instanceOfVoteDAO from "../../daos/vote/vote.js";
 import instanceOfListDAO from "../../daos/list/list.js";
-
+import notificationService from "../notifications/notifications.js";
 class VoteService{
 
     async findVoteByUserAndList(userId, listId) {
@@ -14,11 +14,11 @@ class VoteService{
     }
 
     async addVote(userId, listId, voteType) {
-        // Add a new vote entry
-        await instanceOfVoteDAO.addVote( userId, listId, voteType );
-        const response = instanceOfListDAO.incrementVoteCount(listId, voteType)
+        const response = await instanceOfVoteDAO.addVote(userId, listId, voteType);
+        await notificationService.notify(userId, voteType, listId);
         return response;
     }
+
 
     async deleteVote(voteId){
         try{
@@ -32,13 +32,14 @@ class VoteService{
 
     async switchVote(listId, userId, voteType) {
         try{
-            await instanceOfVoteDAO.switchVote(listId, userId, voteType)
-            // 2. Update the vote counts in ListModel
-            const response = instanceOfListDAO.incrementVoteCount(listId, voteType)
-            return response;
-        } catch(error){
+           return await instanceOfVoteDAO.switchVote(listId, userId, voteType)
+         } catch(error){
             throw error;
         }
+    }
+
+    async removeVote(listId, userId){
+      return await instanceOfVoteDAO.removeVote(listId, userId)
     }
 
 }

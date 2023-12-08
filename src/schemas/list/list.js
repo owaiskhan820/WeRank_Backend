@@ -35,33 +35,20 @@ const listSchema = new Schema({
         type: [listItemSchema],
         required: true,
     },
-    score: {
-        type: Number,
-        default: 0,
-    },
     createdDate: {
         type: Date,
         default: Date.now,
     },
-    upVotes: {
-        type: Number,
-        default: 0,
-    },
-
-    downVotes: {
-        type: Number,
-        default: 0,
-    },
-
-    comments: {
-        type: Number,
-        default: 0,
-    },
-
     updatedDate: {
         type: Date,
     },
 
+    description: {
+        type: String,
+        trim: true, // Trims whitespace from the beginning and end
+        maxlength: 500, // Maximum length of the description
+        // You can add 'required' or 'default' if needed
+    },
     visibility: {
         type: String,
         enum: ['public', 'private'],

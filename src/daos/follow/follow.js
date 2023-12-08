@@ -6,21 +6,13 @@ class FollowDAO{
             follower: followerId, 
             following: followingId
         });
-    
-        // Increment follower count
-        await UserModel.findByIdAndUpdate(followingId, { $inc: { followerCount: 1 } });
+
     
         return follow;
     }
     
     async deleteFollow(followerId, followingId){
         const result = await FollowModel.deleteOne({ follower: followerId, following: followingId });
-    
-        // Decrement follower count if a document was deleted
-        if (result.deletedCount > 0) {
-            await UserModel.findByIdAndUpdate(followingId, { $inc: { followerCount: -1 } });
-        }
-    
         return result;
     }
     
@@ -70,6 +62,16 @@ class FollowDAO{
     async countFollowing(userId) {
         return FollowModel.countDocuments({ follower: userId });
       }
+
+
+    async isFollowing(followerId, followingId) {
+        const follow = await FollowModel.findOne({ 
+            follower: followerId, 
+            following: followingId 
+        });
+    
+        return follow !== null;
+    }
 }
 
 const instanceOfFollowDAO = new FollowDAO();

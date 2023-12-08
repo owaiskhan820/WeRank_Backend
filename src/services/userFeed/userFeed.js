@@ -9,7 +9,6 @@ class UserFeedService{
     async getInterestBasedContent(userId) {
         // Logic to determine user's interests
         const profile = await instanceOfProfileDAO.getProfileByUserId(userId);
-        console.log(profile.interests)
         // Check if the profile has interests
         if (!profile.interests) {
             throw new Error('No interests found for the user');
@@ -22,11 +21,6 @@ class UserFeedService{
 
 
     async getFollowingBasedContent(userId) {
-        
-    }
-
-
-    async getFollowingBasedContent(userId) {
         if (!userId) {
             throw new Error('User ID is required');
         }
@@ -34,8 +28,9 @@ class UserFeedService{
 
         // Assuming followingUsers is an array of user IDs
         const followingIds = followRelationships.map(rel => rel.userId);
-        console.log(followingIds)
-        return instanceOfUserFeedDAO.getContentByUserIds(followingIds);
+        const interestContent = await instanceOfUserFeedDAO.getContentByUserIds(followingIds);
+        return interestContent;
+
     }
 
 

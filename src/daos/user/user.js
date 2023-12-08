@@ -94,9 +94,15 @@ class UserDAO {
     }}
 
     async getUsernameById(userId) {
-      // Assuming mongoose and a UserModel is already defined
-      const user = await UserModel.findById(userId, 'username');
-      return user ? user.username : null;
+      const user = await UserModel.findById(userId, 'username firstName lastName');
+      if (!user) return null;
+    
+      // Return an object with the username and additional information
+      return {
+        username: user.username,
+        firstName: user.firstName,
+        lastName: user.lastName
+      };
     }
 
 

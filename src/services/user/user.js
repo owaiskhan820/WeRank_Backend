@@ -57,12 +57,16 @@ class UserService {
   }
 
   async getUserProfileById(userId) {
-    const username = await instanceOfUserDAO.getUsernameById(userId);
-    const profilePicture = await instanceOfProfileDAO.getProfilePictureById(userId);
-
+    const { username, firstName, lastName } = await instanceOfUserDAO.getUsernameById(userId);
+    const { pictureUrl: profilePicture, bio } = await instanceOfProfileDAO.getProfilePictureById(userId);
+  
     return {
-      username,
-      profilePicture 
+      userId,
+      username, // This will be just the username as before
+      firstName, // Include first name
+      lastName, // Include last name
+      profilePicture, // This will be just the URL as before
+      bio // Include bio in the response
     };
   }
 
@@ -104,22 +108,12 @@ class UserService {
     }
   
     const usersWithSimilarInterestsQuery = instanceOfProfileDAO.findUsersWithInterestsQuery(interests);
-
-    // const { data: usersWithSimilarInterests } = await applyPagination(usersWithSimilarInterestsQuery, page, perPage);
-
     const usersWithSimilarInterests = await usersWithSimilarInterestsQuery.exec()
-  
-
     const idsOfUsersWithSimilarInterestsQuery = usersWithSimilarInterests.map(profile => profile.userId);
-  
     const currentUsersFollowings = await instanceOfFollowDAO.getFollowingByUserId(userId);
-  
-    const followingUserIds = currentUsersFollowings.map(follow => follow.userId);
-
+    const followingUserIds = currentUsersFollowings.map(follow => follow.userId.toString())
     const followingsOfFollowings = await this.getUsersFollowedByFollowings(followingUserIds)
-  
-
-  const followingsOfFollowingsIds = followingsOfFollowings.map(follow => follow.userId);
+    const followingsOfFollowingsIds = followingsOfFollowings.map(follow => follow.userId);
 
   // Combine and deduplicate userIds
       const compiledSuggestions = new Set([
@@ -128,12 +122,13 @@ class UserService {
     ]);
 
 
-    const allSuggestedUserIds = Array.from(compiledSuggestions);
+    const filteredSuggestedUserIds = Array.from(compiledSuggestions).filter(id => !followingUserIds.includes(id));
 
+    // Fetch profiles for the filtered suggested user IDs
+    const suggestedUsersInfoPromises = filteredSuggestedUserIds.map(id => {
+        return this.getUserProfileById(id.toString());
+    });
 
-  const suggestedUsersInfoPromises = Array.from(allSuggestedUserIds).map(id => {
-    return this.getUserProfileById(id.toString());
-  });
 
   const suggestedUsersInfo = await Promise.all(suggestedUsersInfoPromises);
 

@@ -4,12 +4,24 @@ class ContributorService{
 
     async addContributor(listId, userId){
         try {
-            return await instanceOfContributorDAO.addContributor(listId, userId)
-
+            // Attempt to add the contributor
+            const response = await instanceOfContributorDAO.addContributor(listId, userId);
+    
+            // If contributor addition is successful, send notification
+            const actionType = 'contribute';
+            const actionUser = userId;
+            const actionId = listId;
+    
+            // Call the notify method
+            await notificationService.notify(actionUser, actionType, actionId);
+    
+            // Return the response from adding the contributor
+            return response;
         } catch(error){
-            throw error
+            // Handle any errors that occur during the process
+            throw error;
         }
-      } 
+    }
 
     async getUserContributions(userId){
         try {

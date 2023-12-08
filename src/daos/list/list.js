@@ -5,6 +5,7 @@ import VoteModel from '../../models/list/vote.js';
 import ContributorModel from '../../models/list/contributor.js';
 import WatchlistModel from '../../models/watchlist/watchlist.js';
 import CommentModel from '../../models/list/comment.js';
+import mongoose from 'mongoose';
 
 class ListDAO {
 
@@ -30,34 +31,54 @@ class ListDAO {
         }
     }
      
-      async getListByListId(Id, page = 1, perPage = 10) {
+     async getListByListId(Id) {
+    try {
+        // Fetch the list by ID and populate the categoryName
+        const list = await ListModel.findById(Id)
+                                    .populate('categoryId', 'categoryName')
+                                    .exec();
+        return list;
+    } catch (error) {
+        console.error(error);
+        throw new Error('Error retrieving list from database');
+    }
+}
+
+      async getListTitleByListId(Id) {
         try {
           const query = ListModel.findById(Id);
-          return await query;
+          
+          const list =  await query;
+          return list.title;
         } catch (error) {
           console.error(error);
           throw new Error('Error retrieving list from database');
         }
       }
+
       async getListByQuery(queryParam, value, page = 1, perPage = 10) {
         try {
             let query;
             if (queryParam === 'userId') {
-                query = ListModel.find({ userId: value });
+                query = ListModel.find({ userId: value }).populate('categoryId', 'categoryName');
             } else if (queryParam === 'categoryId') {
-                query = ListModel.find({ categoryId: value });
+                query = ListModel.find({ categoryId: value }).populate('categoryId', 'categoryName');
             } else if (queryParam === 'id') {
-                query = ListModel.findById(value);
+                query = ListModel.findById(value).populate('categoryId', 'categoryName');                  
             } else {
                 throw new Error('Invalid query parameter');
             }
     
-            return query
+            // Add pagination logic if necessary
+            // query = query.skip((page - 1) * perPage).limit(perPage);
+    
+            return await query.exec();
         } catch (error) {
             console.error(error);
             throw new Error('Error retrieving list from database');
         }
     }
+    
 
     // In your ListDAO class or object
     async deleteListById(listId) {
@@ -134,21 +155,7 @@ class ListDAO {
   }
 
 
-    async incrementVoteCount(listId, voteType){
-  
-      let voteChanges = {};
-
-      if (voteType === 'upvote') {
-        voteChanges = { upVotes: 1, downVotes: -1 };
-      } else if (voteType === 'downvote') {
-        voteChanges = { upVotes: -1, downVotes: 1 };
-      } else {
-          throw new Error('Invalid vote type');
-      }
-  
-      return await ListModel.findByIdAndUpdate(listId, { $inc: voteChanges }, { new: true });
-    }
-
+ 
     async switchVoteCount(listId, voteType){
   
       let voteChanges = {}; 
@@ -167,7 +174,6 @@ class ListDAO {
 
 
   async updateScores(listId, scoreUpdates) {
-    console.log(listId, scoreUpdates)
     const list = await ListModel.findById(listId);
 
     // For each item in the list, update its score
@@ -233,11 +239,12 @@ async findListsByCreators(creatorIds) {
   }
 }
 
-
 async getListsByIds(listIds) {
   try {
-    // Fetch lists that match the list of IDs
-    const lists = await ListModel.find({ _id: { $in: listIds } }).exec();
+    // Fetch lists that match the list of IDs and populate the categoryName
+    const lists = await ListModel.find({ _id: { $in: listIds } })
+                                 .populate('categoryId', 'categoryName')
+                                 .exec();
     return lists;
   } catch (error) {
     throw new Error(`Service error: ${error.message}`);

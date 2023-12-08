@@ -10,6 +10,8 @@ class WatchlistDAO{
         throw new Error(`Failed to fetch watchlist for user ID: ${userId}. Error: ${error.message}`);
     }
 }
+
+
 async addWatchlistItem(userId, listId) {
     const newWatchlistItem = new WatchlistModel({
         userId,

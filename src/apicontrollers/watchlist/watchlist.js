@@ -4,10 +4,10 @@ import watchlistService from '../../services/watchlist/watchlist.js';
 import listService from '../../services/list/list.js'
 const watchlistRouter= express.Router();
 
-watchlistRouter.post('/isListInWatchlist', authMiddleware, async (req, res) => {
+watchlistRouter.post('/isListInWatchlist/:listId/:userId', async (req, res) => {
   try {
-      const userId = req.user.id;
-      const listId = req.body.listId;
+      const userId = req.params.userId;
+      const listId = req.params.listId;
 
       const isListInWatchlist = await watchlistService.checkListInWatchlist(userId, listId);
       res.status(200).json({ isListInWatchlist });

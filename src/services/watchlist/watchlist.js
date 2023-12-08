@@ -1,5 +1,5 @@
 import instanceOfWatchlistDAO from "../../daos/watchlist/watchlist.js";
-
+import notificationService from "../notifications/notifications.js";
 
 class WatchlistService{
     
@@ -8,11 +8,12 @@ class WatchlistService{
   }
   
   async addWatchlistItem(userId, listId) {
-    const exists = await instanceOfWatchlistDAO.itemExists(userId, listId);
-    if (exists) {
-        return { status: 'exists', message: "Item already in your Watchlist." };
-    }
     const addedItem = await instanceOfWatchlistDAO.addWatchlistItem(userId, listId);
+
+    // Notify about the new watchlist addition
+    const actionType = 'watchlist';
+    await notificationService.notify(userId, actionType, listId);
+
     return { status: 'added', item: addedItem };
 }
   

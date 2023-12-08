@@ -48,9 +48,18 @@ class ProfileDAO{
     }
 
     async getProfilePictureById(userId) {
-        // Assuming mongoose and a ProfileModel is already defined
-        const profile = await ProfileModel.findOne({ user: userId }, 'pictureUrl');
-        return profile ? profile.pictureUrl : null;
+        const profile = await ProfileModel.findOne({ user: userId }, 'pictureUrl bio');
+            if (profile) {
+                return {
+                    pictureUrl: profile.pictureUrl,
+                    bio: profile.bio
+                };
+            } else {
+                return {
+                    pictureUrl: null,
+                    bio: null
+                };
+            }
       }
 
 

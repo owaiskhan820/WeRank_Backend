@@ -17,30 +17,16 @@ const listRouter = express.Router();
 
 
 // Create a List
-listRouter.post('/createList', validateList, authMiddleware, async (req, res) => {
+listRouter.post('/createList', authMiddleware, async (req, res) => {
   
         // 1. Extract userId from authenticated user
         const userId = req.user.id;
-        const { title, categoryId, listItems } = req.body; // Destructure the required fields from req.body
-
-
-        // 2. Retrieve categoryId using the provided category name
-        const categoryExists = await categoryService.getCategoryById(categoryId)
-        if (!categoryExists) {
-            return res.status(404).json({ message: 'Category not found' });
-        }
-        // 3. Preparing the new list data
-        const newListData = {
-            title,
-            categoryId,
-            listItems, // Assuming listItems is an array of items
-            userId
-        };
+        const listData = req.body.listData; // Destructure the required fields from req.body
         
-        newListData.listItems = await listService.calculateScores(newListData.listItems);
+        listData.listItems = await listService.calculateScores(listData.listItems);
     
         // 4. Save the new list
-        const savedList = await listService.saveList(newListData);
+        const savedList = await listService.saveList(listData);
     
         // 5. Return the created list
         res.status(201).json(savedList);
@@ -119,13 +105,13 @@ listRouter.get('/suggestedLists/:userId', async (req, res) => {
   });
 
 
-  listRouter.post('/getUserVoteStatus/', authMiddleware, async (req, res) => {
-    const listId  = req.body.listId;
-    const userId = req.user.id;
+  listRouter.get('/getUserVoteStatus/:listId/:userId', async (req, res) => {
+    const listId  = req.params.listId;
+    const userId = req.params.userId;
 
     try {
         const vote = await voteService.findVoteByUserAndList(userId, listId);
-        const voteType = vote ? vote.voteType : null;
+        const voteType = vote;
         res.status(200).json({ voteType });
     } catch (error) {
         console.error('Error fetching user vote status:', error);
@@ -135,40 +121,35 @@ listRouter.get('/suggestedLists/:userId', async (req, res) => {
 
   
 
-// Upvote a List
 listRouter.post('/vote/', authMiddleware, async (req, res) => {
+    const listId = req.body.listId;
+    const userId = req.user.id;
+    const voteType = req.body.voteType;
 
-
-    const listId  = req.body.listId;
-    const userId  = req.user.id;  
-    const voteType = req.body.voteType;  
-
-    
     try {
-        // Check if the user has already voted
+        // Check if the user has already voted on this list
         const existingVote = await voteService.findVoteByUserAndList(userId, listId);
 
         if (existingVote) {
             if (existingVote.voteType === voteType) {
-                return res.status(400).json({ message: "Already voted this way." });
+                // User is trying to perform the same vote again, so remove the vote
+                await voteService.removeVote(listId, userId);
+                res.json({ message: "Vote removed", updatedVoteStatus: null });
             } else {
+                // User is switching their vote
                 await voteService.switchVote(listId, userId, voteType);
+                res.json({ message: "Vote updated", updatedVoteStatus: voteType });
             }
         } else {
-            // Add new vote
-            await voteService.addVote(userId, listId, voteType);
-            // res.json({msg: "Vote added successfully"})
-            console.log("Vote added successfully")
+            // This is a new vote
+            const newVote = await voteService.addVote(userId, listId, voteType);
+            res.status(200).json({ message: "Vote added", newVote });
         }
-
-        // Fetch the updated list to return, or just return a success message
-        const updatedList = await listService.getListByListId(listId);
-        res.json(updatedList);
-
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 });
+
 
 
 listRouter.put('/rearrangeList/:listId', authMiddleware, async (req, res) => {
@@ -266,6 +247,7 @@ listRouter.post('/analyze-sentiment', async (req, res) => {
 
 
 listRouter.get('/list-score/:listId', async (req, res) => {
+   
     const listId = req.params.listId
     const response = await listService.calculateListScore(listId)
     return res.status(200).json(response)

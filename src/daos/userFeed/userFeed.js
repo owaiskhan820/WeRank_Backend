@@ -3,20 +3,17 @@ import ListModel from "../../models/list/list.js";
 class userFeedDAO{
 
     async getPostsByInterests(interests) {
-        // Fetch posts matching the interests
-        const posts = await ListModel.find({ categoryId : { $in: interests } });
-         console.log(posts)
-        return posts;
+        // Fetch posts matching the interests and populate the categoryName
+        return await ListModel.find({ categoryId: { $in: interests } })
+                                     .populate('categoryId', 'categoryName');
+        
     }
 
     async getContentByUserIds(userIds) {
-
-        // Query MongoDB to get content where the creator's ID is in the list of userIds
-        const content = await ListModel.find({
-            userId: { $in: userIds }
-        });
-
-        return content;
+        // Fetch posts matching the interests and populate the categoryName
+        return await ListModel.find({ userId: { $in: userIds } })
+                                     .populate('categoryId', 'categoryName');
+        
     }
     
 }

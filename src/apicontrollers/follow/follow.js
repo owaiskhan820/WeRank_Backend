@@ -11,12 +11,6 @@ followRouter.get('/followUser/:userId', authMiddleware, validateErrors, async (r
     try {
         const userIdToFollow = req.params.userId;
         const followerId = req.user.id; // Assuming 'req.user' is populated from some authentication middleware
-
-        // Check if the user is trying to follow themselves
-        if (userIdToFollow === followerId) {
-            return res.status(400).json({ message: "You cannot follow yourself." });
-        }
-
         const followStatus = await followService.followUser(followerId, userIdToFollow);
 
         res.status(200).json({ message: "Successfully followed the user", followStatus });
@@ -34,7 +28,7 @@ followRouter.get('/unfollow/:userId', authMiddleware, validateErrors, async (req
         await followService.unfollowUser(followerId, userIdToUnfollow);
         res.status(200).json({ message: 'You have unfollowed the user successfully.' });
     } catch (error) {
-        res(error); 
+        res.json(error); 
     }
 
 });
@@ -46,7 +40,7 @@ followRouter.get('/followers/:userId', validateErrors, async (req, res, next) =>
         const followers = await followService.getFollowersByUserId(userId);
         res.json(followers);
     } catch (error) {
-        next(error);
+        next(error);    
     }
 
 });
@@ -85,7 +79,18 @@ followRouter.get('/following/count/:userId', validateErrors, async (req, res, ne
 
 
 
+followRouter.get('/isFollowing/:targetUserId', authMiddleware, async (req, res, next) => {
+    try {
+        const followerId = req.user.id; // ID of the logged-in user
+        const targetUserId = req.params.targetUserId;
 
+        const isFollowing = await followService.isFollowing(followerId, targetUserId);
+
+        res.status(200).json({ isFollowing });
+    } catch (error) {
+        next(error);
+    }
+});
 
 
 

@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
   },
   isVerified: {
     type: Boolean,
-    default: false // New field to track if the email is verified
+    default: true // New field to track if the email is verified
   },
   emailVerificationToken: {
     type: String, // New field to store the email verification token

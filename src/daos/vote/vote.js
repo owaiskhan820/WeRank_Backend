@@ -4,9 +4,14 @@ import VoteModel from '../../models/list/vote.js';
 class VoteDAO {
     async findVoteByUserAndList(userId, listId) {
         const vote = await VoteModel.findOne({ userId, listId });
-        return vote ? { exists: true, voteType: vote.voteType } : { exists: false };
-    }
-    
+        if (vote) {
+            return {
+                upvoted: vote.voteType === 'upvote',
+                downvoted: vote.voteType === 'downvote'
+            };
+        }
+        return { upvoted: false, downvoted: false };
+    }    
     async updateVote(voteId, newVoteType) {
         // Update the vote type for the given voteId
         return await VoteModel.findByIdAndUpdate(voteId, { voteType: newVoteType });
@@ -54,7 +59,33 @@ class VoteDAO {
             return { exists: false };
         }
     }
+
+    async removeVote(listId, userId){
+        try {
+            // Call the DAO method to remove the vote
+            const result = await instanceOfVoteDAO.removeVote(listId, userId);
+            return result;
+        } catch (error) {
+            // Handle or rethrow the error depending on your error handling strategy
+            console.error('Error in voteService.removeVote:', error);
+            throw error;
+        }
+    }
     
+    async removeVote(listId, userId){
+        try {
+            // Remove the vote document where the userId and listId match
+            const result = await VoteModel.deleteOne({ userId: userId, listId: listId });
+            if (result.deletedCount === 0) {
+                throw new Error('No vote found to delete.');
+            }
+            return result;
+        } catch (error) {
+            // Handle or throw the error depending on your error handling strategy
+            console.error('Error in removeVote:', error);
+            throw error;
+        }
+    }
     
 
 }
