@@ -9,15 +9,25 @@ class UserFeedService{
     async getInterestBasedContent(userId) {
         // Logic to determine user's interests
         const profile = await instanceOfProfileDAO.getProfileByUserId(userId);
+        const following = await instanceOfFollowDAO.getFollowingByUserId(userId);
+    
+        // Extract user IDs from the following list
+        const followingUserIds = following.map(user => user.userId);
+    
         // Check if the profile has interests
         if (!profile.interests) {
             throw new Error('No interests found for the user');
         } else {
             // Fetch content based on user's interests
-            const interestContent = await instanceOfUserFeedDAO.getPostsByInterests(profile.interests);
+            let interestContent = await instanceOfUserFeedDAO.getPostsByInterests(profile.interests);
+    
+            // Filter out content from followed users
+            interestContent = interestContent.filter(content => !followingUserIds.includes(content.userId));
+    
             return interestContent;
         }
     }
+    
 
 
     async getFollowingBasedContent(userId) {

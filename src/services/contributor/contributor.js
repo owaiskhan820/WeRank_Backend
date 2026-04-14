@@ -1,5 +1,5 @@
 import instanceOfContributorDAO from "../../daos/contributor/contributor.js";
-
+import notificationService from "../notifications/notifications.js";
 class ContributorService{
 
     async addContributor(listId, userId){
@@ -14,9 +14,7 @@ class ContributorService{
     
             // Call the notify method
             await notificationService.notify(actionUser, actionType, actionId);
-    
-            // Return the response from adding the contributor
-            return response;
+                return response;
         } catch(error){
             // Handle any errors that occur during the process
             throw error;

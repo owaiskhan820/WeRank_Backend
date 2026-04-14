@@ -6,8 +6,9 @@ class ProfileDAO{
         try {
             // Assuming ProfileModel has a reference to UserModel via 'userId'
             const profileWithUser = await ProfileModel.findOne({ userId: userId })
-                .populate('userId', 'username'); // Populate the 'userId' field with 'username' from UserModel
-    
+                                                        .populate('userId', 'username')  
+                                                        .populate('interests', 'categoryName');  
+                                                            
             if (!profileWithUser) {
                 return null; // Or handle the case where the profile is not found
             }
@@ -19,6 +20,31 @@ class ProfileDAO{
             };
     
         } catch (error) {
+            throw error;
+        }
+    }
+
+
+
+    async updateProfilePicture(userId, imageUrl) {
+        try {
+            console.log("Updating profile picture in DAO layer", userId, imageUrl);
+    
+            // Find the profile by userId and update the profilePicture field
+            const updatedProfile = await ProfileModel.findOneAndUpdate(
+                { userId: userId },  // Query based on the 'userId' field in the profile schema
+                { profilePicture: imageUrl },
+                { new: true, runValidators: true }
+            );
+    
+            if (!updatedProfile) {
+                throw new Error(`Profile not found for user ID: ${userId}`);
+            }
+    
+            return updatedProfile;
+        } catch (error) {
+            // Log the error or handle it as needed
+            console.error("Error updating profile picture:", error);
             throw error;
         }
     }
@@ -46,21 +72,20 @@ class ProfileDAO{
         }
      
     }
-
     async getProfilePictureById(userId) {
-        const profile = await ProfileModel.findOne({ user: userId }, 'pictureUrl bio');
-            if (profile) {
-                return {
-                    pictureUrl: profile.pictureUrl,
-                    bio: profile.bio
-                };
-            } else {
-                return {
-                    pictureUrl: null,
-                    bio: null
-                };
-            }
-      }
+        const profile = await ProfileModel.findOne({ userId: userId }, 'profilePicture bio');
+        if (profile) {
+            return {
+                pictureUrl: profile.profilePicture, // Use the correct field name from the schema
+                bio: profile.bio
+            };
+        } else {
+            return {
+                pictureUrl: null,
+                bio: null
+            };
+        }
+    }
 
 
       findUsersWithInterestsQuery(interests) {

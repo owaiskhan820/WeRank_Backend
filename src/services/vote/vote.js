@@ -32,8 +32,9 @@ class VoteService{
 
     async switchVote(listId, userId, voteType) {
         try{
-           return await instanceOfVoteDAO.switchVote(listId, userId, voteType)
-         } catch(error){
+           const response =  await instanceOfVoteDAO.switchVote(listId, userId, voteType)
+            return response         
+        } catch(error){
             throw error;
         }
     }

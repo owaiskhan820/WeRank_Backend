@@ -117,68 +117,60 @@ async getListByUserId(userId) {
     // Fetch the user's followings and interests
     const followings = await instanceOfFollowDAO.getFollowingByUserId(userId);
     const interests = await instanceOfProfileDAO.getInterestsByUserId(userId);
-
-    // Extract following userIds
-    const followingUserIds = followings.map(follow => follow.userId);
-
-    // 1. Fetch lists watchlisted by users you follow
-    const watchlistedLists = await instanceOfWatchlistDAO.getWatchlistedListsByUserIds(followingUserIds);
-
-    // 2. Fetch lists in similar interest categories
-    const interestBasedLists = await instanceOfListDAO.findListsByInterests(interests);
-
-    // 3. Fetch lists created by users your followings are following
-    const followingsCreators = await userService.getUsersFollowedByFollowings(followingUserIds);
-    const creatorLists = await instanceOfListDAO.findListsByCreators(followingsCreators);
-
-    // Combine all fetched lists
-    let combinedLists = [...watchlistedLists, ...interestBasedLists, ...creatorLists];
-
   
-    const uniqueListsMap = new Map();
-    combinedLists.forEach(list => {
-        // Assuming each list has a unique identifier 'id'
-        if (!uniqueListsMap.has(list.id.toString()) && list.userId !== userId && !followingUserIds.includes(list.userId)) {
-          uniqueListsMap.set(list.id.toString(), list);
-      }
-    });
-
-    // Extracting the deduplicated lists
-    combinedLists = Array.from(uniqueListsMap.values());
-    // Sort combined lists by recency (createdDate)
-
-    const listDetailsPromises = combinedLists.map(async list => {
+    // Extract following userIds and convert to string for comparison
+    const followingUserIds = followings.map(follow => follow.userId.toString());
+  
+    // 1. Fetch lists watchlisted by users you follow
+    let watchlistedLists = await instanceOfWatchlistDAO.getWatchlistedListsByUserIds(followingUserIds);
+    watchlistedLists = this.deduplicateAndFilterLists(watchlistedLists, userId, followingUserIds);
+  
+    // 2. Fetch lists in similar interest categories
+    let interestBasedLists = await instanceOfListDAO.findListsByInterests(interests);
+    interestBasedLists = this.deduplicateAndFilterLists(interestBasedLists, userId, followingUserIds);
+  
+    // 3. Fetch lists created by users your followings are following
+    let followingsCreators = await userService.getUsersFollowedByFollowings(followingUserIds);
+    let creatorLists = await instanceOfListDAO.findListsByCreators(followingsCreators);
+    creatorLists = this.deduplicateAndFilterLists(creatorLists, userId, followingUserIds);
+  
+    // Combine all filtered lists
+    const combinedLists = [...watchlistedLists, ...interestBasedLists, ...creatorLists];
+  
+    // Retrieve additional details for the lists
+    const listsDetails = await Promise.all(combinedLists.map(async list => {
       const userProfile = await instanceOfProfileDAO.getProfileByUserId(list.userId.toString());
       return {
-          userId: list.userId,
-          listTitle: list.title,
-          listId: list.id,
-          username: userProfile.username,
-          profilePicture: userProfile.profilePicture,
-          createdDate: list.createdDate
-
+        userId: list.userId,
+        listTitle: list.title,
+        listId: list.id,
+        username: userProfile.username,
+        profilePicture: userProfile.profilePicture,
+        createdDate: list.createdDate
       };
-  });
-
-  const listsDetails = await Promise.all(listDetailsPromises);
-  listsDetails.sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate));
-
-  return listsDetails;
+    }));
+  
+    // Sort combined lists by recency
+    listsDetails.sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate));
+  
+    return listsDetails;
   }
-
-  deduplicateLists(lists) {
+  
+  deduplicateAndFilterLists(lists, userId, followingUserIds) {
     const uniqueListIds = new Set();
-    const uniqueLists = [];
-
+    const filteredLists = [];
+  
     lists.forEach(list => {
-      if (!uniqueListIds.has(list._id.toString())) {
-        uniqueLists.push(list);
+      const listOwnerId = list.userId.toString();
+      if (!uniqueListIds.has(list._id.toString()) && listOwnerId !== userId && !followingUserIds.includes(listOwnerId)) {
+        filteredLists.push(list);
         uniqueListIds.add(list._id.toString());
       }
     });
-
-    return uniqueLists;
+  
+    return filteredLists;
   }
+  
 
 
   async getListsByIds(listIds) {

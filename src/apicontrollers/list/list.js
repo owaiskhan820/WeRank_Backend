@@ -130,21 +130,24 @@ listRouter.post('/vote/', authMiddleware, async (req, res) => {
         // Check if the user has already voted on this list
         const existingVote = await voteService.findVoteByUserAndList(userId, listId);
 
-        if (existingVote) {
+        if (existingVote.upvoted === false && existingVote.downvoted === false) {
+            const newVote = await voteService.addVote(userId, listId, voteType);
+            res.status(200).json({ message: "Vote added", updatedVoteStatus: newVote.voteType});
+            
+        } else {
             if (existingVote.voteType === voteType) {
                 // User is trying to perform the same vote again, so remove the vote
-                await voteService.removeVote(listId, userId);
+                const response = await voteService.removeVote(listId, userId);
+                console.log("Vote deleted", response)
+
                 res.json({ message: "Vote removed", updatedVoteStatus: null });
             } else {
                 // User is switching their vote
-                await voteService.switchVote(listId, userId, voteType);
+               const response = await voteService.switchVote(listId, userId, voteType);
+                console.log("Vote updated", response)
+
                 res.json({ message: "Vote updated", updatedVoteStatus: voteType });
-            }
-        } else {
-            // This is a new vote
-            const newVote = await voteService.addVote(userId, listId, voteType);
-            res.status(200).json({ message: "Vote added", newVote });
-        }
+            }}
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -154,25 +157,36 @@ listRouter.post('/vote/', authMiddleware, async (req, res) => {
 
 listRouter.put('/rearrangeList/:listId', authMiddleware, async (req, res) => {
     try {
-        const userId = req.user.id
+        const userId = req.user.id;
         const listId = req.params.listId;
         const rearrangedItems = req.body.listItems;
-        console.log(userId, listId, rearrangedItems)
+        console.log(userId, listId, rearrangedItems);
 
-        try{
-           const verifier = await contributorService.verifyContributor(listId, userId);
-            const updatedList = await listService.updateScore(listId, rearrangedItems);
-           const contributor = await contributorService.addContributor(listId, userId)
-            return res.status(200).json({updatedList, contributor });
+        // Verifying if the user has already contributed
+        try {
+            const verifier = await contributorService.verifyContributor(listId, userId);
+        } catch (error) {
+            console.log(error)
+            return res.status(401).json(error);
         }
-        catch(error){
-            return res.status(401).json({message: "something Went Wrong"})
+
+        // Updating the list score and adding contributor
+        try {
+            const updatedList = await listService.updateScore(listId, rearrangedItems);
+            const contributor = await contributorService.addContributor(listId, userId);
+            return res.status(200).json({ updatedList, contributor });
+        } catch (error) {
+            // If there is an error in updating the list, send an appropriate response
+            return res.status(500).json({ message: "Something went wrong", error: error.message });
         }
 
     } catch (error) {
+        // Catch any other errors not caught by the inner try-catch blocks
         res.status(500).json({ message: "Error rearranging", error: error.message });
     }
 });
+
+
 
 
 listRouter.post('/addComment/', authMiddleware, async (req, res) => {
@@ -241,9 +255,6 @@ listRouter.post('/analyze-sentiment', async (req, res) => {
         res.status(500).send({ message: 'Error processing sentiment analysis' });
     }
 });
-
-
-
 
 
 listRouter.get('/list-score/:listId', async (req, res) => {

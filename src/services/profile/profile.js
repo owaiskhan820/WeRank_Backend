@@ -41,6 +41,22 @@ class ProfileSerive{
         return instanceOfProfileDAO.getAllProfiles();
     }
 
+    async updateProfilePicture(userId, imageUrl) {
+        try {
+            console.log("Service layer: Updating profile picture", userId, imageUrl);
+
+            const response = await instanceOfProfileDAO.updateProfilePicture(userId, imageUrl)
+            if (!response) {
+                throw new Error(`Profile not found for user ID: ${userId}`);
+            }
+
+            return response;
+        } catch (error) {
+            console.error("Service layer: Error updating profile picture", error);
+            throw error;
+        }
+    }
+
 }
 
 const profileService = new ProfileSerive();

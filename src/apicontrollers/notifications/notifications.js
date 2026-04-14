@@ -31,7 +31,7 @@ notificationsRouter.get('/Notifications/unread', authMiddleware, async (req, res
 });
 
 
-notificationsRouter.get('/notifications/:id/read', authMiddleware, async (req, res) => {
+notificationsRouter.get('/notifications/read/:id', authMiddleware, async (req, res) => {
 
   try {
     const { id } = req.params;

@@ -121,7 +121,7 @@ class UserService {
         ...followingsOfFollowings.map(id => id.toString())
     ]);
 
-
+    compiledSuggestions
     const filteredSuggestedUserIds = Array.from(compiledSuggestions).filter(id => !followingUserIds.includes(id));
 
     // Fetch profiles for the filtered suggested user IDs
